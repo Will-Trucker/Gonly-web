@@ -4,8 +4,51 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "759d15a1d59f19fb6552f6c756ae0a29",
+    "content-hash": "072e77f7816813275b581a0abd2aad91",
     "packages": [
+        {
+            "name": "almasaeed2010/adminlte",
+            "version": "v3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ColorlibHQ/AdminLTE.git",
+                "reference": "bd4d9c72931f1dd28601b6bfb387554a381ad540"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ColorlibHQ/AdminLTE/zipball/bd4d9c72931f1dd28601b6bfb387554a381ad540",
+                "reference": "bd4d9c72931f1dd28601b6bfb387554a381ad540",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Colorlib"
+                }
+            ],
+            "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 4",
+            "homepage": "https://adminlte.io/",
+            "keywords": [
+                "JS",
+                "admin",
+                "back-end",
+                "css",
+                "less",
+                "responsive",
+                "template",
+                "theme",
+                "web"
+            ],
+            "support": {
+                "issues": "https://github.com/ColorlibHQ/AdminLTE/issues",
+                "source": "https://github.com/ColorlibHQ/AdminLTE/tree/v3.2.0"
+            },
+            "time": "2022-02-07T20:33:09+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.11.0",
@@ -975,17 +1018,77 @@
             "time": "2021-10-07T12:57:01+00:00"
         },
         {
-            "name": "laravel/framework",
-            "version": "v10.13.2",
+            "name": "jeroennoten/laravel-adminlte",
+            "version": "v3.9.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/laravel/framework.git",
-                "reference": "fd4619b56b56308e2c2c1840fedd0b8ebb73dfc5"
+                "url": "https://github.com/jeroennoten/Laravel-AdminLTE.git",
+                "reference": "c241490eb984511d8f968540ec224b05a09f36bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/fd4619b56b56308e2c2c1840fedd0b8ebb73dfc5",
-                "reference": "fd4619b56b56308e2c2c1840fedd0b8ebb73dfc5",
+                "url": "https://api.github.com/repos/jeroennoten/Laravel-AdminLTE/zipball/c241490eb984511d8f968540ec224b05a09f36bf",
+                "reference": "c241490eb984511d8f968540ec224b05a09f36bf",
+                "shasum": ""
+            },
+            "require": {
+                "almasaeed2010/adminlte": "3.2.*",
+                "laravel/framework": ">=7.0",
+                "php": ">=7.2.5"
+            },
+            "require-dev": {
+                "orchestra/testbench": ">=4.0",
+                "phpunit/phpunit": ">=9.1",
+                "scrutinizer/ocular": "^1.9"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "JeroenNoten\\LaravelAdminLte\\AdminLteServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JeroenNoten\\LaravelAdminLte\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeroen Noten",
+                    "email": "jeroennoten@me.com"
+                }
+            ],
+            "description": "Easy AdminLTE integration with Laravel",
+            "keywords": [
+                "AdminLTE",
+                "admin",
+                "administrator",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/jeroennoten/Laravel-AdminLTE/issues",
+                "source": "https://github.com/jeroennoten/Laravel-AdminLTE/tree/v3.9.0"
+            },
+            "time": "2023-04-04T06:40:56+00:00"
+        },
+        {
+            "name": "laravel/framework",
+            "version": "v10.13.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "03106ae9ba2ec4b36dc973b7bdca6fad81e032b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/03106ae9ba2ec4b36dc973b7bdca6fad81e032b4",
+                "reference": "03106ae9ba2ec4b36dc973b7bdca6fad81e032b4",
                 "shasum": ""
             },
             "require": {
@@ -1172,7 +1275,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-06-05T15:48:15+00:00"
+            "time": "2023-06-08T20:25:36+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -3055,6 +3158,88 @@
                 }
             ],
             "time": "2023-04-15T23:01:58+00:00"
+        },
+        {
+            "name": "spatie/laravel-permission",
+            "version": "5.10.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-permission.git",
+                "reference": "d08b3ffc5870cce4a47a39f22174947b33c191ae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/d08b3ffc5870cce4a47a39f22174947b33c191ae",
+                "reference": "d08b3ffc5870cce4a47a39f22174947b33c191ae",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "^7.0|^8.0|^9.0|^10.0",
+                "illuminate/container": "^7.0|^8.0|^9.0|^10.0",
+                "illuminate/contracts": "^7.0|^8.0|^9.0|^10.0",
+                "illuminate/database": "^7.0|^8.0|^9.0|^10.0",
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^5.0|^6.0|^7.0|^8.0",
+                "phpunit/phpunit": "^9.4",
+                "predis/predis": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "5.x-dev",
+                    "dev-master": "5.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Permission\\PermissionServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Spatie\\Permission\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Permission handling for Laravel 6.0 and up",
+            "homepage": "https://github.com/spatie/laravel-permission",
+            "keywords": [
+                "acl",
+                "laravel",
+                "permission",
+                "permissions",
+                "rbac",
+                "roles",
+                "security",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-permission/issues",
+                "source": "https://github.com/spatie/laravel-permission/tree/5.10.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-04-12T17:08:32+00:00"
         },
         {
             "name": "symfony/console",
@@ -5964,39 +6149,44 @@
             "time": "2020-07-09T08:09:16+00:00"
         },
         {
-            "name": "jean85/pretty-package-versions",
-            "version": "2.0.5",
+            "name": "laravel/breeze",
+            "version": "v1.21.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Jean85/pretty-package-versions.git",
-                "reference": "ae547e455a3d8babd07b96966b17d7fd21d9c6af"
+                "url": "https://github.com/laravel/breeze.git",
+                "reference": "a7e7e2acfb2fd332183aae41c445be7a2329e93e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Jean85/pretty-package-versions/zipball/ae547e455a3d8babd07b96966b17d7fd21d9c6af",
-                "reference": "ae547e455a3d8babd07b96966b17d7fd21d9c6af",
+                "url": "https://api.github.com/repos/laravel/breeze/zipball/a7e7e2acfb2fd332183aae41c445be7a2329e93e",
+                "reference": "a7e7e2acfb2fd332183aae41c445be7a2329e93e",
                 "shasum": ""
             },
             "require": {
-                "composer-runtime-api": "^2.0.0",
-                "php": "^7.1|^8.0"
+                "illuminate/console": "^10.0",
+                "illuminate/filesystem": "^10.0",
+                "illuminate/support": "^10.0",
+                "illuminate/validation": "^10.0",
+                "php": "^8.1.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.17",
-                "jean85/composer-provided-replaced-stub-package": "^1.0",
-                "phpstan/phpstan": "^0.12.66",
-                "phpunit/phpunit": "^7.5|^8.5|^9.4",
-                "vimeo/psalm": "^4.3"
+                "orchestra/testbench": "^8.0",
+                "phpstan/phpstan": "^1.10"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Breeze\\BreezeServiceProvider"
+                    ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Jean85\\": "src/"
+                    "Laravel\\Breeze\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6005,22 +6195,20 @@
             ],
             "authors": [
                 {
-                    "name": "Alessandro Lai",
-                    "email": "alessandro.lai85@gmail.com"
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
                 }
             ],
-            "description": "A library to get pretty versions strings of installed dependencies",
+            "description": "Minimal Laravel authentication scaffolding with Blade and Tailwind.",
             "keywords": [
-                "composer",
-                "package",
-                "release",
-                "versions"
+                "auth",
+                "laravel"
             ],
             "support": {
-                "issues": "https://github.com/Jean85/pretty-package-versions/issues",
-                "source": "https://github.com/Jean85/pretty-package-versions/tree/2.0.5"
+                "issues": "https://github.com/laravel/breeze/issues",
+                "source": "https://github.com/laravel/breeze"
             },
-            "time": "2021-10-08T21:21:46+00:00"
+            "time": "2023-05-04T15:02:53+00:00"
         },
         {
             "name": "laravel/pint",
@@ -7335,16 +7523,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.2.1",
+            "version": "10.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "599b33294350e8f51163119d5670512f98b0490d"
+                "reference": "1ab521b24b88b88310c40c26c0cc4a94ba40ff95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/599b33294350e8f51163119d5670512f98b0490d",
-                "reference": "599b33294350e8f51163119d5670512f98b0490d",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1ab521b24b88b88310c40c26c0cc4a94ba40ff95",
+                "reference": "1ab521b24b88b88310c40c26c0cc4a94ba40ff95",
                 "shasum": ""
             },
             "require": {
@@ -7416,7 +7604,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.2.1"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.2.2"
             },
             "funding": [
                 {
@@ -7432,7 +7620,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-06-05T05:15:51+00:00"
+            "time": "2023-06-11T06:15:20+00:00"
         },
         {
             "name": "sebastian/cli-parser",
