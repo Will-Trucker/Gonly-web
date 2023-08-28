@@ -1,0 +1,153 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fredoka', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background-color: #ebfbfb;
+}
+
+main{
+    margin: 50px 65px;
+}
+
+article{
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/000/107/464/small/huge-doodle-vector-pack.jpg);
+    height: 11.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+    
+article div{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    width: 80%;
+    padding: 10px 15px;
+}
+    
+article div h2{
+    font-size: 3em;
+    font-weight: 500;
+}
+
+main section{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+    
+.categories-grid{
+    width: 40%;
+    display: grid;
+    margin-bottom: 3em;
+    align-items: flex-end;
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: #e9e7e7;
+    grid-template-columns: 1fr 1fr;
+    padding: 5px;
+}
+    
+.categories-grid img{
+    width: 100%;
+    height: 100%;
+}
+
+.categories-grid img{
+    width: 100%;
+    height: 32em;
+}
+    
+.categories-grid section{
+    margin-left: 5px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 5px;
+    overflow: hidden;
+    height: 32em;
+}
+    
+.categories-grid section img{
+    width: 100%;
+    height: 100%;
+}
+    
+.categories-grid div{
+    margin-top: 10px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+    
+.categories-grid div h3{
+    font-size: 25px;
+    font-weight: 500;
+}
+    
+.cta {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    display: flex;
+    align-items: baseline;
+    background: none;
+}
+  
+.cta span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 14px;
+    padding-right: 15px;
+    text-transform: uppercase;
+}
+  
+.cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+}
+  
+.cta:hover svg {
+    transform: translateX(0);
+}
+  
+.cta:active svg {
+    transform: scale(0.9);
+}
+  
+.hover-underline-animation {
+    position: relative;
+    color: black;
+    padding-bottom: 20px;
+}
+  
+.hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+  
+.cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
