@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="{{asset('admin-assets/css/adminlte.min.css')}}">
 		<link rel="stylesheet" href="{{asset('admin-assets/plugins/dropzone/min/dropzone.min.css')}}">
 		<link rel="stylesheet" href="{{asset('admin-assets/css/custom.css')}}">
-
+        <link rel="stylesheet" href="{{asset('admin-assets/plugins/summernote/summernote.min.css')}}">
 	</head>
 	<body class="hold-transition sidebar-mini">
 		
@@ -58,9 +58,6 @@
 							<h4 class="h4 mb-0"><strong>{{ Auth::guard('admin')->user()->name }}</strong></h4>
 							<div class="mb-3">{{ Auth::guard('admin')->user()->email }}</div>
 							<div class="dropdown-divider"></div>
-							<a href="#" class="dropdown-item">
-								<i class="fas fa-user-cog mr-2"></i> {{__('Settings')}}
-							</a>
 							<div class="dropdown-divider"></div>
 							<div class="dropdown-divider"></div>
 							<a href="{{ route('admin.logout') }}" class="dropdown-item text-danger">
@@ -84,13 +81,20 @@
 		<script src="{{asset('admin-assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"> </script>
 		<script src="{{asset('admin-assets/js/adminlte.min.js')}}"></script>
 		<script src="{{asset('admin-assets/js/demo.js')}}"></script>
-
+		<script src="{{asset('admin-assets/plugins/summernote/summernote.min.js')}}"></script>
         <script>
 			$.ajaxSetup({
-            headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-     });
+                 headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+			$(document).ready(function(){
+               $(".summernote").summernote({
+				height:250
+
+			   });
+			});
 		</script>
 	
 		@yield('customJs')

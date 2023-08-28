@@ -133,8 +133,9 @@
     });
 
     $('#name').change(function(){
-		element = $(this);
-    $.ajax({
+		element = $(this); 
+		$("button[type=submit]").prop('disabled',true);
+        $.ajax({
               url: '{{route("getSlug")}}',
               type: 'get',
               data: {title: element.val()},
@@ -142,7 +143,8 @@
 			  headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
-    		  success: function(response){
+    		  success: function(response){ 
+              $("button[type=submit]").prop('disabled',false);
                 if(response["status"] == true){
 					$("#slug").val(response["slug"]);
 				}

@@ -125,14 +125,15 @@
 
     $('#name').change(function(){
 		element = $(this);
+		$("button[type=submit]").prop('disabled',true);
     $.ajax({
               url: '{{route("getSlug")}}',
               type: 'get',
               data: {title: element.val()},
               dataType: 'json',
-			  
     		  success: function(response){
                 if(response["status"] == true){
+					$("button[type=submit]").prop('disabled',false);
 					$("#slug").val(response["slug"]);
 				}
     		  }
