@@ -11,13 +11,10 @@ use Symfony\Component\HttpFoundation\Response;
 class AdminRedirectIfAuthenticated
 {
     /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
-    public function handle(Request $request, Closure $next, string ...$guards): Response
-    {
-        $guards = empty($guards) ? [null] : $guards;
+     
+Handle an incoming request.*
+@param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next*/
+public function handle(Request $request, Closure $next, string ...$guards): Response{$guards = empty($guards) ? [null] : $guards;
 
         if (Auth::guard('admin')->check()) {
            return redirect()->route('admin.dashboard');

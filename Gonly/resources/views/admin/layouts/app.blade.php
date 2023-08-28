@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>| Gonly - AdminPanel</title>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-		<link rel="shortcut icon" href="{{Vite::asset('resources/img/logo-gonly-icon.png')}}" type="image/x-icon"> 
+		<link rel="shortcut icon" href="{{Vite::asset('resources/img/Logos/logo-gonly-icon.png')}}" type="image/x-icon"> 
 		<meta name="csrf-token" content="{{csrf_token()}}">
 		<link rel="stylesheet" href="{{asset('admin-assets/plugins/fontawesome-free/css/all.min.css')}}">
 		<link rel="stylesheet" href="{{asset('admin-assets/css/adminlte.min.css')}}">
