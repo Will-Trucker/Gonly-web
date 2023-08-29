@@ -287,7 +287,7 @@
         })
 
      Dropzone.autoDiscover = false;
-     const dropzone =("#image").dropzone({ 
+     const dropzone = new Dropzone("#image", { 
      url:  "{{ route('temp-images.create') }}",
      maxFiles: 6,
      paramName: 'image',
