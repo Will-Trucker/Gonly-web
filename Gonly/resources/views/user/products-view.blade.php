@@ -16,7 +16,7 @@
             <h1>Mis publicaciones</h1>
             <p>Aquí se enlistan todos tus productos publicados para ventas dentro de Gonly!</p>
         </div>
-        <a href="{{ route('products.create') }}">
+        <a href="{{ route('productsUser-create') }}">
             <article>
                 <i class="fa-solid fa-circle-plus"></i>
                 <h1>Agregar producto para tu venta!</h1>
@@ -69,7 +69,7 @@
         </section>
         @endif
 
-        {!! $productsUser->links() !!}
+        {!! $products->links() !!}
     </main>
 
     @include('layouts.footer-users')    

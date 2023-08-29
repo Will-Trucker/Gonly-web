@@ -15,7 +15,7 @@
     <main>
         
             {{ method_field('PATCH') }}
-            @include('layouts.form-user-products', ['nameLook' => 'Edición de producto', 'actionForm' => url('/products/'.$products->id), 'methodForm' => method_field('PATCH'), 'submitForm' => 'Guardar cambios' ])
+            @include('layouts.form-user-products', ['nameLook' => 'Edición de producto', 'actionForm' => url('/productsUser/'.$products->id), 'methodForm' => method_field('PATCH'), 'submitForm' => 'Guardar cambios' ])
 
     </main>
 

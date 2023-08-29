@@ -13,10 +13,10 @@
     @include('layouts.nav-users-loged')
 
     <main>
-
-        <form action="{{ route('products.store') }}" method="POST" class="form-container" enctype="multipart/form-data">
         
-            @include('layouts.form-user-products', ['nameLook' => 'Creación de un nuevo producto', 'actionForm' => route('products.store'), 'submitForm' => 'Crear producto' ])
+        <form action="{{ route('productsUser-store') }}" method="POST" class="form-container" enctype="multipart/form-data">
+        
+            @include('layouts.form-user-products', ['nameLook' => 'Creación de un nuevo producto', 'actionForm' => route('productsUser-store'), 'submitForm' => 'Crear producto' ])
 
         </form>
 

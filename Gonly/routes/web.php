@@ -40,7 +40,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('products', ProductsUserController::class)->middleware(['auth', 'verified']);
+Route::resource('productsUser', ProductsUserController::class)->middleware(['auth', 'verified']);
+
+Route::get('productsUser', [ProductsUserController::class, 'index'])->middleware(['auth', 'verified'])->name('productsUser-index');
+Route::get('productsUser/create', [ProductsUserController::class, 'create'])->middleware(['auth', 'verified'])->name('productsUser-create');
+Route::post('productsUser/store', [ProductsUserController::class, 'store'])->middleware(['auth', 'verified'])->name('productsUser-store');
 
 Route::prefix('/products/{id}/preview/')->group(function() {
     // Ruta para subir imágenes adicionales
@@ -71,9 +75,6 @@ Route::group(['prefix'  => 'admin'], function(){
  
      Route::get('/login', [App\Http\Controllers\admin\AdminLoginController::class, 'indexl'])->name('admin.login');
      Route::post('/authenticate', [App\Http\Controllers\admin\AdminLoginController::class, 'authenticate'])->name('admin.authenticate');
- 
- 
- 
     });
  
     Route::group(['middleware' => 'admin.auth'], function(){

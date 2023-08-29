@@ -47,7 +47,7 @@ class ImagesController extends Controller
 
         $user_id = auth()->user()->id;
 
-        $product = Products::where('user_id', $user_id)->where('id', $id)->firstOrFail();
+        $product = Products_user::where('user_id', $user_id)->where('id', $id)->firstOrFail();
 
         /*return view('user.options-product', compact('product'));*/
 
@@ -59,7 +59,6 @@ class ImagesController extends Controller
     public function show($moreimg)
     {
         //
-        return view('user.more-images-show-product');
     }
 
     /**

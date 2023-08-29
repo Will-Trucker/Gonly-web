@@ -17,7 +17,7 @@ class ProductsUserController extends Controller
         //
         $user_id = auth()->user()->id;
 
-        $data['product'] = Products_user::where('user_id', $user_id)->paginate(6);
+        $data['products'] = Products_user::where('user_id', $user_id)->paginate(6);
 
         return view('user.products-view', $data);
     }
@@ -84,7 +84,7 @@ class ProductsUserController extends Controller
         $dataProduct['user_id'] = auth()->user()->id;
         Products_user::insert($dataProduct);
 
-        return redirect(route('products.index'))->with('message', 'Enhorabuena! El producto se ha creado exitosamente');
+        return redirect(route('productsUser-index'))->with('message', 'Enhorabuena! El producto se ha creado exitosamente');
 
     }
 
@@ -152,7 +152,7 @@ class ProductsUserController extends Controller
 
         Products_user::where('id','=',$id)->update($dataProduct);
         $products=Products_user::findOrFail($id);
-        return redirect('/products')->with('message', 'El producto se ha editado y actualizado con éxito!');
+        return redirect('/productsUser')->with('message', 'El producto se ha editado y actualizado con éxito!');
     }
 
     /**
@@ -169,6 +169,6 @@ class ProductsUserController extends Controller
         
         };
 
-        return redirect('products')->with('message', 'El producto se ha eliminado con éxito!');
+        return redirect('productsUser')->with('message', 'El producto se ha eliminado con éxito!');
     }
 }

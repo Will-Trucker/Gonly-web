@@ -4,14 +4,14 @@
 
     <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>    
     @vite([ 'resources/css/user/upload-more-images-product.css', 'resources/css/user/form-products.css', 'resources/css/layouts-css/nav-loged.css', 'resources/js/app.js', 'resources/css/layouts-css/footer-users.css', 'resources/js/options-product.js'])
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.css">    @endsection
-
-@section('Welcome')
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+    @section('Welcome')
     Más imágenes | Gonly
 @endsection
 
 @php
-    $product = \App\Models\Products::find(request()->id); // Obtén el producto según el ID en la URL
+    $product = \App\Models\Products_user::find(request()->id); // Obtén el producto según el ID en la URL
 @endphp
 
 
@@ -68,24 +68,19 @@
 
     
 <script>
-    Dropzone.options.imageUpload = {
-    maxFiles: 5,
-    addRemoveLinks: true,
-    accept: function(file, done) {
-        console.log("uploaded");
-        done();
-    },
-    init: function() {
-        this.on("maxfilesexceeded", function(file){
-            alert("No more files please!");
-        });
-    },
-   maxfilesexceeded: function (files) {
-    this.removeAllFiles();
-    this.addFile(files);
-  },
-
-};
+    Dropzone.options.myGreatDropzone = {
+        headers: {
+            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        },
+        maxFiles: 5,
+        addRemoveLinks: true,
+        acceptedFiles: 'image/*',
+        init: function() {
+            this.on("maxfilesexceeded", function(file){
+                alert("No more files please!");
+                this.removeFile(file);
+            });
+        }
+        dictDefaultMessage: "Arrastre una imagen al recuadro para subirlo",
+    };
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js"></script>
