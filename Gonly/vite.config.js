@@ -12,7 +12,7 @@ export default defineConfig({
                 'resources/css/login.css',
                 'resources/img/logo-gonly-icon.png',
                 'resources/img/avatar5.png',
-                'resources/img/default-150x150.png'
+                
             ],
             refresh: true,
         }),
