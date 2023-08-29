@@ -286,9 +286,9 @@
             });
         })
 
-        Dropzone.autoDiscover = false;
-     const dropzone = new Dropzone("#image", { 
-        url:  "{{ route('temp-images.create') }}",
+     Dropzone.autoDiscover = false;
+     const dropzone =("#image").dropzone({ 
+     url:  "{{ route('temp-images.create') }}",
      maxFiles: 6,
      paramName: 'image',
      addRemoveLinks: true,

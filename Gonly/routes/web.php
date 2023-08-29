@@ -68,6 +68,7 @@ Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controller
 
 
 /*  ADMIN  */
+// Rutas del administrador
 
 Route::group(['prefix'  => 'admin'], function(){
 
@@ -75,6 +76,9 @@ Route::group(['prefix'  => 'admin'], function(){
  
      Route::get('/login', [App\Http\Controllers\admin\AdminLoginController::class, 'indexl'])->name('admin.login');
      Route::post('/authenticate', [App\Http\Controllers\admin\AdminLoginController::class, 'authenticate'])->name('admin.authenticate');
+ 
+ 
+ 
     });
  
     Route::group(['middleware' => 'admin.auth'], function(){

@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <a href="{{route('admin.dashboard')}}" class="brand-link">
-        <img src="{{Vite::asset('resources/img/Logos/logo-gonly-icon.png')}}" alt="Gonly logo" class="brand-image  " style="opacity: .8">
+        <img src="{{Vite::asset('resources/img/logo-gonly-icon.png')}}" alt="Gonly logo" class="brand-image  " style="opacity: .8">
         <span class="brand-text font-weight-light">Gonly AdminPanel</span>
     </a>
     <div class="sidebar">

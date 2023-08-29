@@ -5,10 +5,10 @@
         <div class="container-fluid my-2">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>{{__('Products')}}</h1>
+                    <h1>Products</h1>
                 </div>
                 <div class="col-sm-6 text-right">
-                    <a href="{{ route('products.create') }}" class="btn btn-primary">{{__('New Product')}}</a>
+                    <a href="{{ route('products.create') }}" class="btn btn-primary">New Product</a>
                 </div>
             </div>
         </div>
@@ -39,13 +39,13 @@
                         <thead>
                             <tr>
                                 <th width="60">ID</th>
-                                <th width="80">{{__('Image')}}</th>
-                                <th>{{__('Title')}}</th>
-                                <th>{{__('Price')}}</th>
-                                <th>{{__('Qty')}}</th>
+                                <th width="80"></th>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Qty</th>
                                 <th>SKU</th>
-                                <th width="100">{{__('Status')}}</th>
-                                <th width="100">{{__('Actions')}}</th>
+                                <th width="100">Status</th>
+                                <th width="100">Action</th>
                             </tr>
                         </thead>
                         <tbody>
