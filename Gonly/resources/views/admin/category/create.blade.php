@@ -123,7 +123,7 @@
        });
     });
 
-    $('#name').change(function(){
+	$('#name').change(function(){
 		element = $(this);
 		$("button[type=submit]").prop('disabled',true);
     $.ajax({
