@@ -12,6 +12,9 @@
 @section('content-everyone')
     @include('layouts.nav-users-guest')
 
+    <div>
+        
+    </div>
     <section class="home-present" style="background-image: url( {{ Vite::asset('resources/img/Decoration/Curve-Line.svg') }} )">
         <section class="container-text-and-img-1">
             <div class="container-text1">
@@ -21,7 +24,11 @@
                     <a href="">{{__('Offers of the day')}}</a>
                 </div>
             </div>
+<<<<<<< Updated upstream
             <article class="container-img" >
+=======
+            <article class="home-img-cont">
+>>>>>>> Stashed changes
                 <img src="{{ Vite::asset('resources/img/Decoration/ilustration-removebg-preview.png') }}" alt="">
             </article>  
         </section>

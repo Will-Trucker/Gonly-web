@@ -584,6 +584,7 @@ body{
 }
 
 
+<<<<<<< Updated upstream
 
 /* Agrega media queries para tamaños de pantalla más pequeños */
 
@@ -672,3 +673,10 @@ body{
 }
 
 
+=======
+@media screen and (max-width: 1070px) {  
+    .home-img-cont > img {
+        display: none;
+    }
+}
+>>>>>>> Stashed changes
