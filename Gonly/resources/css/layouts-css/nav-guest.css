@@ -439,3 +439,142 @@ header section ul a li:hover{
 header section ul a li i{
     margin-right: 9px;
 }
+
+/* 
+
+@media screen and (max-width: 860px) {
+    .off-canvas-btn, input[type="checkbox"]{
+        display:block;
+        position: fixed;
+        z-index: 920;
+        top: 20px;
+        right: 20px;
+        width: 3rem;
+        height: 3rem;
+        cursor: pointer;
+        opacity: 0.25;
+    }
+    
+    .off-canvas-burger{
+        display: block;
+        position: fixed;
+        z-index: 910;
+        top: 20px;
+        right: 20px;
+        width: 3rem;
+        height: 3rem;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .off-canva-menu{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: #FFF9;
+        z-index: 900;
+        transform: translate(100%, 0);
+        transition: transform 1s ease;
+    }
+
+    .off-canva-menu > nav > *{
+        margin: 22px;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        margin-bottom: 8px;
+    }
+
+    .menu-items-cont1 ul{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .menu-items-cont1 ul a{
+        text-align: center;
+        padding: 19 px 0;
+        width: 100%;
+        border-bottom: 1px solid purple;
+    }
+
+    .menu-items-cont1 ul a:hover{
+        background-color: rgb(77, 255, 7);
+    }
+
+    .search-form-cont{
+        display: none;
+    }
+
+    .off-canvas-btn:checked ~ .off-canva-menu{
+        transform: translate(0, 0);
+    }
+
+}
+*/
+
+/* 
+<div class="container-nav1">
+            
+            <input type="checkbox" name="" class="off-canvas-btn">
+            <label class="off-canvas-burger">☰</label>
+            
+            <div class="off-canva-menu">
+                <nav>
+                    <div class="logo-image">
+                        <a href="{{ route('welcome') }}"><img class="logo-gonly-black-letters" src="{{ Vite::asset('resources/img/Logos/logo-gonly-black-letters.png') }}"></a>
+                    </div>
+
+                    <form action="" class="search-form-cont">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" class="search hover:outline-none" name="search-products" placeholder="{{__('Search product')}}">
+                    <input type="submit" class="submit" value="{{__('Search')}}">
+                    </form>       
+                    
+                    <x-translateSwicht />
+
+                    <div class="container__user-status">
+                        <svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="80" height="80"><mask id=":r2f:" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" rx="72" fill="#FFFFFF"></rect></mask><g mask="url(#:r2f:)"><rect width="36" height="36" fill="#ff005b"></rect><rect x="0" y="0" width="36" height="36" transform="translate(8 8) rotate(214 18 18) scale(1.1)" fill="#ffb238" rx="6"></rect><g transform="translate(4 4) rotate(-4 18 18)"><path d="M13,20 a1,0.75 0 0,0 10,0" fill="#000000"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>
+                        <h3>
+                        @if (Route::has('login'))
+                            @auth
+                            {{ Auth::user()->name }}
+                            @else
+                            Gonly - naitor
+                            @endauth
+                            @endif
+                        </h3>
+                        <a href="{{ route('profile.edit') }}" class="fa-solid fa-gear"></a>
+                    </div>
+
+                </nav>
+                <section class="menu-items-cont1">
+                    <ul>
+                        <a href="{{ route('categories') }}"><li><i class="fa-solid fa-cubes-stacked"></i>{{__('Categories')}}</li></a>
+                        @if (Route::has('login'))
+                            @auth
+                            <a href="#"><li><i class="fa-solid fa-cart-shopping"></i>Carrito</li></a>
+                            <a href="{{ Route('dashboard') }}"><li><i class="fa-solid fa-gauge"></i>Panel</li></a>
+                            @else
+                                <a href="{{ route('login') }}"><li><i class="fa-solid fa-right-from-bracket"></i>{{__('Log in')}}</li></a>
+
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}"><li><i class="fa-solid fa-address-card"></i>{{__('Register')}}</li></a>
+                                @endif
+                            @endauth
+                        @endif
+                        <a href="#"><li><i class="fa-solid fa-circle-info"></i>{{__('Information')}}</li></a>
+                        <a href="#"><li><i class="fa-solid fa-headset"></i>{{__("Contact")}}</li></a>
+                    </ul>
+                </section>
+            </div>
+
+        </div>
+*/
