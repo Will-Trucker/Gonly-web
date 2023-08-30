@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Images;
+use App\Models\Products_user;
 use App\Models\Products;
 
 use Illuminate\Support\Facades\Storage;
@@ -41,7 +42,10 @@ class ImagesController extends Controller
 
         $url = Storage::url($productsImages);
 
+        $modelProducts = Products_user::find($id); // Asegúrate de ajustar el nombre del campo según corresponda
+        
         Images::create([
+            'products_user_id' => $modelProducts->id,
             'url' => $url
         ]);
 

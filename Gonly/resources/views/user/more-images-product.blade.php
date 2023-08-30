@@ -62,6 +62,28 @@
         <form action="{{ route('moreimg.store', ['id' => $product->id]) }}" method="POST" class="dropzone" id="my-great-dropzone" enctype="multipart/form-data">
             {{ csrf_field() }}
         </form>
+        <button class="redirect" id="backButton" onclick="goBack();">Volver</button>
+        <script>
+            let hasReloaded = false;
+
+            document.getElementById('backButton').addEventListener('click', function() {
+                if (!hasReloaded) {
+                    window.addEventListener('pageshow', function(event) {
+                        // El evento pageshow se dispara al regresar a la página
+                        if (event.persisted) {
+                            // Asegurarse de que solo se recargue una vez
+                            if (!hasReloaded) {
+                                location.reload();
+                                hasReloaded = true;
+                            }
+                        }
+                    });
+                }
+                window.history.back();
+            });
+        </script>
+        
+
     </div>
     @include('layouts.footer-users')    
 @endsection

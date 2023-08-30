@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Products_user;
 use Illuminate\Http\Request;
+use App\Models\Images;
 
 use Illuminate\Support\Facades\Storage;
 
@@ -29,7 +30,9 @@ class ProductsUserController extends Controller
 
         $product = Products_user::where('user_id', $user_id)->where('id', $id)->firstOrFail();
 
-        return view('user.options-product', compact('product'));
+        $files = Images::all();
+
+        return view('user.options-product', compact('product', 'files'));
     }
 
 
