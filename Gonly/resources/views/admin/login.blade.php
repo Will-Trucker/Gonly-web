@@ -7,13 +7,13 @@
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
         
-		<link rel="shortcut icon" href="{{Vite::asset('resources/img/logo-gonly-icon.png')}}" type="image/x-icon">
+		<link rel="shortcut icon" href="{{Vite::asset('resources/img/Logos/logo-gonly-icon.png')}}" type="image/x-icon">
 		<link rel="stylesheet" href="{{asset('admin-assets/plugins/fontawesome-free/css/all.min.css')}}">
 		<link rel="stylesheet" href="{{asset('admin-assets/css/adminlte.min.css')}}">
 		<link rel="stylesheet" href="{{asset('admin-assets/css/custom.css')}}">
 
 		@vite(['resources/css/login.css',
-		      'resources/img/logo-gonly-icon.png'	 
+		      'resources/img/Logos/logo-gonly-icon.png'	 
 		])
 	</head>
 	<body class="hold-transition login-page">

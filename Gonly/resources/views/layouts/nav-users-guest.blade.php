@@ -3,15 +3,10 @@
             <div class="logo-image">
                 <a href="{{ route('welcome') }}" ><img class="logo-gonly-black-letters"  src="{{ Vite::asset('resources/img/Logos/logo-gonly-black-letters.png') }}"></a>
             </div>
-
-            <form id="buscador">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input type="search" class="search hover:outline-none" name="search-products" placeholder="{{__('Search product')}}">
-              <input type="submit" class="submit" value="{{__('Search')}}">
-            </form>       
+            
+            <livewire:search-component/>
             
             <x-translateSwicht />
-
             
             <div class="relatve z-10" class="relatve">
                 <button id="menuButton" class="w-52 user-configuration bg-transparent px-2 border-2 border-amber-300 py-0.5">

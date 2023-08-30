@@ -5,6 +5,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\ProductsUserController;
 use App\Http\Controllers\ImagesController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CategoryPController;
+use App\Http\Controllers\SubCategoryPController;
+use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\admin\AdminLoginController;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\CategoryController;
@@ -64,6 +68,16 @@ Route::get('/products/{id}/preview', [ProductsUserController::class, 'additional
 require __DIR__.'/auth.php';
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Shopping Cart
+Route::get('/cart',[App\Http\Controllers\CartController::class, 'cartlist'])->name('cart');
+
+Route::get('/category',[App\Http\Controllers\CategoryPController::class, 'index'])->name('categories.index');
+
+Route::get('/category/{category}', [App\Http\Controllers\SubCategoryPController::class, 'index'])->name('subcategories.index');
+
+Route::get('/category/{category}/{subcategory}', 'ProductoController@index')->name('productos.index');
+
 
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
 // Rutas del administrador
