@@ -14,7 +14,6 @@
 
 </head>
 <body style="background-image: url( {{ Vite::asset('resources/img/Decoration/ssspot.svg') }} );">
-
     <div class="form-container">
         <form method="POST" action="{{ route('login') }}" class="form-login">
             @csrf

@@ -223,6 +223,11 @@ header section ul a li i{
 
     }
 
+    .logo-image a{
+        padding: 30px;
+
+    }
+
 
     #menuButton{
         padding: 0 0 0 10px;
@@ -251,6 +256,7 @@ header section ul a li i{
    .headers{
     display: contents;
     
+    
 }
 
     #sidebarMenu {
@@ -261,11 +267,13 @@ header section ul a li i{
         transform: translateX(-250px);
         transition: transform 250ms ease-in-out;
         background: linear-gradient(180deg, #4ec616 0%, #4ec616 100%);
+        
     }
     .sidebarMenuInner{
         margin:0;
         padding:0;
         border-top: 1px solid rgba(177, 205, 36, 0.1);
+        
     }
     .sidebarMenuInner li{
         list-style: none;
@@ -295,23 +303,29 @@ header section ul a li i{
         display: none;
     }
     .sidebarIconToggle {
+        border-radius: 10%;
         transition: all 0.3s;
         box-sizing: border-box;
         cursor: pointer;
         position: fixed;
-        height: 100%;
-        width: 100%;
+       
         top: 25px;
         left: 15px;
         height: 22px;
         width: 22px;
+        margin-top: 60px;
+    }
+
+    .openSidebarMenu{
+        border: 5px solid greenyellow;
     }
     .spinner {
         box-sizing: border-box;
         position: absolute;
         height: 3px;
         width: 100%;
-        margin-top: 70px;
+        margin-top: 2px;
+
         background-color: #c89a9a;
     }
     .horizontal {

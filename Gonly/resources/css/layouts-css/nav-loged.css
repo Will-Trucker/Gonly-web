@@ -186,7 +186,201 @@ header .menu-user-loged ul{
 header .menu-user-loged ul a{
     color: #040404;
     margin: 15px 20px;
-    font-size: 1.1em;
+    font-size: 1.07em;
     position: relative;
     display: flex;
 }
+
+.headers{
+    display: none;
+}
+
+@media screen and (max-width: 1100px) {
+    
+    .logo-image{
+        margin: 5px;
+        min-width: 60px;
+        height: 50px;
+    }
+
+    .logo-gonly-black-letters {
+        display: none;
+    }
+
+    .logo-image{
+        z-index: 1;
+        background-image: url('../../../resources/img/Logos/logo-gonly-icon.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        text-align: center;
+
+    }
+
+    .logo-image a{
+        padding: 30px;
+
+    }
+
+
+    #menuButton{
+        padding: 0 0 0 10px;
+        margin: 10px;
+       }
+}
+
+
+@media screen and (max-width: 830px) {
+    #buscador{
+     display: none;
+     visibility: hidden;
+    } 
+    #menuButton{
+     margin: 10px;
+    }
+ 
+ 
+    
+ 
+
+
+
+    /*Menu de hamburguesa*/
+ 
+    .menu-user-loged{
+     display: none;
+    }
+    
+    .headers{
+     display: contents;
+     
+     
+ }
+ 
+     #sidebarMenu {
+         height: 31.5%;
+         display: flex;
+         position: fixed;
+         width: 190px;
+         transform: translateX(-250px);
+         transition: transform 250ms ease-in-out;
+         background: linear-gradient(180deg, #4ec616 0%, #4ec616 100%);
+         
+     }
+     .sidebarMenuInner{
+         margin:0;
+         padding:0;
+         border-top: 1px solid rgba(177, 205, 36, 0.1);
+         
+     }
+     .sidebarMenuInner li{
+         list-style: none;
+         color: #fff;
+         text-transform: uppercase;
+         font-weight: bold;
+         padding: 15px;
+         cursor: pointer;
+         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+     }
+     .sidebarMenuInner li span{
+         display: block;
+         font-size: 14px;
+         color: rgba(204, 24, 24, 0.5);
+     }
+     .sidebarMenuInner li a{
+         color: #fff;
+     }
+     
+     input[type="checkbox"]:checked ~ #sidebarMenu {
+         transform: translateX(0);
+     }
+ 
+     input[type=checkbox] {
+         transition: all 0.3s;
+         box-sizing: border-box;
+         display: none;
+     }
+     .sidebarIconToggle {
+         border-radius: 10%;
+         transition: all 0.3s;
+         box-sizing: border-box;
+         cursor: pointer;
+         position: fixed;
+        
+         top: 25px;
+         left: 15px;
+         height: 22px;
+         width: 22px;
+         margin-top: 60px;
+     }
+ 
+     .openSidebarMenu{
+         border: 5px solid greenyellow;
+     }
+     .spinner {
+         box-sizing: border-box;
+         position: absolute;
+         height: 3px;
+         width: 100%;
+         margin-top: 2px;
+ 
+         background-color: #c89a9a;
+     }
+     .horizontal {
+         transition: all 0.3s;
+         box-sizing: border-box;
+         position: relative;
+         float: left;
+         margin-top: 3px;
+ 
+     }
+     .diagonal.part-1 {
+         position: relative;
+         transition: all 0.3s;
+         box-sizing: border-box;
+         float: left;
+     }
+     .diagonal.part-2 {
+         transition: all 0.3s;
+         box-sizing: border-box;
+         position: relative;
+         float: left;
+         margin-top: 3px;
+     }
+     input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
+         transition: all 0.3s;
+         box-sizing: border-box;
+         opacity: 0;
+     }
+     input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+         transition: all 0.3s;
+         box-sizing: border-box;
+         transform: rotate(135deg);
+   
+     }
+     input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+         transition: all 0.3s;
+         box-sizing: border-box;
+         transform: rotate(-135deg);
+         margin-top: -9px;
+     }
+ 
+ 
+ 
+    
+ 
+ }
+ 
+
+ @media screen and (max-width: 525px) {
+    .logo-image{
+        display: none;
+    }
+
+    #menuButton{
+        width: 90%;
+        padding: 2px; 
+
+       }
+      
+ }

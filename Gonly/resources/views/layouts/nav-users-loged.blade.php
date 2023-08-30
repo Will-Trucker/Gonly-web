@@ -4,7 +4,7 @@
         <a href="{{ route('welcome') }}"><img class="logo-gonly-black-letters" src="{{ Vite::asset('resources/img/Logos/logo-gonly-black-letters.png') }}"></a>
       </div>
 
-      <form action="" class="form-search">
+      <form id="buscador" class="form-search">
         <i class="fa-solid fa-magnifying-glass"></i>
         <input type="search" class="search hover:outline-none" name="search-products" placeholder="{{__('Search product')}}">
         <input type="submit" class="submit" value="{{__('Search')}}">
@@ -12,7 +12,7 @@
         
       <x-translateSwicht />
 
-      <div class="relatve z-10">
+      <div class="relatve z-10" class="relatve">
         <button id="menuButton" class="w-52 user-configuration bg-transparent px-2 border-2 border-amber-300 py-0.5">
           <img src="{{ Vite::asset('resources/img/Users/Messi.png') }}" alt="">
           <h3>{{ Auth::user()->name }}</h3><i class="fa-solid fa-gear"></i>
@@ -38,5 +38,28 @@
         <a href="{{ route('profile.edit') }}" class="link-5"><li>Mi perfil <i class="fa-solid fa-user"></i></li></a>
       </ul>
     </div>
+
+
+    <section class="headers">
+            <br>
+            <br>
+        <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+        <label for="openSidebarMenu" class="sidebarIconToggle">
+            <div class="spinner diagonal part-1"></div>
+            <div class="spinner horizontal"></div>
+            <div class="spinner diagonal part-2"></div>
+        </label>
+        <div id="sidebarMenu">
+            <ul class="sidebarMenuInner">
+            <li><a href="{{ route('dashboard') }}">Mis balances</a></li>
+            <li><a href="{{ route('productsUser-index') }}">Mis publicaciones</a></li>
+            <li><a href="#">Mis ventas </a></li>
+            <li><a href="#">Mis compras</a></li>
+            <li><a href="{{ route('profile.edit') }}">Mi perfil</a></li>
+            </ul>
+        </div>
+        </section>
+
+
 </header>
 

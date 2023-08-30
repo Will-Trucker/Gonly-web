@@ -127,3 +127,66 @@ body{
 .coolinput input[type=text].input:focus {
     outline: none;
 }
+
+@media screen and (max-width: 950px) {
+    .form-decoration img{
+        display: none;       
+    }
+
+    .form-container form {
+        margin-right: 25%;
+        padding: 0;
+    }
+
+    .coolinput{
+    }
+
+    .form-container{
+        width: 90%;
+        padding: 0px;
+        border: 1px solid red;
+    }
+
+    .form-container .form-login{
+        width: 100%;
+    }
+
+    .form-container .form-decoration{
+        width: 43%;
+        margin-right: 15px;
+    }
+
+}
+
+@media screen and (max-width: 530px) {
+    .form-decoration img{
+        display: none;       
+    }
+
+    .form-container form {
+        margin-right: 25%;
+        padding: 0;
+    }
+
+    .coolinput, label{
+        font-size: 14px;
+    }
+
+    .form-container{
+        width: 98%;
+        padding: 0px;
+        border: 1px solid red;
+    }
+
+    .form-container .form-login{
+        width: 100%;
+    }
+
+    .form-container .form-decoration{
+        width: 42%;
+    }
+    div .logo-img{
+        margin: 1px -15px 1px -15px;
+    }
+
+}
