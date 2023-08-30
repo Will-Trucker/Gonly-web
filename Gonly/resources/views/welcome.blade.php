@@ -29,7 +29,7 @@
     <main class="principal-content">
         <div class="famous-categories">
             <h2 class="h2-forall">{{__('Featured Categories')}}</h2>
-            <div>
+            <div class="container-categorias">
                 <a href="#">
                     <img src="{{ Vite::asset('resources/img/Categories/Accesories.png') }}" alt="">
                     <h3>{{__('Accessories')}}</h3>
@@ -67,7 +67,7 @@
                 <h2 class="h2-forall modified-1">{{__('Most sold')}}</h2>
                 <a href="#" class="all">{{__('See everything')}} <i class="fa-solid fa-arrow-right"></i></a>
             </div>
-            <section>
+            <section class="container-categorias">
 
                 <div class="container__products-buyer">
                     <a href="#" class="image-product">
@@ -254,7 +254,7 @@
             <div>
                 <h2 class="h2-forall modified-1">{{__('Our recommended')}}</h2>
             </div>
-            <section>
+            <section class="container-categorias">
 
                 <div class="container__products-buyer">
                     <a href="#" class="image-product">
@@ -392,7 +392,7 @@
             <div>
                 <h2 class="h2-forall">Noticias</h2>
             </div>
-            <section>
+            <section class="container-categorias">
 
                 <div class="trending__mont-1">
                     <div class="text">
