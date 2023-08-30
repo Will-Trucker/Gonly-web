@@ -15,4 +15,5 @@ class Images extends Model
     public function products_user(){
         return $this->belongsTo('App\Models\Products_user');
     }
+    
 }
