@@ -596,6 +596,10 @@ body{
         padding: 0 1vh;
     }
 
+    *{
+        background-color: black;
+    }
+
 }
 
 @media screen and (max-width: 1200px) {
