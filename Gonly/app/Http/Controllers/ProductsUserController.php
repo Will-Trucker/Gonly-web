@@ -30,7 +30,7 @@ class ProductsUserController extends Controller
 
         $product = Products_user::where('user_id', $user_id)->where('id', $id)->firstOrFail();
 
-        $files = Images::all();
+        $files = Images::where('products_user_id', $id)->get();
 
         return view('user.options-product', compact('product', 'files'));
     }
