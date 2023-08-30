@@ -1,6 +1,7 @@
 @extends('layouts.head-pretm')
 
 @section('link-css-js')
+    @livewireStyles
     @vite(['resources/css/home/welcome.css', 'resources/css/layouts-css/nav-guest.css', 'resources/css/layouts-css/footer-users.css' , 'resources/js/welcome.js'])
 @endsection
 
@@ -435,8 +436,7 @@
 
             </section>
         </div>
-
     </main>
-
     @include('layouts.footer-users')
+    @livewireScripts
 @endsection
