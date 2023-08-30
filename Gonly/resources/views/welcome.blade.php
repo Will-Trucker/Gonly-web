@@ -385,18 +385,6 @@
         </div>
     
     </main>
-
-    {{--
-    <div class="part-app"  style="background-image: url( {{ Vite::asset('resources/img/Decoration/smartmockups_lkp05c4i.jpg') }} )">
-        <div>
-            <h2>Descarga nuestra APP</h2>
-            <p>Y disfruta de una mejor experiencia al alcanze de tu mano, sin restricciones!</p>
-            <a href="#">
-                <img class="google-play-link" src="{{ Vite::asset('resources/img/Decoration/google-play-badge.png') }}" alt="">
-            </a>
-        </div>
-    </div>
-    --}}
     
     <main class="principal-content">
         <div class="trending-month">

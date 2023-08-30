@@ -111,6 +111,26 @@ main{
   transform: scale(0.95);
 }
 
+.redirect {
+    background-color: #00ff0d;
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 25px;
+    display: block;
+    margin: auto;
+    margin-top: 25px;
+    width: 100px;
+    height: 45px;
+    transition: .3s;
+}
+  
+.redirect:hover {
+    background-color: #b7741e;
+    box-shadow: 0 0 0 5px #3bf6605f;
+    color: #fff;
+}
+
 
 /* Comienzo del responsive web */
 

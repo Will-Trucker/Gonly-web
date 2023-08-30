@@ -35,29 +35,38 @@
                         <input type="radio" id="1" name="image-slide" style="display: none">
                         <input type="radio" id="2" name="image-slide" style="display: none">
                         <input type="radio" id="3" name="image-slide" style="display: none">
+                        <input type="radio" id="4" name="image-slide" style="display: none">
+                        <input type="radio" id="5" name="image-slide" style="display: none">
                         <div class="slide">
                             <div class="item-slide">
-                                <img src="{{ asset('storage').'/'.$product->photos }}" alt="">
+                                <img src="{{ asset('storage').'/'.$product->photos }}">
                             </div>
-                            <div class="item-slide">
-                                <img src="https://i.ebayimg.com/thumbs/images/g/gpcAAOSwvqdkHG6t/s-l640.jpg">
-                            </div>
-                            <div class="item-slide">
-                                <img src="https://i.ebayimg.com/thumbs/images/g/gpcAAOSwvqdkHG6t/s-l640.jpg">
-                            </div>
+                            @foreach ($files as $file)
+                                <div class="item-slide">
+                                    <img src="{{ asset($file->url) }}" alt="">
+                                </div>
+                            @endforeach
+
                         </div>
                         <div class="pagination">
                             <label class="pagination-item" for="1">
-                                <img src="{{ asset('storage').'/'.$product->photos }}" alt="">
+                                <img src="{{ asset('storage').'/'.$product->photos }}">
                             </label>
                             
-                            <label class="pagination-item" for="2">
-                                <img src="https://i.ebayimg.com/thumbs/images/g/gpcAAOSwvqdkHG6t/s-l640.jpg">
-                            </label>
-                            
-                            <label class="pagination-item" for="3">
-                                <img src="https://i.ebayimg.com/thumbs/images/g/gpcAAOSwvqdkHG6t/s-l640.jpg">
-                            </label>
+                            @php
+                                $counter = 2; // Inicializar el contador en 2
+                            @endphp
+
+                            @foreach ($files as $file)
+                                <label class="pagination-item" for="{{ $counter }}">
+                                    <img src="{{ asset($file->url) }}" alt="">
+                                </label>
+                                @php
+                                    $counter++; // Incrementar el contador en 1
+                                    $counter = min($counter, 5); // Asegurarse de que el contador no exceda 5
+                                @endphp
+                            @endforeach
+
                         </div>
                     </div>
                 </div>   

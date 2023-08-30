@@ -13,4 +13,8 @@ class Products_user extends Model
     public function user(){
         return $this->belongsTo('App\User');
     }
+
+    public function images_product(){
+        return $this->hasMany('App\Models\Images');
+    }
 }

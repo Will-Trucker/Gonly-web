@@ -121,36 +121,27 @@ header nav .submit[value]:hover{
     background-color: #e7edd4;
 }
 
-header nav .container__user-status{
+.user-configuration{
     display: flex;
-    margin: 5px;
-    padding: 12px;
     align-items: center;
-    height: 2.9em;
-    border: 2px solid #c4e044;
+    justify-content: center;
 }
 
-header nav .container__user-status svg{
-    height: 2.3em;
-    width: 2.3em;
+.user-configuration img{
+    height: 2.5em;
+    width: 2.5em;
     border-radius: 50px;
 }
 
-header nav .container__user-status h3{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
-    border-right: 3px solid #c4e044;
-    padding-right: 10px;
-    font-size: 1.1em;
+.user-configuration h3{
+    padding: 0 9px;
+    display: block;
+    width: 10em;
+    white-space: nowrap; /* Evita el salto de línea */
+     overflow: hidden; /* Oculta el exceso de contenido */
+    text-overflow: ellipsis; /* Agrega puntos suspensivos al final */
 }
 
-header nav .container__user-status a{
-    color: #000;
-    margin: 5px;
-    font-size: 1.3em;
-}
 
 header section{
     border-bottom: 1px solid #000;

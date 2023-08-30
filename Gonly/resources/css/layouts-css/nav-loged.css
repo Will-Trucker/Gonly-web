@@ -168,8 +168,8 @@ header nav .container__user-status a{
     display: block;
     width: 10em;
     white-space: nowrap; /* Evita el salto de línea */
-  overflow: hidden; /* Oculta el exceso de contenido */
-  text-overflow: ellipsis; /* Agrega puntos suspensivos al final */
+     overflow: hidden; /* Oculta el exceso de contenido */
+    text-overflow: ellipsis; /* Agrega puntos suspensivos al final */
 }
 
 header .menu-user-loged{
