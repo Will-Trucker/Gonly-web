@@ -17,7 +17,7 @@ class ImagesController extends Controller
     public function index()
     {
         //
-        return view('user.options-product');
+        return view('user.options-product', compact('files'));
     }
 
     /**

@@ -127,7 +127,7 @@ header nav .submit[value]:hover{
     justify-content: center;
 }
 
-.user-configuration img{
+.user-configuration svg{
     height: 2.5em;
     width: 2.5em;
     border-radius: 50px;
