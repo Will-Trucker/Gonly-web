@@ -1,6 +1,6 @@
 # Gonly
 
-<img src="[Gonly.png](https://github.com/Will-Trucker/Gonly-web/blob/main/Gonly/resources/img/Logos/logo-gonly-white-letters.png)">
+<img src="https://github.com/Will-Trucker/Gonly-web/blob/main/Gonly/resources/img/Logos/logo-gonly-white-letters.png">
 
 Una nueva forma de comprar ha llegado
 
