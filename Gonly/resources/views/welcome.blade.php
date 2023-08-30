@@ -12,15 +12,15 @@
     @include('layouts.nav-users-guest')
 
     <section class="home-present" style="background-image: url( {{ Vite::asset('resources/img/Decoration/Curve-Line.svg') }} )">
-        <section>
-            <div>
+        <section class="container-text-and-img-1">
+            <div class="container-text1">
                 <h1><b>{{__('Gonly')}}</b> {{__('is your best option')}}</h1>
                 <p>{{__('To get what you need, just immerse yourself in our APP to find everything you want, what you want and when you want.')}}</p>
                 <div>
                     <a href="">{{__('Offers of the day')}}</a>
                 </div>
             </div>
-            <article>
+            <article class="container-img" >
                 <img src="{{ Vite::asset('resources/img/Decoration/ilustration-removebg-preview.png') }}" alt="">
             </article>  
         </section>
