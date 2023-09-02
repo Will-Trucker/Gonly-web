@@ -71,13 +71,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Shopping Cart
 Route::get('/cart',[App\Http\Controllers\CartController::class, 'carrito'])->name('cart.carrito');
-
+/*
 Route::get('/category',[App\Http\Controllers\CategoryPController::class, 'index'])->name('categories.index');
 
 Route::get('/category/{category}', [App\Http\Controllers\SubCategoryPController::class, 'index'])->name('subcategories.index');
 
 Route::get('/category/{category}/{subcategory}', 'ProductoController@index')->name('productos.index');
-
+*/
 
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
 // Rutas del administrador

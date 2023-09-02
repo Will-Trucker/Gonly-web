@@ -1,7 +1,7 @@
 @extends('layouts.head-pretm')
 
 @section('link-css-js')
-    
+    @livewireStyles
     @vite(['resources/css/home/welcome.css', 'resources/css/layouts-css/nav-guest.css', 'resources/css/layouts-css/footer-users.css' , 'resources/js/welcome.js'])
 @endsection
 
@@ -24,7 +24,6 @@
                     <a href="">{{__('Offers of the day')}}</a>
                 </div>
             </div>
-            <article class="container-img" >
             <article class="home-img-cont">
                 <img src="{{ Vite::asset('resources/img/Decoration/ilustration-removebg-preview.png') }}" alt="">
             </article>  
