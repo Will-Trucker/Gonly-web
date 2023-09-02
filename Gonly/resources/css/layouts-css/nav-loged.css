@@ -234,7 +234,183 @@ header .menu-user-loged ul a{
     display: flex;
 }
 
-.headers{
+/* menu responsive, prueba 2 */
+
+input[type="checkbox"]{
+    display: none;
+}
+
+.mobile-display-logo{
+    display: none;
+}
+
+.off-canvas-burger{
+    display: none;
+}
+
+@media screen and (max-width: 860px) {
+
+    .mobile-display-logo{
+        display: block;
+    }
+
+    .off-canvas-btn, input[type="checkbox"]{
+        display:block;
+        position: fixed;
+        z-index: 920;
+        top: 20px;
+        right: 20px;
+        width: 3rem;
+        height: 3rem;
+        cursor: pointer;
+        opacity: 0.1;
+    }
+    
+    .off-canvas-burger{
+        display: block;
+        position: fixed;
+        z-index: 910;
+        top: 20px;
+        right: 20px;
+        width: 3rem;
+        height: 3rem;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .off-canva-menu{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: rgb(227, 254, 254);
+        z-index: 900;
+        transform: translate(100%, 0);
+        transition: transform 1s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .off-canva-menu > nav > *{
+        margin: 22px;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        margin-bottom: 8px;
+    }
+
+    .menu-items-cont1 ul{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .menu-items-cont1 ul a{
+        text-align: center;
+        padding: 19 px 0;
+        width: 100%;
+    }
+
+    .menu-items-cont1 ul a:hover{
+        background-color: rgb(77, 255, 7);
+    }
+
+    .search-form-cont{
+        display: none;
+    }
+
+    .off-canvas-btn:checked ~ .off-canva-menu{
+        transform: translate(0, 0);
+    }
+
+    .search{
+        width: 90%;
+    }
+
+    .logo-image{
+        background-color: rgb(227, 254, 254);
+        border-radius: 13px;
+    }
+
+    header nav .logo-gonly-black-letters{
+        border-radius: 20px;
+    }
+
+    .menu-user-loged{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header .menu-user-loged ul{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    header .menu-user-loged ul a{
+        color: #040404;
+        margin: 15px 20px;
+        font-size: 1.07em;
+        position: relative;
+        display: flex;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        height: 38%;
+        border: none;
+    }
+
+    header .menu-user-loged{
+        border-bottom: none;
+    }
+
+    /* elementos fuera del menu responsive que cambian */
+
+    .mobile-display-logo{
+        width: 100%;
+        position: relative;
+        height: 70px;
+        margin-bottom: -20px;
+    }
+
+    .logo-image2{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        background-color: white;
+        margin-top: -2px;
+        border: 1px solid rgb(198, 198, 198);
+        margin-bottom: 0px;
+    }
+
+    .logo-gonly-black-letters{
+        height: 3.4em;
+        margin: 5px;
+    }
+
+    header nav{
+        border-bottom: 1px solid #0005;
+    }
+
+}
+
+
+/* .headers{
     display: none;
 }
 
@@ -282,14 +458,14 @@ header .menu-user-loged ul a{
      margin: 10px;
     }
  
- 
+ */
     
  
 
 
 
     /*Menu de hamburguesa*/
- 
+ /*
     .menu-user-loged{
      display: none;
     }
@@ -426,4 +602,4 @@ header .menu-user-loged ul a{
 
        }
       
- }
+ } */
