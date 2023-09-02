@@ -583,9 +583,6 @@ body{
     filter: hue-rotate(100deg);
 }
 
-
-<<<<<<< Updated upstream
-
 /* Agrega media queries para tamaños de pantalla más pequeños */
 
 @media screen and (max-width: 700px) {
@@ -600,7 +597,6 @@ body{
         margin: 50px auto;
         margin-bottom: 20px;
     }
-
 
     .container-text1{
         width: 100%;
@@ -619,13 +615,6 @@ body{
         font-size: 12px;
         color: #0e3d08;
     }
-
-    
-
-    /* *{
-        background-color: black;
-    } */
-
 }
 
 @media screen and (max-width: 400px) {
@@ -669,12 +658,3 @@ body{
     }
     
 }
-
-
-=======
-@media screen and (max-width: 1070px) {  
-    .home-img-cont > img {
-        display: none;
-    }
-}
->>>>>>> Stashed changes

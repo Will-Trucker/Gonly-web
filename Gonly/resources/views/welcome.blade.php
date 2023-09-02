@@ -24,11 +24,7 @@
                     <a href="">{{__('Offers of the day')}}</a>
                 </div>
             </div>
-<<<<<<< Updated upstream
             <article class="container-img" >
-=======
-            <article class="home-img-cont">
->>>>>>> Stashed changes
                 <img src="{{ Vite::asset('resources/img/Decoration/ilustration-removebg-preview.png') }}" alt="">
             </article>  
         </section>
