@@ -131,6 +131,7 @@ header nav .logo-gonly-black-letters{
 }
 
 .search ul li h1{
+    width: 8em;
     display: flex;
     margin: 0px 15px;
     font-weight: 900;
@@ -138,7 +139,10 @@ header nav .logo-gonly-black-letters{
 }
 
 .search ul li p{
+    display: flex;
     height: 4.5em;
+    text-align: center;
+    align-items: center;
     width: 18em;
     overflow: hidden;
     text-align: justify;
@@ -146,6 +150,7 @@ header nav .logo-gonly-black-letters{
 }
 
 .search ul li span{
+    width: 5.5em;
     font-weight: 900;
     font-size: 1.2em;
     margin-left: 15px;    

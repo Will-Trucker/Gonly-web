@@ -70,7 +70,7 @@ require __DIR__.'/auth.php';
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Shopping Cart
-Route::get('/cart',[App\Http\Controllers\CartController::class, 'cartlist'])->name('cart');
+Route::get('/cart',[App\Http\Controllers\CartController::class, 'carrito'])->name('cart.carrito');
 
 Route::get('/category',[App\Http\Controllers\CategoryPController::class, 'index'])->name('categories.index');
 

@@ -9,7 +9,8 @@ use App\Models\SubCategory;
 
 class ProductoController extends Controller
 {
-    public function index(Category $categoria, SubCategory $subcategoria)
+    /* public function index(Category $categoria, SubCategory $subcategoria) */
+    public function index()
     {
         $products = $subcategoria->products;
         return view('producto.showProducts', compact('products'));

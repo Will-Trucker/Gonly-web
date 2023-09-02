@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>| Gonly - AdminPanel</title>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-		<link rel="shortcut icon" href="{{Vite::asset('resources/img/Logos/logo-gonly-icon.png')}}" type="image/x-icon"> 
+		<link rel="shortcut icon" href="{{Vite::asset('resources/img/icongonly.png')}}" type="image/x-icon"> 
 		<meta name="csrf-token" content="{{csrf_token()}}">
 		<link rel="stylesheet" href="{{asset('admin-assets/plugins/fontawesome-free/css/all.min.css')}}">
 		<link rel="stylesheet" href="{{asset('admin-assets/css/adminlte.min.css')}}">
@@ -58,9 +58,6 @@
 							<h4 class="h4 mb-0"><strong>{{ Auth::guard('admin')->user()->name }}</strong></h4>
 							<div class="mb-3">{{ Auth::guard('admin')->user()->email }}</div>
 							<div class="dropdown-divider"></div>
-							<a href="#" class="dropdown-item">
-								<i class="fas fa-user-cog mr-2"></i> {{__('Settings')}}
-							</a>
 							<div class="dropdown-divider"></div>
 							<div class="dropdown-divider"></div>
 							<a href="{{ route('admin.logout') }}" class="dropdown-item text-danger">

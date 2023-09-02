@@ -1,0 +1,103 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fredoka', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background-color: #ebfbfb;
+}
+
+header .menu-user-loged ul a::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 0;
+    height: 1.50px;
+    background-color: #add104;
+    transition: width 0.3s;
+}
+  
+header .menu-user-loged ul .link-5::after {
+    width: 100%;
+}
+
+header .menu-user-loged ul a li{
+    color: #3c3c3c;
+    transition: .2s ease-in;
+}
+
+header .menu-user-loged ul .link-5 li{
+    color: #6d8136;
+}
+
+header .menu-user-loged ul .link-1 li:hover{
+    color: #6d8136;
+}
+
+header .menu-user-loged ul .link-2 li:hover{
+    color: #6d8136;
+}
+
+header .menu-user-loged ul .link-3 li:hover{
+    color: #6d8136;
+}
+
+header .menu-user-loged ul .link-4 li:hover{
+    color: #6d8136;
+}
+
+header .menu-user-loged ul a li i{
+    margin-left: 9px;
+}
+
+main{
+    margin: 50px 65px;
+}
+
+@keyframes movimiento-adelante {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(10px);
+    }
+}
+  
+@keyframes movimiento-atras {
+    0% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+  
+    .wrapper .footer-widget, .wrapper .footer-widget:nth-child(1) {
+      width: calc(50% - 30px);
+    }
+}
+  
+@media (max-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  
+    .wrapper .footer-widget, .wrapper .footer-widget:nth-child(1) {
+      width: 100%;
+      margin: 0 10px 50px;
+    }
+}

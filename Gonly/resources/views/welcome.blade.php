@@ -81,16 +81,6 @@
 
                 <div class="container__products-buyer">
                     <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/fan.jpeg') }}" alt="Fan">
-                        <h2>Ventilador DORCO</h2>
-                        <p>Vendilador piola on una helice que puede cortar hasta a los negros y geis, es en serio....</p>
-                    </a>
-                    <div class="price-products-buyer">$75</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
                         <img src="{{ Vite::asset('resources/img/Products/shoes.jpeg') }}" alt="Shoes">
                         <h2>Zapatos Jordan</h2>
                         <p>Con estos zapatos el bicho metió unas buenas canastas conta los lakres, los humilló mucho.</p>
@@ -255,24 +245,6 @@
                 <h2 class="h2-forall modified-1">{{__('Our recommended')}}</h2>
             </div>
             <section class="container-categorias">
-
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/smartphone.png') }}" alt="Smartphone">
-                        <h2>iPhone 18X MAX</h2>
-                    </a>
-                    <div class="price-products-buyer">$1.500</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/smartphone.png') }}" alt="Smartphone">
-                        <h2>iPhone 18X MAX</h2>
-                    </a>
-                    <div class="price-products-buyer">$1.500</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
 
                 <div class="container__products-buyer">
                     <a href="#" class="image-product">
