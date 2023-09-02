@@ -19,7 +19,7 @@
             </div>
         </article>
 
-        <section>
+        <section class="categorias-cont1">
             <div class="categories-grid">
                 <img src="https://cdn.vibox.co.uk/uploads/180/conversions/void-w_amd_lgpu-large.png">
                 <section>

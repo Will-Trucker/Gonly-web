@@ -125,3 +125,66 @@ body{
 .coolinput input[type=text].input:focus {
     outline: none;
 }
+
+
+@media screen and (max-width: 1000px) {
+    .form-decoration img{
+        display: none;       
+    }
+
+    .form-container form {
+        margin-left: 27%;
+        padding: 0;
+    }
+
+
+    .form-container{
+        width: 90%;
+        padding: 0px;
+        border: 1px solid red;
+    }
+
+    .form-container .form-login{
+        width: 100%;
+    }
+
+    .form-container .form-decoration{
+        width: 10%;
+        margin-right: 15px;
+    }
+
+}
+
+@media screen and (max-width: 540px) {
+    .form-decoration img{
+        display: none;       
+    }
+
+    .form-container form {
+        margin-right: 25%;
+        padding: 0;
+    }
+
+    .coolinput, label{
+        font-size: 16px;
+    }
+
+    .form-container{
+        width: 90%;
+        padding: 0px;
+        border: 1px solid red;
+    }
+
+    .form-container .form-login{
+        width: 100%;
+    }
+
+    .form-container .form-decoration{
+        width: 4%;
+        margin-right: 13px;
+    }
+    div .logo-img{
+        margin: 1px -15px 1px -15px;
+    }
+
+}
