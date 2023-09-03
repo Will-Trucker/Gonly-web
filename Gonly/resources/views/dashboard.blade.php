@@ -17,7 +17,7 @@
             <p>Da un vistazo de las posibilidades que tienes con Gonly, para compra y venta, adelante!</p>
         </div>
         <section class="grid-containers-balanced">
-            <div>
+            <div class="div1-1">
                 <section style="background-image: url({{ Vite::asset('resources/img/Decoration/productos.jpg') }})">
                     <h1>Tus compras</h1>
                     <p>Aquí se verán en general tus compras realizadas en Gonly!</p>
@@ -27,7 +27,7 @@
                     <p>Por el momento no tienes ningún registro de compra ligada a este usuario, puedes ver todo especial para ti, <a style="text-decoration: underline;" href="{{ route('welcome') }}">haz clic aquí.</a></p>
                 </article>
             </div>
-            <div>
+            <div class="div1-2">
                 <section style="background-image: url({{ Vite::asset('resources/img/Decoration/ventas.jpg') }})">
                     <h1>Tus ingresos</h1>
                     <p>Aquí se verán en general tus ventas dentro de Gonly en Gonly!</p>
@@ -37,7 +37,7 @@
                     <p>Por el momento no tienes ningún registro de venta ligada a este usuario, pero puedes vender productos, <a style="text-decoration: underline;" href="{{ route('welcome') }}">haz clic aquí.</a></p>
                 </article>
             </div>
-            <div>
+            <div class="div1-3">
                 <section style="background-image: url({{ Vite::asset('resources/img/Decoration/publicaciones.jpg') }})">
                     <h1>Tus publicaciones</h1>
                     <p>Aquí se visualizarán los productos a vender que has publicado dentro de Gonly!</p>
