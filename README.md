@@ -11,6 +11,11 @@ Una nueva forma de comprar ha llegado
 - phpMyAdmin
 - CSS
 - JS
+- AJAX
+- Tailwind CSS
+- Bootstrap
+- Vite JS
+- jquery
 - HTML5
 
 # Contribuidores
