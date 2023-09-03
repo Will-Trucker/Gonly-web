@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/8dd3c39186.js" crossorigin="anonymous"></script>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+
     
     @yield('link-css-js')
     
