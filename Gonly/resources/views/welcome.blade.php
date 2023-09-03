@@ -24,7 +24,7 @@
                     <a href="">{{__('Offers of the day')}}</a>
                 </div>
             </div>
-            <article class="home-img-cont">
+            <article class="container-img" >
                 <img src="{{ Vite::asset('resources/img/Decoration/ilustration-removebg-preview.png') }}" alt="">
             </article>  
         </section>

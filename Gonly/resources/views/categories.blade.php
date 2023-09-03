@@ -1,7 +1,7 @@
 @extends('layouts.head-pretm')
 
 @section('link-css-js')
-    @vite(['resources/css/home/categories.css', 'resources/css/layouts-css/nav-guest.css', 'resources/css/layouts-css/footer-users.css' , 'resources/js/welcome.js'])
+    @vite(['resources/css/home/categories.css', 'resources/js/categories.js', 'resources/css/layouts-css/nav-guest.css', 'resources/css/layouts-css/footer-users.css' , 'resources/js/welcome.js'])
 @endsection
 
 @section('Welcome')
@@ -92,7 +92,6 @@
                 </div>
             </div>
         </section>
-            
 
     </main>
     @include('layouts.footer-users')
