@@ -168,7 +168,7 @@ main section{
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 525px) {
     .categories-grid{
         width: 100%;
     }
