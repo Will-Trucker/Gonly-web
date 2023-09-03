@@ -311,12 +311,6 @@ input[type="checkbox"]{
         width: 90%;
     }
 
-    /* .menu-items-cont1 ul a{
-        text-align: center;
-        padding: 19 px 0;
-        width: 100%;
-    } */
-
     .menu-items-cont1 ul a:hover{
         background-color: rgb(77, 255, 7);
     }
@@ -450,6 +444,10 @@ input[type="checkbox"]{
     .menu-items-cont1 ul a{
         text-align: center;
         width: auto;
+    }
+
+    .logo-image2{
+        margin-top: -10px;
     }
  }
 
