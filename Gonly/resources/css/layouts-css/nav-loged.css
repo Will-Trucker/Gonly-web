@@ -308,11 +308,11 @@ input[type="checkbox"]{
         width: 90%;
     }
 
-    .menu-items-cont1 ul a{
+    /* .menu-items-cont1 ul a{
         text-align: center;
         padding: 19 px 0;
         width: 100%;
-    }
+    } */
 
     .menu-items-cont1 ul a:hover{
         background-color: rgb(77, 255, 7);
