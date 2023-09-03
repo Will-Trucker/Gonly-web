@@ -322,3 +322,41 @@ button:hover .button-text {
       margin: 0 10px 50px;
     }
 }
+
+@media screen and (max-width: 500px) {
+    main .welcome-user{
+        margin-bottom: 25px;
+        padding: 2.5em;
+    }
+    
+    main .welcome-user h1{
+        font-size: 1.7em;
+        background-color: #fff;
+    }
+    
+    main .welcome-user p{
+        font-size: 1em;
+        background-color: #fff;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .off-canvas-btn, input[type="checkbox"]{
+        top: 15px;
+        right: 28px !important;
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+    }
+    
+    .off-canvas-burger{
+        display: block;
+        position: fixed;
+        z-index: 910;
+        top: 9px;
+        right: 28px !important;
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+        font-size: 34px !important;
+        text-align: center;
+    }
+}
