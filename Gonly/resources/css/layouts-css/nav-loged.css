@@ -7,6 +7,7 @@ header nav{
     justify-content: space-around;
     align-items: center;
     border-bottom: 1px solid #0005;
+    
 }
 
 .menu {
@@ -258,22 +259,24 @@ input[type="checkbox"]{
         display:block;
         position: fixed;
         z-index: 920;
-        top: 20px;
-        right: 20px;
-        width: 3rem;
-        height: 3rem;
+        top: 15px;
+        right: 10px;
+        width: 2rem;
+        height: 2rem;
         cursor: pointer;
         opacity: 0.1;
+        border: 2px solid green;
     }
+
     
     .off-canvas-burger{
         display: block;
         position: fixed;
         z-index: 910;
-        top: 20px;
-        right: 20px;
-        width: 3rem;
-        height: 3rem;
+        top: 9px;
+        right: 10px;
+        width: 2rem;
+        height: 2rem;
         font-size: 30px;
         text-align: center;
     }

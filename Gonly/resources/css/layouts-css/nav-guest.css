@@ -14,6 +14,7 @@
 
 header{
     position: relative;
+    z-index: 800;
 }
 
 header nav{
@@ -396,22 +397,8 @@ input[type="checkbox"]{
 
  @media screen and (max-width: 380px) {
     .mobile-display-logo{
-        margin-top: 8px;
+        margin-top: 1px;
         position: sticky;
-    }
-
-    nav{
-        height: 55%;
-        border: none;
-    }
-
-    nav{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        text-align: center;
-        height: 55%;
-        border: none;
     }
 
     nav{
@@ -420,7 +407,7 @@ input[type="checkbox"]{
         align-items: center;
         justify-content: center;
         width: 100%;
-        margin-bottom: 8px;
+        margin-bottom: 1px;
     }
 
     .search{
