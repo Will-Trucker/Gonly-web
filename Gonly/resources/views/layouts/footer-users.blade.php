@@ -54,7 +54,7 @@
         <div class="footer-widget">
           <h6>Contactos &amp; Ayuda</h6>
           <ul class="links">
-            <li><a href="#">+503 60069750</a></li>
+            <li><a href="#">+503 60069752</a></li>
             <li><a href="#">gonly@gmail.com</a></li>
           </ul>
         </div>
