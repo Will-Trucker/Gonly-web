@@ -71,6 +71,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Shopping Cart
 Route::get('/cart',[App\Http\Controllers\CartController::class, 'carrito'])->name('cart.carrito');
+
+Route::get('/shop/{categorySlug?}/{subCategorySlug?}',[App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
+
 /*
 Route::get('/category',[App\Http\Controllers\CategoryPController::class, 'index'])->name('categories.index');
 

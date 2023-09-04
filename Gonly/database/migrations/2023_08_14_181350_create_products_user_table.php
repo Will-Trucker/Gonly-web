@@ -16,15 +16,15 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBigInteger('user_id');
-            
+
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            
+
             $table->string('tittle'); // Corregir el nombre a 'title'
             $table->text('description');
             $table->text('specifications');
             $table->decimal('price');
             $table->string('photos');
-            
+
             $table->timestamps();
         });
     }
