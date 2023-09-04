@@ -18,7 +18,11 @@ export default defineConfig({
                 'resources/css/home/categories.css', 
                 'resources/css/layouts-css/nav-guest.css',
                 'resources/css/layouts-css/footer-users.css', 
-                
+                'resources/img/icongonly.png',
+                'resources/img/Decoration/ilustration-removebg-preview.png',
+                'resources/css/card-products/style.css',
+                'resources/img/Card__Product-1.png',
+
             ],
             refresh: true,
         }),

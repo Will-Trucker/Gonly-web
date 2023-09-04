@@ -7,10 +7,7 @@
 }
 
 main{
-    width: 100%;
-    height: 100vh;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 15px;
+    margin: 50px 65px;
     text-align: center;
 }
 
@@ -99,7 +96,7 @@ i > img{
 }
 
 .seguir-comprando-btn{
-    background-color: #188cf3;
+    background-color: rgb(252 211 77 );
 }
 
 .comprar-btn{
@@ -194,3 +191,4 @@ input{
         min-width: 50px;
     }
 }
+

@@ -8,6 +8,15 @@
     list-style: none;
 }
 
+.off-canva-menu{
+    position: relative;
+}
+
+header{
+    position: relative;
+    z-index: 800;
+}
+
 header nav{
     display: flex;
     justify-content: space-around;
@@ -131,6 +140,7 @@ header nav .logo-gonly-black-letters{
 }
 
 .search ul li h1{
+    width: 8em;
     display: flex;
     margin: 0px 15px;
     font-weight: 900;
@@ -138,7 +148,10 @@ header nav .logo-gonly-black-letters{
 }
 
 .search ul li p{
+    display: flex;
     height: 4.5em;
+    text-align: center;
+    align-items: center;
     width: 18em;
     overflow: hidden;
     text-align: justify;
@@ -146,6 +159,7 @@ header nav .logo-gonly-black-letters{
 }
 
 .search ul li span{
+    width: 5.5em;
     font-weight: 900;
     font-size: 1.2em;
     margin-left: 15px;    
@@ -234,193 +248,182 @@ header section ul a li i{
     margin-right: 9px;
 }
 
-.headers{
+/* menu responsive, prueba 2 */
+
+input[type="checkbox"]{
     display: none;
 }
 
-@media screen and (max-width: 1100px) {
-    
-    .logo-image{
-        margin: 5px;
-        min-width: 60px;
-        height: 50px;
-    }
-
-    .logo-gonly-black-letters {
-        display: none;
-    }
-
-    .logo-image{
-        z-index: 1;
-        background-image: url('../../../resources/img/Logos/logo-gonly-icon.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position-x: center;
-        text-align: center;
-
-    }
-
-    .logo-image a{
-        padding: 30px;
-
-    }
-
-
-    #menuButton{
-        padding: 0 0 0 10px;
-        margin: 10px;
-       }
+.mobile-display-logo{
+    display: none;
 }
 
-
-@media screen and (max-width: 800px) {
-   #buscador{
+.off-canvas-burger{
     display: none;
-    visibility: hidden;
-   } 
-   #menuButton{
-    margin: 10px;
-   }
-
-
-
-   /*Menu de hamburguesa*/
-
-   .container-menu{
-    display: none;
-   }
-   
-   .headers{
-    display: contents;
-    
-    
 }
 
-    #sidebarMenu {
-        height: 31.5%;
-        display: flex;
-        position: fixed;
-        width: 190px;
-        transform: translateX(-250px);
-        transition: transform 250ms ease-in-out;
-        background: linear-gradient(180deg, #4ec616 0%, #4ec616 100%);
-        
-    }
-    .sidebarMenuInner{
-        margin:0;
-        padding:0;
-        border-top: 1px solid rgba(177, 205, 36, 0.1);
-        
-    }
-    .sidebarMenuInner li{
-        list-style: none;
-        color: #fff;
-        text-transform: uppercase;
-        font-weight: bold;
-        padding: 15px;
-        cursor: pointer;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-    .sidebarMenuInner li span{
+@media screen and (max-width: 860px) {
+
+    .mobile-display-logo{
         display: block;
-        font-size: 14px;
-        color: rgba(204, 24, 24, 0.5);
-    }
-    .sidebarMenuInner li a{
-        color: #fff;
-    }
-    
-    input[type="checkbox"]:checked ~ #sidebarMenu {
-        transform: translateX(0);
     }
 
-    input[type=checkbox] {
-        transition: all 0.3s;
-        box-sizing: border-box;
+    .off-canvas-btn, input[type="checkbox"]{
+        display:block;
+        position: fixed;
+        z-index: 920;
+        top: 15px;
+        right: 10px;
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+        opacity: 0.1;
+        border: 2px solid green;
+    }
+
+    
+    .off-canvas-burger{
+        display: block;
+        position: fixed;
+        z-index: 910;
+        top: 9px;
+        right: 10px;
+        width: 2rem;
+        height: 2rem;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .off-canva-menu{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: rgb(227, 254, 254);
+        z-index: 900;
+        transform: translate(100%, 0);
+        transition: transform 1s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        margin-bottom: 8px;
+    }
+
+    .container-menu ul{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border: none;
+    }
+
+    .menu-items-cont1 ul a:hover{
+        background-color: rgb(77, 255, 7);
+    }
+
+    .search-form-cont{
         display: none;
     }
-    .sidebarIconToggle {
-        border-radius: 10%;
-        transition: all 0.3s;
-        box-sizing: border-box;
-        cursor: pointer;
-        position: fixed;
-       
-        top: 25px;
-        left: 15px;
-        height: 22px;
-        width: 22px;
-        margin-top: 60px;
+
+    .off-canvas-btn:checked ~ .off-canva-menu{
+        transform: translate(0, 0);
     }
 
-    .openSidebarMenu{
-        border: 5px solid greenyellow;
+    .search{
+        width: 90%;
     }
-    .spinner {
-        box-sizing: border-box;
-        position: absolute;
-        height: 3px;
+
+    .logo-image{
+        background-color: rgb(227, 254, 254);
+        border-radius: 13px;
+    }
+
+    header nav .logo-gonly-black-letters{
+        border-radius: 20px;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        height: 55%;
+        border: none;
+    }
+
+    header .menu-user-loged{
+        border-bottom: none;
+    }
+
+    /* elementos fuera del menu responsive que cambian */
+
+    .mobile-display-logo{
         width: 100%;
-        margin-top: 2px;
-
-        background-color: #c89a9a;
-    }
-    .horizontal {
-        transition: all 0.3s;
-        box-sizing: border-box;
         position: relative;
-        float: left;
-        margin-top: 3px;
-
-    }
-    .diagonal.part-1 {
-        position: relative;
-        transition: all 0.3s;
-        box-sizing: border-box;
-        float: left;
-    }
-    .diagonal.part-2 {
-        transition: all 0.3s;
-        box-sizing: border-box;
-        position: relative;
-        float: left;
-        margin-top: 3px;
-    }
-    input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
-        transition: all 0.3s;
-        box-sizing: border-box;
-        opacity: 0;
-    }
-    input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
-        transition: all 0.3s;
-        box-sizing: border-box;
-        transform: rotate(135deg);
-  
-    }
-    input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
-        transition: all 0.3s;
-        box-sizing: border-box;
-        transform: rotate(-135deg);
-        margin-top: -9px;
+        height: 70px;
+        margin-bottom: -20px;
     }
 
+    .logo-image2{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        background-color: white;
+        margin-top: -7px;
+        border: 1px solid rgb(198, 198, 198);
+        margin-bottom: 0px;
+    }
 
+    .logo-gonly-black-letters{
+        height: 3.4em;
+        margin: 5px;
+    }
 
-   
+    header nav{
+        border-bottom: 1px solid #0005;
+    }
 
 }
 
-@media screen and (max-width: 525px) {
-    .logo-image{
-        display: none;
+ @media screen and (max-width: 380px) {
+    .mobile-display-logo{
+        margin-top: 1px;
+        position: sticky;
     }
 
-    #menuButton{
-        width: 90%;
-        padding: 2px; 
+    nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 1px;
+    }
 
-       }
-      
+    .search{
+        width: 58%;
+    }
+
+    .menu-items-cont1 ul{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .menu-items-cont1 ul a{
+        text-align: center;
+        width: auto;
+    }
  }
 
 r::after {

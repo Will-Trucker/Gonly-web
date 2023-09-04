@@ -26,7 +26,7 @@ class SearchComponent extends Component
     public function getProduct($id = 0)
     {
         $result = Products_user::find($id);
-    
+
         if ($result) {
             $this->search = $result->tittle;
             $this->product = $result;
@@ -39,7 +39,7 @@ class SearchComponent extends Component
         $productos = Products_user::all();
         return view('livewire.search-component', compact('productos'));
     }
-    
+
     public function updatedSearch()
     {
         if (!empty($this->search)) {

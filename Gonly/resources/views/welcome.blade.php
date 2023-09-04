@@ -23,7 +23,7 @@
                     <a href="">{{__('Offers of the day')}}</a>
                 </div>
             </div>
-            <article class="home-img-cont">
+            <article class="container-img home-img-cont">
                 <img src="{{ Vite::asset('resources/img/Decoration/ilustration-removebg-preview.png') }}" alt="">
             </article>  
         </section>
@@ -83,16 +83,6 @@
 
                 <div class="container__products-buyer">
                     <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/fan.jpeg') }}" alt="Fan">
-                        <h2>Ventilador DORCO</h2>
-                        <p>Vendilador piola on una helice que puede cortar hasta a los negros y geis, es en serio....</p>
-                    </a>
-                    <div class="price-products-buyer">$75</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
                         <img src="{{ Vite::asset('resources/img/Products/shoes.jpeg') }}" alt="Shoes">
                         <h2>Zapatos Jordan</h2>
                         <p>Con estos zapatos el bicho metió unas buenas canastas conta los lakres, los humilló mucho.</p>
@@ -124,7 +114,7 @@
             </section>
         </div>
 
-        <h2 class="h2-forall" style="margin-bottom: 35px;">{{__('Most liked')}}</h2>
+        <h2 class="h2-forall texto_most_liked" style="margin-bottom: 35px;">{{__('Most liked')}}</h2>
         <section class="product">             
             <button class="pre-btn"><img src="{{ Vite::asset('resources/img/Images/arrow.png') }}"></button>
             <button class="nxt-btn"><img src="{{ Vite::asset('resources/img/Images/arrow.png') }}"></button>
@@ -257,24 +247,6 @@
                 <h2 class="h2-forall modified-1">{{__('Our recommended')}}</h2>
             </div>
             <section>
-
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/smartphone.png') }}" alt="Smartphone">
-                        <h2>iPhone 18X MAX</h2>
-                    </a>
-                    <div class="price-products-buyer">$1.500</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/smartphone.png') }}" alt="Smartphone">
-                        <h2>iPhone 18X MAX</h2>
-                    </a>
-                    <div class="price-products-buyer">$1.500</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
 
                 <div class="container__products-buyer">
                     <a href="#" class="image-product">

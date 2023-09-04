@@ -1,14 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.head-pretm')
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito</title>
-</head>
-<body>
-    
+@section('link-css-js')
+    @vite(['resources/css/home/categories.css', 'resources/css/layouts-css/nav-guest.css', 'resources/css/layouts-css/footer-users.css' , 'resources/js/welcome.js', 'resources/css/carrito.css'])
+@endsection
+
+@section('Welcome')
+    Carrito | Gonly
+@endsection
+
+@section('content-everyone')
+    @include('layouts.nav-users-guest')
     <main>
         <div class="contenedor-carrito">
             <h1>Carrito de compras</h1>
@@ -48,7 +49,7 @@
                         </td>
                         <td class="texto-largo description">
                             <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi aperiam asperiores beatae nostrum laborum at sequi quibusdam nihil, sunt neque ipsam optio tempora sapiente mollitia exercitationem temporibus corrupti veniam alias. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse placeat iusto nihil autem, unde iure eum ipsum dolorem, atque cupiditate earum corporis veritatis eligendi reiciendis. Sequi odit rem soluta ad?
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
                             </p>
                         </td>
                         <td>
@@ -73,7 +74,7 @@
                         </td>
                         <td class="texto-largo description">
                             <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi aperiam asperiores beatae nostrum laborum at sequi quibusdam nihil, sunt neque ipsam optio tempora sapiente mollitia exercitationem temporibus corrupti veniam alias.
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
                             </p>
                         </td>
                         <td>
@@ -91,7 +92,7 @@
 
                     <tr>
                         <td class="product-img-td">
-                            <img src="dron.jpg" alt="Producto" width="250px">
+                            <img src="{{Vite::asset('resources/img/dron.jpg')}}" alt="Producto" width="250px">
                         </td>
                         <td>
                             Super-Man&Spider-Man
@@ -144,8 +145,6 @@
                             &nbsp
                         </td>
                     </tr>
-
-
                 </tbody>
             </table>
         </div>
@@ -157,7 +156,8 @@
                 <i>$20.00</i>
             </div>
         </div>
-    </main>
+   
+   </main>
+ @include('layouts.footer-users')
 
-</body>
-</html>
+@endsection

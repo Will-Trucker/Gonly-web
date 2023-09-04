@@ -7,6 +7,7 @@ header nav{
     justify-content: space-around;
     align-items: center;
     border-bottom: 1px solid #0005;
+    
 }
 
 .menu {
@@ -53,8 +54,9 @@ header nav .logo-gonly-black-letters{
     margin: 5px;
 }
 
-header nav .form-search{
+.search{
     display: flex;
+    flex-direction: column;
     align-items: center;
     width: 45em;
     height: 2.5em;
@@ -63,53 +65,95 @@ header nav .form-search{
     border-radius: 5px;
 }
 
-header nav form i{
-    margin: 0 5px;
-    padding-left: 10px;
-    font-size: 0.9em;
-}
-
-header nav .search{
+.search .search-div{
     display: flex;
     align-items: center;
-    width: 125%;
-    border: none;
-    height: 3vw;
-    font-size: 1.1em;
-    background-color: transparent;
-    color: #404242;
-    transition: .5s ease-in-out;
-    padding-left: 5px;
-    outline: none;
+    width: 100%;
 }
 
-header nav .search:focus {
-    font-size: 1.12em;
-    color: #000;
-    padding-left: 13px;
-    outline: none;
-}
-
-
-header nav .search:placeholder{
-    font-size: 1.15em;
-}
-
-header nav .submit{
-    height: 100%;
-    width: 8vw;
-    border-left: solid;
-    border-top: 0;
-    border-right: 0;
-    border-bottom: 0;
-}
-
-header nav .submit[value]{
-    font-size: 1.1em;
-    padding: 0px 10px;
+.search .search-div i{
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 0px 20px;
+    margin-top: -2px;
+    height: 95%;
+    display: flex;
     align-items: center;
+    justify-content: center;
     background-color: #d8e2bc;
     transition: .1s ease-in;
+}
+
+.search .search-div input{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top: -1.5px;
+    width: 100%;
+    background-color: transparent;
+    height: 100%;
+    border: 0px;
+    border-left: 2px solid #000;
+    outline: none;
+    transition: .5s ease-in-out;
+}
+
+.search .search-div input:focus{
+    color: #000;
+    padding-left: 18px;
+    outline: none;
+}
+
+.search ul{
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 35px;
+    border: 1px solid #000;
+    border-top: 0px;
+    z-index: 15;
+}
+
+.search ul li{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #000;
+    margin-bottom: 15px;
+}
+
+.search ul li h1{
+    width: 8em;
+    display: flex;
+    margin: 0px 15px;
+    font-weight: 900;
+    align-items: center;
+}
+
+.search ul li p{
+    display: flex;
+    height: 4.5em;
+    text-align: center;
+    align-items: center;
+    width: 18em;
+    overflow: hidden;
+    text-align: justify;
+    text-overflow: ellipsis;
+}
+
+.search ul li span{
+    width: 5.5em;
+    font-weight: 900;
+    font-size: 1.2em;
+    margin-left: 15px;    
+}
+
+.search ul li img{
+    width: 7em;
+    height: 7em;
+    border-radius: 10px;
 }
 
 #menuButton:focus + #menuDropdown, #menuDropdown:hover {
@@ -157,7 +201,7 @@ header nav .container__user-status a{
     justify-content: center;
 }
 
-.user-configuration img{
+.user-configuration svg{
     height: 2.5em;
     width: 2.5em;
     border-radius: 50px;
@@ -167,9 +211,9 @@ header nav .container__user-status a{
     padding: 0 9px;
     display: block;
     width: 10em;
-    white-space: nowrap; /* Evita el salto de línea */
-     overflow: hidden; /* Oculta el exceso de contenido */
-    text-overflow: ellipsis; /* Agrega puntos suspensivos al final */
+    white-space: nowrap;
+     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 header .menu-user-loged{
@@ -191,7 +235,224 @@ header .menu-user-loged ul a{
     display: flex;
 }
 
-.headers{
+/* menu responsive, prueba 2 */
+
+input[type="checkbox"]{
+    display: none;
+}
+
+.mobile-display-logo{
+    display: none;
+}
+
+.off-canvas-burger{
+    display: none;
+}
+
+@media screen and (max-width: 860px) {
+
+    .mobile-display-logo{
+        display: block;
+    }
+
+    .off-canvas-btn, input[type="checkbox"]{
+        display:block;
+        position: fixed;
+        z-index: 920;
+        top: 15px;
+        right: 10px;
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+        opacity: 0.1;
+        border: 2px solid green;
+    }
+
+    
+    .off-canvas-burger{
+        display: block;
+        position: fixed;
+        z-index: 910;
+        top: 9px;
+        right: 10px;
+        width: 2rem;
+        height: 2rem;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .off-canva-menu{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: rgb(227, 254, 254);
+        z-index: 900;
+        transform: translate(100%, 0);
+        transition: transform 1s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        margin-bottom: 8px;
+    }
+
+    .menu-items-cont1 ul{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .menu-items-cont1 ul a:hover{
+        background-color: rgb(77, 255, 7);
+    }
+
+    .search-form-cont{
+        display: none;
+    }
+
+    .off-canvas-btn:checked ~ .off-canva-menu{
+        transform: translate(0, 0);
+    }
+
+    .search{
+        width: 90%;
+    }
+
+    .logo-image{
+        background-color: rgb(227, 254, 254);
+        border-radius: 13px;
+    }
+
+    header nav .logo-gonly-black-letters{
+        border-radius: 20px;
+    }
+
+    .menu-user-loged{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header .menu-user-loged ul{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    header .menu-user-loged ul a{
+        color: #040404;
+        margin: 15px 20px;
+        font-size: 1.07em;
+        position: relative;
+        display: flex;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        height: 55%;
+        border: none;
+    }
+
+    header .menu-user-loged{
+        border-bottom: none;
+    }
+
+    /* elementos fuera del menu responsive que cambian */
+
+    .mobile-display-logo{
+        width: 100%;
+        position: relative;
+        height: 70px;
+        margin-bottom: -20px;
+    }
+
+    .logo-image2{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        background-color: white;
+        margin-top: -2px;
+        border: 1px solid rgb(198, 198, 198);
+        margin-bottom: 0px;
+    }
+
+    .logo-gonly-black-letters{
+        height: 3.4em;
+        margin: 5px;
+    }
+
+    header nav{
+        border-bottom: 1px solid #0005;
+    }
+
+}
+
+ @media screen and (max-width: 380px) {
+    .mobile-display-logo{
+        margin-top: 8px;
+        position: sticky;
+    }
+
+    nav{
+        height: 55%;
+        border: none;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        height: 55%;
+        border: none;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .search{
+        width: 58%;
+    }
+
+    .menu-items-cont1 ul{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .menu-items-cont1 ul a{
+        text-align: center;
+        width: auto;
+    }
+
+    .logo-image2{
+        margin-top: -10px;
+    }
+ }
+
+
+/* .headers{
     display: none;
 }
 
@@ -239,14 +500,14 @@ header .menu-user-loged ul a{
      margin: 10px;
     }
  
- 
+ */
     
  
 
 
 
     /*Menu de hamburguesa*/
- 
+ /*
     .menu-user-loged{
      display: none;
     }
@@ -383,4 +644,4 @@ header .menu-user-loged ul a{
 
        }
       
- }
+ } */
