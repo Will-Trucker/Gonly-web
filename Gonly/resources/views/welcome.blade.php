@@ -115,7 +115,7 @@
             </section>
         </div>
 
-        <h2 class="h2-forall" style="margin-bottom: 35px;">{{__('Most liked')}}</h2>
+        <h2 class="h2-forall texto_most_liked" style="margin-bottom: 35px;">{{__('Most liked')}}</h2>
         <section class="product">             
             <button class="pre-btn"><img src="{{ Vite::asset('resources/img/Images/arrow.png') }}"></button>
             <button class="nxt-btn"><img src="{{ Vite::asset('resources/img/Images/arrow.png') }}"></button>

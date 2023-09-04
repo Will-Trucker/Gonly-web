@@ -9,6 +9,10 @@ footer {
     padding-top: 80px;
     background-color: #ffffff;
 }
+
+.seccion-destino{
+    scroll-behavior: smooth;
+}
   
 .container {
     width: 100%;
