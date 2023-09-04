@@ -11,8 +11,8 @@
 @section('content-everyone')
     @include('layouts.nav-users-guest')
     <main>
-        
+          
     </main>
-</main>
+
 @include('layouts.footer-users')
 @endsection

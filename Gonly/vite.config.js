@@ -21,7 +21,9 @@ export default defineConfig({
                 'resources/img/icongonly.png',
                 'resources/img/Decoration/ilustration-removebg-preview.png',
                 'resources/css/card-products/style.css',
+                'resources/css/card-products/slider.css',
                 'resources/img/Card__Product-1.png',
+                'resources/js/index.js'
 
             ],
             refresh: true,

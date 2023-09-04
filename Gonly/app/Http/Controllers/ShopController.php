@@ -51,16 +51,18 @@ class ShopController extends Controller
 
     public function product($slug){
       // echo $slug;
-      $product = Product::where('slug',$slug)->with('product_images')->first();
+      $products = Product::where('slug',$slug)->with('product_images')->first();
       
-      if($product == null){
+      if($products == null){
         abort(404);
       } 
 
+      $data['products'] = $products; 
 
 
 
-      return view('products.showProducts');
+
+      return view('products.showProducts',$data);
   
     }
 
