@@ -16,8 +16,7 @@
  <main>    
             <article>
                 <div>
-                    <h2>Categorías</h2>
-                    <p>Aquí se encuentran las categorías proporcioadas por Gonly, en las que puedes comprar todo lo que necesites</p>
+                    <h2>Informacion</h2>
                 </div>
             </article>
 <div id="about-main">
