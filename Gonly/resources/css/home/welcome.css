@@ -275,7 +275,6 @@ body{
     padding: 0 3em;
     display: flex;
     overflow-x: hidden;
-    
     scroll-behavior: smooth;
 }
   
