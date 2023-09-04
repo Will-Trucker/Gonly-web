@@ -1,11 +1,14 @@
 @extends('layouts.head-pretm')
 
 @section('link-css-js')
-    @vite(['resources/css/home/categories.css', 'resources/css/layouts-css/nav-guest.css', 'resources/css/layouts-css/footer-users.css' , 'resources/js/welcome.js', 'resources/css/card-products/style.css','resources/img/Card__Product-1.png',])
+    @vite(['resources/css/home/categories.css', 'resources/css/layouts-css/nav-guest.css',  'resources/css/card-products/style.css','resources/img/Card__Product-1.png',
+	'resources/css/layouts-css/footer-users.css' , 'resources/js/welcome.js'])
 @endsection
 
 @section('Welcome')
-    {{ $subCategory->name }} | Gonly
+
+    {{ $category->name }} | Gonly
+
 @endsection
 
 @section('content-everyone')
@@ -13,21 +16,23 @@
     <main>
         <article>
             <div>
-                <h2>{{ $subCategory->name }}</h2>
-                <p>Aquí se encuentran los productos mostrados por la subcategoria seleccionada</p>
+				
+                <h2>{{$category->name}}</h2>
+				
+                <p>Aquí se encuentran las categorías proporcioadas por Gonly, en las que puedes comprar todo lo que necesites</p>
             </div>
         </article>
+		
         @if($products->isNotEmpty())   
-                            @foreach ($products as $product)
-                              @php
-                                $productImage = $product->product_images->first();
-                              @endphp   
 		<div class="container">
             
 			<div class="container-color">
 				<div class="container-color1">
 					<div class="container-main">
-                           
+						@foreach ($products as $product)
+						@php
+						  $productImage = $product->product_images->first();
+						@endphp   
 							<div class="container-img">
 								<div class="container-all">
 										<div class="item-slide">
@@ -74,16 +79,13 @@
 										  </button>							
 									</div>
 							</div>
+							@endforeach
 					</div>
                     
 				</div>          
+                    
 		</div>
-        @endforeach
 @endif
-<div class="card-footer clearfix">
-    {{ $products->links() }}
-
-</div>   
     </main>
     @include('layouts.footer-users')
 @endsection

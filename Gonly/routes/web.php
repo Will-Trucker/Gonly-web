@@ -9,6 +9,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryPController;
 use App\Http\Controllers\SubCategoryPController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\admin\AdminLoginController;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\CategoryController;
@@ -71,6 +72,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Shopping Cart
 Route::get('/cart',[App\Http\Controllers\CartController::class, 'carrito'])->name('cart.carrito');
+
+//Route::get('/shop/{categorySlug}', [App\Http\Controllers\ShopController::class, 'show'])->name('shop.index');
+
 
 Route::get('/shop/{categorySlug?}/{subCategorySlug?}',[App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
 

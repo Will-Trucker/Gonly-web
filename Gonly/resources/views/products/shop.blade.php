@@ -30,7 +30,7 @@
                     <img src="{{ asset('uploads/category/'.$category->image) }}" alt="{{$category->name}}">
                 </section> 
                 <div>
-                    <h3>{{ $category->name }}</h3>      
+                    <h3>{{ $category->name }}  </a></h3>      
                     <p>Con los que puedes adquirir solo aquí, en Gonly</p>
                     @if ($category->sub_category->isNotEmpty())
                    

@@ -9,7 +9,7 @@
                 <h1>{{__('Create Brands')}}</h1>
             </div>
             <div class="col-sm-6 text-right">
-                <a href="{{ route('brands.create') }}" class="btn btn-primary">{{__('Back to Results')}}</a>
+                <a href="{{ route('brands.index') }}" class="btn btn-primary">{{__('Back to Results')}}</a>
             </div>
         </div>
     </div>
