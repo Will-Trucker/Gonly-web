@@ -20,7 +20,7 @@
             @csrf
             <div class="logo-img">
                 <img src="{{ Vite::asset('resources/img/Logos/logo-gonly-icon.png') }}" alt="">
-                <h2>Iniciar seción en Gonly</h2>
+                <h2>Iniciar sesión en Gonly</h2>
             </div>
             <div class="coolinput">
                 <label for="email" class="text">E-mail</label>
