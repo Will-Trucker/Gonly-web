@@ -47,7 +47,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/information', function () {
     return view('information');
-});
+})->name('information');
 
 Route::resource('productsUser', ProductsUserController::class)->middleware(['auth', 'verified']);
 

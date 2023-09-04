@@ -1,3 +1,4 @@
+<div id="seccion-destino"></div>
 <footer>
     <div class="container">
       <div class="wrapper">
@@ -51,9 +52,9 @@
           </ul>
         </div>
         <div class="footer-widget">
-          <h6>Ayuda &amp; Soporte</h6>
+          <h6>Contactos &amp; Ayuda</h6>
           <ul class="links">
-            <li><a href="#">Cambiar idioma</a></li>
+            <li><a href="#">+503 60069750</a></li>
             <li><a href="#">gonly@gmail.com</a></li>
           </ul>
         </div>
