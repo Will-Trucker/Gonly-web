@@ -49,6 +49,21 @@ class ShopController extends Controller
         return view('products.shop', $data);
     }
 
+    public function product($slug){
+      // echo $slug;
+      $product = Product::where('slug',$slug)->with('product_images')->first();
+      
+      if($product == null){
+        abort(404);
+      } 
+
+
+
+
+      return view('products.showProducts');
+  
+    }
+
    
 /*
     public function show(Request $request, $categorySlug = null, $subCategorySlug = null){
