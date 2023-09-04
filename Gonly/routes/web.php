@@ -45,6 +45,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/information', function () {
+    return view('information');
+});
+
 Route::resource('productsUser', ProductsUserController::class)->middleware(['auth', 'verified']);
 
 Route::get('productsUser', [ProductsUserController::class, 'index'])->middleware(['auth', 'verified'])->name('productsUser-index');
