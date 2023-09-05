@@ -50,6 +50,12 @@ Route::get('/information', function () {
     return view('information');
 })->name('information');
 
+
+Route::get('/products', function () {
+    return view('products/showProducts');
+})->name('products');
+
+
 Route::resource('productsUser', ProductsUserController::class)->middleware(['auth', 'verified']);
 
 Route::get('productsUser', [ProductsUserController::class, 'index'])->middleware(['auth', 'verified'])->name('productsUser-index');

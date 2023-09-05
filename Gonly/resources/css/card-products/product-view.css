@@ -12,6 +12,7 @@ img {
 	margin-bottom: 50px;
 	color: #222;
 }
+
 .container-main1{
 	margin: 50px;
 	padding: 0;
@@ -87,17 +88,21 @@ img {
 	position: relative;
 }
 
+.input-bottom {
+	display: none;
+}
 
 .input-quantity {
 	background-color: #a9bf04;
 	border: none;
 	padding: 10px;
-	width: 40px;
-	height: 50%;
+	width: 60px;
+	height: 80%;
 	color: #000000;
 	font-weight: 500;
 	line-height: 0;
 	border-radius: 40px;
+	margin-top: 5px;
 }
 
 .input-quantity:hover {
@@ -124,6 +129,7 @@ img {
 	position: absolute;
 	top: 7px;
 	right: 7px;
+	margin-top: 5.5px;
 }
 
 .btn-increment-decrement i {

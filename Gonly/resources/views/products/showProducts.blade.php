@@ -5,7 +5,7 @@
 @endsection
 
 @section('Welcome')
-| Gonly
+    Products | Gonly
 @endsection
 
 @section('content-everyone')
@@ -15,9 +15,11 @@
             <div class="container-main2">
                 <div class="container-img">
                 <div class="container-all">
-                    <input type="radio" id="1" name="image-slide" hidden>
-                    <input type="radio" id="2" name="image-slide" hidden>
-                    <input type="radio" id="3" name="image-slide" hidden>
+
+                    <input class="input-bottom" type="radio" id="1" name="image-slide" hidden>
+                    <input class="input-bottom" type="radio" id="2" name="image-slide" hidden>
+                    <input class="input-bottom" type="radio" id="3" name="image-slide" hidden>
+
                     <div class="slide">
                         <div class="item-slide">
                             <img src="{{Vite::asset('resources/img/1.png')}}">
