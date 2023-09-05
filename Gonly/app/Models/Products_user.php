@@ -17,4 +17,15 @@ class Products_user extends Model
     public function images_product(){
         return $this->hasMany('App\Models\Images');
     }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    // Relación con la subcategoría
+    public function subcategory()
+    {
+        return $this->belongsTo(SubCategory::class);
+    }
 }

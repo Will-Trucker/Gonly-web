@@ -35,9 +35,13 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+Route::get('dashboard', [ProductsUserController::class, 'dasboardPresent'])->middleware(['auth', 'verified'])->middleware(['auth', 'verified'])->name('dashboard');
+
+/*
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+*/
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -46,12 +50,10 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('productsUser', ProductsUserController::class)->middleware(['auth', 'verified']);
-
 Route::get('productsUser', [ProductsUserController::class, 'index'])->middleware(['auth', 'verified'])->name('productsUser-index');
-
 Route::get('productsUser/create', [ProductsUserController::class, 'create'])->middleware(['auth', 'verified'])->name('productsUser-create');
-
 Route::post('productsUser/store', [ProductsUserController::class, 'store'])->middleware(['auth', 'verified'])->name('productsUser-store');
+Route::get('product/index', [SubCategoryProductUserController::class, 'index'])->name('productCategoryUser');
 
 Route::prefix('/products/{id}/preview/')->group(function() {
     // Ruta para subir imagenes adicionales

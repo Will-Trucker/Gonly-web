@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Products_user;
 use Illuminate\Http\Request;
 use App\Models\Images;
+use App\Models\Category;
+use App\Models\SubCategory;
 
 use Illuminate\Support\Facades\Storage;
 
@@ -35,14 +37,30 @@ class ProductsUserController extends Controller
         return view('user.options-product', compact('product', 'files'));
     }
 
+    public function dasboardPresent()
+    {
+        //
+        $user_id = auth()->user()->id;
+
+        // Cuenta los productos del usuario
+        $productCount = Products_user::where('user_id', $user_id)->count();
+
+        $data['productCount'] = $productCount;
+        $data['products'] = Products_user::where('user_id', $user_id)->paginate(6);
+
+        return view('dashboard', $data);
+
+    }
+
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
-        return view('user.form-products');
+        $categories = Category::orderBy('name', 'ASC')->get();
+    
+        return view('user.form-products', compact('categories'));
     }
 
     /**
@@ -57,6 +75,8 @@ class ProductsUserController extends Controller
             'specifications'=>'required|string|max:1220',
             'price' => 'required|numeric|min:0|max:50000',
             'photos'=>'required|max:10000|mimes:jpeg,png,jpg',
+            'category_id' => 'required|numeric', // Agrega una regla para category_id
+            'sub_category_id' => 'required|numeric', 
         ];
         $message=[
             'tittle.max'=>'El título del producto no debe ser mayor a 25 caracteres (Incluyendo espacios)',
@@ -76,6 +96,9 @@ class ProductsUserController extends Controller
 
         $dataProduct = request()->except('_token');
 
+        $dataProduct['category_id'] = $request->category_id;
+        $dataProduct['sub_category_id'] = $request->sub_category_id;
+        
         $request->validate([
             'photos' => 'required|image|max:10100'  
         ]);

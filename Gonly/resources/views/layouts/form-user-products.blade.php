@@ -5,7 +5,7 @@
     </div>
     <div>
             @if (count($errors)>0)
-                <div class="mt-1 mx-80 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+                <div style="padding: 5px 14em 15px 20em;" class="mt-1 mx-80 pl-11 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
                     <span class=" text-lg -mx-60">Advertencia</span>
                     @foreach ($errors->all() as $error)
                         <ol class=" -mx-60">- {{ $error }}</ol>
@@ -27,18 +27,7 @@
             <textarea name="specifications" style="max-height: 40em; overflow: hidden;" id="specifications" autofocus autocomplete="specifications" placeholder="Ingrese las especificacipnes del producto">{{ isset($products ->specifications)?$products ->specifications:old('specifications') }}</textarea>
         </div>
 
-        <!--
-        <div>
-            <label for="">Categoría</label>
-            <select placeholder="Ingrese el nombre de su producto" name="" id="">
-                <option value="">Tecnología</option>
-                <option value="">Ropa</option>
-                <option value="">Sexo</option>
-                <option value="">Calzado</option>
-                <option value="">Minitas</option>
-            </select>
-        </div>
-        -->
+        @livewire('category-dropdown-component')
 
         <div class="container-price">
             <label for="price">Precio</label>

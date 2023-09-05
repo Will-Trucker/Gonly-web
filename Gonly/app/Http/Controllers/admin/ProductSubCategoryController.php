@@ -20,10 +20,10 @@ class ProductSubCategoryController extends Controller
           'subCategories' => $subCategories
       ]);
     } else {
-        return response()->json([
-            'status' => true,
-            'subCategories' => []
-        ]);
+      return response()->json([
+        'status' => true,
+        'subCategories' => $subCategories
+    ]);
     }
   }
 }

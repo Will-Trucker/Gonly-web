@@ -12,5 +12,4 @@ class CategoryPController extends Controller
         return view('products.category',compact('category'));
     }
 
-
 }

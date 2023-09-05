@@ -42,9 +42,36 @@
                     <h1>Tus publicaciones</h1>
                     <p>Aquí se visualizarán los productos a vender que has publicado dentro de Gonly!</p>
                 </section>
+                <especificaciones-producto>
+                    <aside>
+                        <h1>Tu Panel de productos</h1>
+                    </aside>
+                    <h2>Tienes <b>{{ $productCount }}</b> producto subidos en venta actualmente</h2>
+                </especificaciones-producto>
                 <article class="articulos">
-                    <img src="{{ Vite::asset('resources/img/Decoration/nosearch-publish.png') }}">
-                    <p>Por el momento no tienes ningún registro de publicación de algún producto ligado a este usuario, pero puedes vender, <a style="text-decoration: underline;" href="{{ route('products.create') }}">haz clic aquí.</a></p>
+                    @if ($products->isNotEmpty())
+                        @foreach ( $products as $productsUser )
+                            <contenedor-productos>
+                                <h1>{{ $productsUser->tittle }}</h1>
+                                <aside class="contenedor">
+                                    <h5>{{ $productsUser->description }}</h5>
+                                </aside>
+                                {{--<p>{{ $productsUser->specifications }}</p>--}}
+                                <h2>$ {{ $productsUser->price }}</h2>
+                                <picture><img src="{{ asset('storage').'/'.$productsUser->photos }}" alt=""></picture>
+                                <button onclick="window.location.href='{{ route('additional-view', ['id' => $productsUser->id]) }}'" class="learn-more">
+                                    <span class="circle" aria-hidden="true">
+                                        <span class="icon arrow"></span>
+                                    </span>
+                                    <span class="button-text">Más detalles</span>
+                                </button>
+                                {{--{!! $additionalView !!}--}}
+                            </contenedor-productos>
+                        @endforeach
+                    @else
+                        <img src="{{ Vite::asset('resources/img/Decoration/nosearch-publish.png') }}">
+                        <p>Por el momento no tienes ningún registro de publicación de algún producto ligado a este usuario, pero puedes vender, <a style="text-decoration: underline;" href="{{ route('products.create') }}">haz clic aquí.</a></p>
+                    @endif
                 </article>
             </div>
         </section>
