@@ -57,7 +57,7 @@ main section{
     border-radius: 15px;
     background-color: #e9e7e7;
     grid-template-columns: 1fr 1fr;
-    padding: 1.5%;
+    padding: 2rem 1.5% 0.6rem;
 }
     
 .categories-grid img{
