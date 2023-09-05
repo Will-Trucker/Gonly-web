@@ -215,6 +215,11 @@ img {
 @media screen and (max-width: 800px){
 	.container-main2 {
 		flex-direction: column;
+		margin: 0;
+	}
+
+	main{
+		margin: 0 auto;
 	}
 
 	.container-img{
