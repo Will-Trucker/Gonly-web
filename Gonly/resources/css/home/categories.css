@@ -94,6 +94,17 @@ main section{
     font-size: 25px;
     font-weight: 500;
 }
+
+.categories-grid{
+    width: 600px;
+    grid-template-columns: 0.5fr;
+}
+.categories-grid img{
+    margin-left: 50%;
+}
+.categories-grid section{
+    display: none;
+}
     
 .cta {
     margin-top: 10px;
