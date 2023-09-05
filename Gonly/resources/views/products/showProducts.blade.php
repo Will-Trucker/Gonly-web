@@ -2,12 +2,10 @@
 
 @section('link-css-js')
     @vite(['resources/css/home/categories.css', 'resources/css/layouts-css/nav-guest.css', 'resources/css/layouts-css/footer-users.css' , 'resources/js/welcome.js','resources/img/Card__Product-1.png','resources/css/card-products/product-view.css','resources/js/index.js','resources/img/2.jpg','resources/img/1.png'])
-    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
-    <script src="{{Vite::asset('resources/js/index.js')}}"></script>
 @endsection
 
 @section('Welcome')
-{{$products->title}}  | Gonly
+    Products | Gonly
 @endsection
 
 @section('content-everyone')
@@ -17,15 +15,12 @@
             <div class="container-main2">
                 <div class="container-img">
                 <div class="container-all">
-                    <input type="radio" id="1" name="image-slide" hidden>
-                    <input type="radio" id="2" name="image-slide" hidden>
-                    <input type="radio" id="3" name="image-slide" hidden>
+
+                    <input class="input-bottom" type="radio" id="1" name="image-slide" hidden>
+                    <input class="input-bottom" type="radio" id="2" name="image-slide" hidden>
+                    <input class="input-bottom" type="radio" id="3" name="image-slide" hidden>
+
                     <div class="slide">
-                        @if ($products->product_images)
-                            @foreach ($products->product_images as $key => $productImage)
-                                
-                            @endforeach
-                        @endif
                         <div class="item-slide">
                             <img src="{{Vite::asset('resources/img/1.png')}}">
                         </div>
@@ -51,7 +46,7 @@
                 </div>
                     <div class="container-info-product">
                         <div class="container-titulo">
-                            <span>{{$products->title}}</span> 
+                            <span>Zapatos</span> 
                         </div>
                         <div class="container-description">
                             <div class="title-description">
@@ -60,12 +55,15 @@
                             </div>
                             <div class="text-description">
                                 <p>
-                                   {{ $products->description }}
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing
+                                    elit. Laboriosam iure provident atque voluptatibus
+                                    reiciendis quae rerum, maxime placeat enim cupiditate
+                                    voluptatum, 
                                 </p>
                             </div>
                         </div>
                         <div class="container-price">
-                            <span>${{$products->price}}</span>  
+                            <span>$95.00</span>  
                         </div>	
                         <div class="container-add-cart">
                             <div>
