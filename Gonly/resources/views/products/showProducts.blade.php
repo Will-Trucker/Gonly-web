@@ -5,7 +5,7 @@
 @endsection
 
 @section('Welcome')
-    Products | Gonly
+ {{ $products->title }}| Gonly
 @endsection
 
 @section('content-everyone')
@@ -15,38 +15,30 @@
             <div class="container-main2">
                 <div class="container-img">
                 <div class="container-all">
-
+                    @if($products->product_images)
                     <input class="input-bottom" type="radio" id="1" name="image-slide" hidden>
                     <input class="input-bottom" type="radio" id="2" name="image-slide" hidden>
                     <input class="input-bottom" type="radio" id="3" name="image-slide" hidden>
-
-                    <div class="slide">
+                            <div class="slide">
+                        @foreach ($products->product_images as $key => $productImage)
                         <div class="item-slide">
-                            <img src="{{Vite::asset('resources/img/1.png')}}">
+                            <img src="{{asset('uploads/product/large/'.$productImage->image)}}">
                         </div>
-                        <div class="item-slide">
-                            <img src="{{Vite::asset('resources/img/2.jpg')}}">
-                        </div>
-                        <div class="item-slide">
-                            <img src="{{Vite::asset('resources/img/1.png')}}">
-                        </div>
+                        @endforeach
                     </div>
                     <div class="pagination">
-                        <label class="pagination-item" for="1">
-                            <img src="{{Vite::asset('resources/img/1.png')}}">
+                        @foreach ($products->product_images as $key => $productImage)
+                        <label class="pagination-item" for="{{ $key + 1 }}">
+                            <img src="{{asset('uploads/product/large/'.$productImage->image)}}">
                         </label>
-                        <label class="pagination-item" for="2">
-                            <img src="{{Vite::asset('resources/img/2.jpg')}}">
-                        </label>
-                        <label class="pagination-item" for="3">
-                            <img src="{{Vite::asset('resources/img/1.png')}}">
-                        </label>
-                    </div>
+                        @endforeach
+                    </div>  
+                    @endif
                 </div>
                 </div>
                     <div class="container-info-product">
                         <div class="container-titulo">
-                            <span>Zapatos</span> 
+                            <span>{{ $products->title }}</span> 
                         </div>
                         <div class="container-description">
                             <div class="title-description">
@@ -55,15 +47,12 @@
                             </div>
                             <div class="text-description">
                                 <p>
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing
-                                    elit. Laboriosam iure provident atque voluptatibus
-                                    reiciendis quae rerum, maxime placeat enim cupiditate
-                                    voluptatum, 
+                                    {{ $products->description }}
                                 </p>
                             </div>
                         </div>
                         <div class="container-price">
-                            <span>$95.00</span>  
+                            <span>${{ $products->price }}</span>  
                         </div>	
                         <div class="container-add-cart">
                             <div>
@@ -80,24 +69,6 @@
                                 Añadir al carrito
                             </button>
                         </div>	
-                        <div class="container-additional-information">
-                            <div class="title-additional-information">
-                                <h4>Especificaciones</h4>
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </div>
-                            <div class="text-additional-information hidden">
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing
-                                    elit. Laboriosam iure provident atque voluptatibus
-                                    reiciendis quae rerum, maxime placeat enim cupiditate
-                                    voluptatum, temporibus quis iusto. Enim eum qui delectus
-                                    deleniti similique? Lorem, ipsum dolor sit amet
-                                    consectetur adipisicing elit. Sint autem magni earum est
-                                    dolorem saepe perferendis repellat ipsam laudantium cum
-                                    assumenda quidem quam, vero similique? Iusto officiis
-                                    quod blanditiis iste?</p>
-                            </div>
-                        </div>
-                    </div>	
                </div>
         </div>    
     </main>

@@ -87,14 +87,15 @@
                     </table>										
                 </div>
                 <div class="card-footer clearfix">
-                   {{ $categories->links() }}
-                </div>
+                    {{ $categories->links() }}
+                 </div>
             </div>
         </div>
     </section>
 @endsection
 
 @section('customJs')
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"></script>
   <script>
    function deleteCategory(id){
       var url = '{{ route("categories.delete","ID") }}';

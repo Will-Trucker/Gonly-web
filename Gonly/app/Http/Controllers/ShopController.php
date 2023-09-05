@@ -40,7 +40,7 @@ class ShopController extends Controller
             return view('products.subcategory', ['subCategory' => $subCategory, 'products' => $products->paginate(6)]);
         }
     }
-        $products = $products->paginate(6);
+        $products = $products->paginate();
 
         $data['categories'] = $categories;
         $data['products'] = $products;
@@ -58,9 +58,6 @@ class ShopController extends Controller
       } 
 
       $data['products'] = $products; 
-
-
-
 
       return view('products.showProducts',$data);
   

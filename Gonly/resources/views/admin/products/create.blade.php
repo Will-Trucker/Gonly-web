@@ -67,8 +67,8 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="price">{{ __('Price') }}</label>
-                                            <input type="text" name="price" id="price" class="form-control"
-                                                placeholder="{{ __('Price') }}">
+                                            <input type="number" name="price" id="price" class="form-control"
+                                                placeholder="{{ __('Price') }}" min="0.00" step="0.01">
                                             <p class="error"></p>
                                         </div>
                                     </div>
@@ -89,20 +89,6 @@
                             <div class="card-body">
                                 <h2 class="h4 mb-3">{{ __('Inventory') }}</h2>
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="sku">{{ __('SKU (Stock Keeping Unit)') }}</label>
-                                            <input type="text" name="sku" id="sku" class="form-control" placeholder="sku">
-                                            <p class="error"></p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="barcode">{{ __('Barcode') }}</label>
-                                            <input type="text" name="barcode" id="barcode" class="form-control"
-                                                placeholder="Barcode">
-                                        </div>
-                                    </div>
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <div class="custom-control custom-checkbox">
