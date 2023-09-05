@@ -376,14 +376,14 @@
     <main class="principal-content">
         <div class="trending-month">
             <div>
-                <h2 class="h2-forall">Noticias</h2>
+                <h2 class="h2-forall">{{__('News')}}</h2>
             </div>
             <section>
 
                 <div class="trending__mont-1">
                     <div class="text">
-                        <h2>Gran semana!</h2>
-                        <p>¡Junio está lleno de sorpresas en Gonly! Del 22 al 30 de julio, únete a nuestra gran celebración de ofertas y descuentos exclusivos para todos.</p>
+                        <h2>{{__('Gran semana!')}}</h2>
+                        <p>{{__('')}}¡Junio está lleno de sorpresas en Gonly! Del 22 al 30 de julio, únete a nuestra gran celebración de ofertas y descuentos exclusivos para todos.</p>
                     </div>
                     <div class="trending__month-image-1">
                         <img src="{{ Vite::asset('resources/img/Decoration/juny.jpg') }}" alt="">
