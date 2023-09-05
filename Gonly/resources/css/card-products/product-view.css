@@ -230,6 +230,24 @@ img {
 	.container-img > img{
 		max-width: 300px;
 	}
+	
+	.btn-increment-decrement {
+		margin-top: 5px;
+	}
+}
+
+
+@media screen and (max-width: 400px){
+	.input-quantity {
+		
+		width: 60px;
+		height: 60%;
+		margin-top: 15px;
+	}
+
+	.btn-increment-decrement {
+		margin-top: 16px;
+	}
 }
 
 /*Slider*/
