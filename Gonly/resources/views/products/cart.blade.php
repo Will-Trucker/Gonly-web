@@ -5,7 +5,7 @@
 @endsection
 
 @section('Welcome')
-    Carrito | Gonly
+    Carrito de Compras | Gonly
 @endsection
 
 @section('content-everyone')
@@ -22,142 +22,116 @@
                         <td class="nombre-td product-td">
                             Nombre
                         </td>
-                        <td class="descripcion-td product-td description">
-                            Descripción
-                        </td>
                         <td class="precio-td product-td">
                             Precio
                         </td>
                         <td class="cantidad-td product-td">
                             Cantidad
                         </td>
+                        <td class="cantidad-td product-td">
+                            Total
+                        </td>
                         <td class="elimianr-td product-td">
-                            Eliminar
+                           Opciones
                         </td>
                     </tr>
                 </thead>
-
+                @if(!empty($cartContent))
                 <!-- Segunda fila de información (la que se duplicará al agregar más productos) -->
                 <tbody>
+                
+                    @foreach ($cartContent as $item)
+                    <tr>
+                        <td class="product-img-td">
+                            @if(!empty($item->options->productImage->image))
+                            <img src="{{ asset('uploads/product/small/'.$item->options->productImage->image) }}">
+                            @else
+                            <img src="{{ Vite::asset('resources/img/default-150x150.png') }}" class="img-thumbnail default-product-image" width="150">
+                            @endif
+                        </td>
+                        <td>
+                            {{  $item->name  }}
+                        </td>
+                        <td>
+                            ${{ $item->price }}
+                        </td>
+                            <td>
+                            <div class="input-group quantity mx-auto" style="width: 100px;">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-sm btn-dark btn-minus p-2 pt-1 pb-1 sub">
+                                      <i class="fa fa-minus"></i></button>
+                                </div>
+                                <input type="text" class="form-control form-control-sm  border-0 text-center" value="{{ $item->qty  }}">
+                                <div class="input-group-btn">
+                                <button class="btn btn-sm btn-dark btn-plus p-2 pt-1 pb-1 add">
+                                <i class="fa fa-plus"></i>
+                                </button>
+                                    </div>
+                                </div>
+                            </td>  
+                            <td>
+                            ${{ $item->price*$item->qty }}
+                            </td>
+                        <td>
+                            <button class="fa-button-cont">
+                                <i class="fa-solid fa-trash fa-2x"></i>
+                            </button>
+                        </td>
+                       
+                    </tr>
                     
-                    <tr>
-                        <td class="product-img-td">
-                            <img src="dron.jpg" alt="Producto" width="250px">
-                        </td>
-                        <td>
-                            Dron
-                        </td>
-                        <td class="texto-largo description">
-                            <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                            </p>
-                        </td>
-                        <td>
-                            $25.00
-                        </td>
-                        <td class="cantidad-td">
-                            <input type="number" value="1" max="10" min="1">
-                        </td>
-                        <td>
-                            <button class="fa-button-cont">
-                                <i class="fa-solid fa-trash fa-2x"></i>
-                            </button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="product-img-td">
-                            <img src="dron.jpg" alt="Producto" width="250px">
-                        </td>
-                        <td>
-                            Dron
-                        </td>
-                        <td class="texto-largo description">
-                            <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                            </p>
-                        </td>
-                        <td>
-                            $25.00
-                        </td>
-                        <td class="cantidad-td">
-                            <input type="number" value="1" max="10" min="1">
-                        </td>
-                        <td>
-                            <button class="fa-button-cont">
-                                <i class="fa-solid fa-trash fa-2x"></i>
-                            </button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="product-img-td">
-                            <img src="{{Vite::asset('resources/img/dron.jpg')}}" alt="Producto" width="250px">
-                        </td>
-                        <td>
-                            Super-Man&Spider-Man
-                        </td>
-                        <td class="texto-largo description">
-                            <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                            </p>
-                        </td>
-                        <td>
-                            $25.00
-                        </td>
-                        <td class="cantidad-td">
-                            <input type="number" value="1" max="10" min="1">
-                        </td>
-                        <td>
-                            <button class="fa-button-cont">
-                                <i class="fa-solid fa-trash fa-2x"></i>
-                            </button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="product-img-td">
-                            &nbsp
-                        </td>
-                        <td>
-                            &nbsp
-                        </td>
-                        <td class="texto-largo description">
-                            &nbsp
-                        </td>
-                        <td>
-                            <div class="monto-extra-cont">
-                                <div class="monto-1 montos">
-                                    <b>Subtotal: &nbsp</b>
-                                    <i>$200</i>
-                                </div>
-                                <hr>
-                                <div class="monto-2 montos">
-                                    <b class="mitad">Monto adicional:</b>
-                                    <p class="mitad">+ $4.50</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            &nbsp
-                        </td>
-                        <td>
-                            &nbsp
-                        </td>
-                    </tr>
-                </tbody>
+                </tbody> 
+               
+                  
+                
+                @endforeach
+        @endif
             </table>
         </div>
-        <div class="botones-contenedor">
+       <div class="botones-contenedor">
             <input type="button" value="Seguir comprando" class="seguir-comprando-btn btn">
             <input type="button" value="Comprar" class="comprar-btn btn">
             <div class="subtotal">
-                <b>Total: &nbsp </b>
-                <i>$20.00</i>
-            </div>
+                <b>SubTotal: &nbsp </b>
+                <i>  
+                    $ {{ Cart::subtotal() }}
+                </i>
+            </div> 
+            <div class="subtotal">
+                <b>Envio: &nbsp </b>
+                <i>  
+                    $0 
+                </i>
+            </div> 
+            <div class="subtotal">
+                <b>Total a pagar: &nbsp </b>
+                <i>  
+                    $ {{ Cart::subtotal() }}
+                </i>
+            </div> 
+           
         </div>
-   
+       
    </main>
  @include('layouts.footer-users')
+@endsection
 
+@section('customJs')
+  <script>
+     $('.add').click(function(){
+        var qtyElement = $(this).parent().prev(); // Qty Input
+        var qtyValue = parseInt(qtyElement.val());
+        if (qtyValue < 10) {
+            qtyElement.val(qtyValue+1);
+        }            
+      });
+
+      $('.sub').click(function(){
+        var qtyElement = $(this).parent().next(); 
+        var qtyValue = parseInt(qtyElement.val());
+        if (qtyValue > 1) {
+            qtyElement.val(qtyValue-1);
+        }        
+      });
+  </script>
 @endsection
