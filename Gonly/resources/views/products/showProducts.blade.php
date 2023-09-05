@@ -64,13 +64,27 @@
                                     <i class="fa-solid fa-chevron-down" id="decrement"></i>
                                 </div>
                             </div>
-                            <button class="btn-add-to-cart">
-                                <i class="fa-solid fa-plus"></i>
-                                Añadir al carrito
-                            </button>
+                            <a href="javascript:void(0);" onclick="addToCart({{ $products->id }});" class="btn btn-dark"><i class="fas fa-shopping-cart"></i>&nbsp;Añadir al carrito</a>
                         </div>	
+
                </div>
         </div>    
     </main>
 @include('layouts.footer-users')
+@endsection
+
+@section('customJs')
+  <script type="text/javascript">
+     function addToCart(id){
+        $.ajax({
+            url: '{{ route("shop.addToCart") }}',
+            type: 'post',
+            data: {id:id},
+            dataType: 'json',
+            success: function(response){
+
+            }
+        })
+     }
+  </script>
 @endsection

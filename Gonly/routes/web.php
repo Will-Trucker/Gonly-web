@@ -81,7 +81,8 @@ require __DIR__.'/auth.php';
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Shopping Cart
-Route::get('/cart',[App\Http\Controllers\CartController::class, 'carrito'])->name('cart.carrito');
+Route::get('/cart',[App\Http\Controllers\CartController::class, 'cart'])->name('shop.cart');
+Route::post('/add-to-cart',[App\Http\Controllers\CartController::class, 'addToCart'])->name('shop.addToCart');
 
 //Route::get('/shop/{categorySlug}', [App\Http\Controllers\ShopController::class, 'show'])->name('shop.index');
 
@@ -90,7 +91,7 @@ Route::get('/shop/{categorySlug?}/{subCategorySlug?}',[App\Http\Controllers\Shop
 
 Route::get('/product/{slug}',[App\Http\Controllers\ShopController::class, 'product'])->name('shop.product');
 
-Route::get('/cart',[App\Http\Controllers\CartController::class, 'cart'])->name('shop.cart');
+
 
 /*
 Route::get('/category',[App\Http\Controllers\CategoryPController::class, 'index'])->name('categories.index');

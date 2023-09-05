@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/8dd3c39186.js" crossorigin="anonymous"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    
 
     
     @yield('link-css-js')
@@ -21,7 +22,17 @@
 <body>
 
     @yield('content-everyone')
-    
+    <script src="{{asset('admin-assets/plugins/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('admin-assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"> </script>
+    <script>
+			$.ajaxSetup({
+                 headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+    </script>
+
+    @yield('customJs')
 </body>
 
 </html>
