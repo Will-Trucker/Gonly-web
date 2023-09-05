@@ -679,6 +679,15 @@ body{
     }
 }
 
+@media screen and (max-width: 1000px) {
+    .product{
+        display: none;
+    }
+    .texto_most_liked{
+        display: none;
+    }
+}
+
 
 @media screen and (max-width: 860px) {
     .container-text1{
