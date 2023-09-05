@@ -61,7 +61,7 @@
                                     <button class="btn btn-sm btn-dark btn-minus p-2 pt-1 pb-1 sub">
                                       <i class="fa fa-minus"></i></button>
                                 </div>
-                                <input type="text" class="form-control form-control-sm  border-0 text-center" value="{{ $item->qty  }}">
+                                <input type="number" readonly class="form-control form-control-sm  border-0 text-center" value="{{ $item->qty  }}">
                                 <div class="input-group-btn">
                                 <button class="btn btn-sm btn-dark btn-plus p-2 pt-1 pb-1 add">
                                 <i class="fa fa-plus"></i>
