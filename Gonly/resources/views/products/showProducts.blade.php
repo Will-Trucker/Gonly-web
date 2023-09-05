@@ -75,16 +75,24 @@
 
 @section('customJs')
   <script type="text/javascript">
-     function addToCart(id){
-        $.ajax({
-            url: '{{ route("shop.addToCart") }}',
-            type: 'post',
-            data: {id:id},
-            dataType: 'json',
-            success: function(response){
-
+  function addToCart(id) {
+    $.ajax({
+        url: '{{ route("shop.addToCart") }}',
+        type: 'post',
+        data: { id: id },
+        dataType: 'json',
+        success: function (response) {
+            if (response.status === true) {
+                window.location.href = "{{ route('shop.cart') }}";
+            } else {
+                alert(response.message);
             }
-        })
-     }
+        },
+        error: function () {
+            alert("Error al agregar el producto al carrito.");
+        }
+    });
+}
+
   </script>
 @endsection

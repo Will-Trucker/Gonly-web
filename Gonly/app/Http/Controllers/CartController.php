@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Cart;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Models\Product;
 
 class CartController extends Controller
 {
    public function addToCart(Request $request){
-      $products = Product::with('product_images')->find($request->id);
+      $product = Product::with('product_images')->find($request->id);
 
-      if($products == null){
+      if($product == null){
         return response()->json([
           'status' => false,
           'message' => 'Product not found | Producto no encontrado'
@@ -19,35 +19,49 @@ class CartController extends Controller
       }
 
      if(Cart::count() > 0){
-       //echo "Product already in cart";
-
        //Productos encontrados en el carrito
-
        // Verificar si los productos realmente se encuentra en el carrito
-
        // Mostrar un mensaje que el producto fue agregado en el carrito
-
        // Si el producto no fue agregado al carrito, luego agrega el producto en el carrito
 
+       $cartContent = Cart::content();
+       $productAlreadyExist = false;
 
+       foreach ($cartContent as $item) {
+           if($item->id == $product->id){
+            $productAlreadyExist = true;
+          }
+       }
+
+      if($productAlreadyExist == false){
+        Cart::add($product->id,$product->title, 1, $product->price, ['productImage' => (!empty($product->product_images)) ? $product->product_images->first() : '']);
+
+        $status = false;
+        $message = $product->title.' added in cart';
+
+         } else {
+          $status = true;
+          $message = $product->title.' already added in cart';
+        }
      } else {
-        echo "Cart is empty now adding a product in cart";
-        // Carrito esta vacio
-        Cart::add($products->id,$products->title, 1, $products->price, ['productImage' => (!empty($products->product_images)) ? $products->product_images->first() : '']);
+        Cart::add($product->id,$product->title, 1, $product->price, ['productImage' => (!empty($product->product_images)) ? $product->product_images->first() : '']);
         $status = true;
-        $message = $products->title.' added in cart';
+        $message = $product->title.' added in cart';
      }
 
      return response()->json([
       'status' => $status,
       'message' => $message
     ]);
-      //Cart::add('293ad', 'Product 1', 1, 9.99);
+
   }
 
    public function cart(){
-    dd(Cart::content());
-    // return view('products.cart');
+      $cartContent  = Cart::content();
+      //dd($cartContent);
+      $data['cartContent'] = $cartContent;
+
+      return view('products.cart',$data);
    }
 
 
