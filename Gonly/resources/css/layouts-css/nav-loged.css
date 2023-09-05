@@ -7,6 +7,7 @@ header nav{
     justify-content: space-around;
     align-items: center;
     border-bottom: 1px solid #0005;
+    
 }
 
 .menu {
@@ -258,22 +259,24 @@ input[type="checkbox"]{
         display:block;
         position: fixed;
         z-index: 920;
-        top: 20px;
-        right: 20px;
-        width: 3rem;
-        height: 3rem;
+        top: 15px;
+        right: 10px;
+        width: 2rem;
+        height: 2rem;
         cursor: pointer;
         opacity: 0.1;
+        border: 2px solid green;
     }
+
     
     .off-canvas-burger{
         display: block;
         position: fixed;
         z-index: 910;
-        top: 20px;
-        right: 20px;
-        width: 3rem;
-        height: 3rem;
+        top: 9px;
+        right: 10px;
+        width: 2rem;
+        height: 2rem;
         font-size: 30px;
         text-align: center;
     }
@@ -293,10 +296,6 @@ input[type="checkbox"]{
         align-items: center;
     }
 
-    .off-canva-menu > nav > *{
-        margin: 22px;
-    }
-
     nav{
         display: flex;
         flex-direction: column;
@@ -310,12 +309,6 @@ input[type="checkbox"]{
         display: flex;
         flex-direction: column;
         width: 90%;
-    }
-
-    .menu-items-cont1 ul a{
-        text-align: center;
-        padding: 19 px 0;
-        width: 100%;
     }
 
     .menu-items-cont1 ul a:hover{
@@ -369,7 +362,7 @@ input[type="checkbox"]{
         flex-direction: column;
         justify-content: space-between;
         text-align: center;
-        height: 38%;
+        height: 55%;
         border: none;
     }
 
@@ -408,6 +401,55 @@ input[type="checkbox"]{
     }
 
 }
+
+ @media screen and (max-width: 380px) {
+    .mobile-display-logo{
+        margin-top: 8px;
+        position: sticky;
+    }
+
+    nav{
+        height: 55%;
+        border: none;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        height: 55%;
+        border: none;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .search{
+        width: 58%;
+    }
+
+    .menu-items-cont1 ul{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .menu-items-cont1 ul a{
+        text-align: center;
+        width: auto;
+    }
+
+    .logo-image2{
+        margin-top: -10px;
+    }
+ }
 
 
 /* .headers{

@@ -126,65 +126,113 @@ body{
     outline: none;
 }
 
+@media screen and (max-width: 1300px) {
 
-@media screen and (max-width: 1000px) {
+    .form-container{
+        height: 660px;
+    }
+
     .form-decoration img{
         display: none;       
     }
 
     .form-container form {
-        margin-left: 27%;
+        margin: 0;
         padding: 0;
     }
 
+    .logo-img{
+        margin-top: 20px;
+    }
 
     .form-container{
         width: 90%;
-        padding: 0px;
-        border: 1px solid red;
+        padding: 0;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .form-container .form-login{
-        width: 100%;
+    .form-container .form-register{
+        width: 80%;
     }
 
     .form-container .form-decoration{
-        width: 10%;
-        margin-right: 15px;
+        display: none;
+    }
+}
+
+@media screen and (max-width: 950px) {
+
+    .form-container{
+        height: 550px;
+    }
+    
+    .form-container .form-register{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .form-decoration img{
+        display: none;       
+    }
+
+    .form-container form {
+        margin: 0;
+        padding: 0;
+    }
+
+    .form-container{
+        width: 90%;
+        padding: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-container .form-register{
+        width: 80%;
+    }
+
+    .form-container .form-decoration{
+        display: none;
     }
 
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 530px) {
+    .form-container{
+        height: 545px;
+    }
+
     .form-decoration img{
         display: none;       
     }
 
     .form-container form {
-        margin-right: 25%;
+        margin: 0;
         padding: 0;
-    }
-
-    .coolinput, label{
-        font-size: 16px;
     }
 
     .form-container{
         width: 90%;
-        padding: 0px;
-        border: 1px solid red;
+        padding: 0;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .form-container .form-login{
-        width: 100%;
+    .form-container .form-register{
+        width: 80%;
     }
 
     .form-container .form-decoration{
-        width: 4%;
-        margin-right: 13px;
-    }
-    div .logo-img{
-        margin: 1px -15px 1px -15px;
+        display: none;
     }
 
+}
+
+@media screen and (max-width: 400px) {
+    .form-container{
+        height: 540px;
+    }
 }

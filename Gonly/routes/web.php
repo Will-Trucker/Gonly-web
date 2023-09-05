@@ -9,6 +9,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryPController;
 use App\Http\Controllers\SubCategoryPController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\admin\AdminLoginController;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\CategoryController;
@@ -49,6 +50,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/information', function () {
+    return view('information');
+})->name('information');
+
+
+Route::get('/products', function () {
+    return view('products/showProducts');
+})->name('products');
+
+
 Route::resource('productsUser', ProductsUserController::class)->middleware(['auth', 'verified']);
 Route::get('productsUser', [ProductsUserController::class, 'index'])->middleware(['auth', 'verified'])->name('productsUser-index');
 Route::get('productsUser/create', [ProductsUserController::class, 'create'])->middleware(['auth', 'verified'])->name('productsUser-create');
@@ -72,7 +83,18 @@ require __DIR__.'/auth.php';
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Shopping Cart
-Route::get('/cart',[App\Http\Controllers\CartController::class, 'carrito'])->name('cart.carrito');
+Route::get('/cart',[App\Http\Controllers\CartController::class, 'cart'])->name('shop.cart');
+Route::post('/add-to-cart',[App\Http\Controllers\CartController::class, 'addToCart'])->name('shop.addToCart');
+
+//Route::get('/shop/{categorySlug}', [App\Http\Controllers\ShopController::class, 'show'])->name('shop.index');
+
+
+Route::get('/shop/{categorySlug?}/{subCategorySlug?}',[App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
+
+Route::get('/product/{slug}',[App\Http\Controllers\ShopController::class, 'product'])->name('shop.product');
+
+
+
 /*
 Route::get('/category',[App\Http\Controllers\CategoryPController::class, 'index'])->name('categories.index');
 

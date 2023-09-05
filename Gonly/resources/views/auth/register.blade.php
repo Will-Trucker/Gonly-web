@@ -46,7 +46,7 @@
 
             <div class="container-input-and-login">
                 <input class="purchase-submit" type="submit" value="Regístrate">
-                <h5>Ya tienes una cuenta? <a href="{{ Route('login') }}">Iniciar seción.</a></h5>
+                <h5>Ya tienes una cuenta? <a href="{{ Route('login') }}">Iniciar sesión.</a></h5>
             </div>
         </form>
         <div class="form-decoration">

@@ -29,7 +29,7 @@ return new class extends Migration
             $table->text('specifications');
             $table->decimal('price');
             $table->string('photos');
-            
+
             $table->timestamps();
         });
     }

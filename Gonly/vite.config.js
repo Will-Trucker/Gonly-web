@@ -20,6 +20,12 @@ export default defineConfig({
                 'resources/css/layouts-css/footer-users.css', 
                 'resources/img/icongonly.png',
                 'resources/img/Decoration/ilustration-removebg-preview.png',
+                'resources/css/card-products/style.css',
+                'resources/css//card-products/product-view.css',
+                'resources/img/index.js',
+                'resources/img/2.jpg',
+                'resources/img/1.jpg'
+  
             ],
             refresh: true,
         }),

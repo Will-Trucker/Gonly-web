@@ -1,3 +1,4 @@
+<div id="seccion-destino"></div>
 <footer>
     <div class="container">
       <div class="wrapper">
@@ -10,22 +11,22 @@
           </p>
           <ul class="socials">
             <li>
-              <a href="#">
+              <a target="_blank" href="https://www.facebook.com/profile.php?id=61550688284067">
                 <i class="fab fa-facebook-f"></i>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a target="_blank" href="https://twitter.com/Gonly_7">
                 <i class="fab fa-twitter"></i>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a target="_blank" href="https://www.instagram.com/gonlystore/">
                 <i class="fab fa-instagram"></i>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a target="_blank" href="https://linktr.ee/GonlyStore" >
                 <i class="fab fa-linkedin-in"></i>
               </a>
             </li>
@@ -51,10 +52,11 @@
           </ul>
         </div>
         <div class="footer-widget">
-          <h6>Ayuda &amp; Soporte</h6>
+          <h6>Contactos &amp; Ayuda</h6>
           <ul class="links">
-            <li><a href="#">Cambiar idioma</a></li>
+            <li><a href="#">+503 60069752</a></li>
             <li><a href="#">gonly@gmail.com</a></li>
+            <li><a target="_blank" href="https://linktr.ee/GonlyStore">Redes Sociales</a></li>
           </ul>
         </div>
       </div>

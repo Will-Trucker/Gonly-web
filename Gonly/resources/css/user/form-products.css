@@ -270,3 +270,68 @@ main .form-container div:nth-child(2) .container-price form{
       margin: 0 10px 50px;
     }
 }
+
+@media screen and (max-width: 1000px) {
+  main .form-container{
+    padding: none;
+    border: none;
+  }
+
+  main .form-container .form-logo{
+    display: flex;
+    margin-bottom: 19px;
+    
+}
+
+main .form-container div:nth-child(1) img{
+    height: 3em;    
+}
+
+main .form-container div:nth-child(1) h1{
+    font-size: 1.6em;
+}
+
+main .form-container div:nth-child(2) div{
+  padding: 5px 3em 15px 3em;
+}
+
+main .form-container div:nth-child(2) div input{
+  margin-top: 5px;
+  margin-left: -5px;
+}
+
+.container-price{
+  margin-bottom: 21px;
+}
+}
+
+@media screen and (max-width: 380px) {
+  .mobile-display-logo{
+      margin-top: 1px;
+      position: sticky;
+  }
+
+  nav{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 1px;
+  }
+
+  .search{
+      width: 58%;
+  }
+
+  .menu-items-cont1 ul{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+  }
+
+  .menu-items-cont1 ul a{
+      text-align: center;
+      width: auto;
+  }
+}

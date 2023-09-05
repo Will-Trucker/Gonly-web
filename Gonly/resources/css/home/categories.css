@@ -1,6 +1,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css);
 
 *{
     margin: 0;
@@ -57,19 +58,14 @@ main section{
     border-radius: 15px;
     background-color: #e9e7e7;
     grid-template-columns: 1fr 1fr;
-    padding: 1.5%;
+    padding: 2rem 1.5% 0.6rem;
 }
     
 .categories-grid img{
     width: 100%;
     height: 100%;
 }
-
-.categories-grid img{
-    width: 100%;
-    height: 32em;
-}
-    
+  
 .categories-grid section{
     margin-left: 5px;
     display: grid;
@@ -98,6 +94,17 @@ main section{
 .categories-grid div h3{
     font-size: 25px;
     font-weight: 500;
+}
+
+.categories-grid{
+    width: 600px;
+    grid-template-columns: 0.5fr;
+}
+.categories-grid img{
+    margin-left: 50%;
+}
+.categories-grid section{
+    display: none;
 }
     
 .cta {
@@ -168,8 +175,27 @@ main section{
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 600px) {
     .categories-grid{
         width: 100%;
+        grid-template-columns: 0.5fr;
+    }
+    .categories-grid img{
+        margin-left: 50%;
+    }
+    .categories-grid section{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .texto_descripcion1 h3{
+        font-size: 20px !important;
+    }
+    .texto_descripcion1 p {
+        font-size: 14px !important;
+    }
+    .hover-underline-animation{
+        font-size: 10px !important;
     }
 }

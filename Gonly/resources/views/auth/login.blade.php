@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="shortcut icon" href="{{ Vite::asset('resources/img/Logos/logo-gonly-icon.png') }}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,7 @@
             @csrf
             <div class="logo-img">
                 <img src="{{ Vite::asset('resources/img/Logos/logo-gonly-icon.png') }}" alt="">
-                <h2>Iniciar seción en Gonly</h2>
+                <h2>Iniciar sesión en Gonly</h2>
             </div>
             <div class="coolinput">
                 <label for="email" class="text">E-mail</label>

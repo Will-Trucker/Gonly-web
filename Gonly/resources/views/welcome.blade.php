@@ -1,7 +1,6 @@
 @extends('layouts.head-pretm')
 
 @section('link-css-js')
-    @livewireStyles
     @vite(['resources/css/home/welcome.css', 'resources/css/layouts-css/nav-guest.css', 'resources/css/layouts-css/footer-users.css' , 'resources/js/welcome.js'])
 @endsection
 
@@ -16,15 +15,15 @@
         
     </div>
     <section class="home-present" style="background-image: url( {{ Vite::asset('resources/img/Decoration/Curve-Line.svg') }} )">
-        <section class="container-text-and-img-1">
-            <div class="container-text1">
+        <section>
+            <div class="texto_principal3">
                 <h1><b>{{__('Gonly')}}</b> {{__('is your best option')}}</h1>
                 <p>{{__('To get what you need, just immerse yourself in our APP to find everything you want, what you want and when you want.')}}</p>
                 <div>
                     <a href="">{{__('Offers of the day')}}</a>
                 </div>
             </div>
-            <article class="container-img" >
+            <article class="container-img home-img-cont">
                 <img src="{{ Vite::asset('resources/img/Decoration/ilustration-removebg-preview.png') }}" alt="">
             </article>  
         </section>
@@ -32,7 +31,7 @@
     <main class="principal-content">
         <div class="famous-categories">
             <h2 class="h2-forall">{{__('Featured Categories')}}</h2>
-            <div class="container-categorias">
+            <div>
                 <a href="#">
                     <img src="{{ Vite::asset('resources/img/Categories/Accesories.png') }}" alt="">
                     <h3>{{__('Accessories')}}</h3>
@@ -70,7 +69,7 @@
                 <h2 class="h2-forall modified-1">{{__('Most sold')}}</h2>
                 <a href="#" class="all">{{__('See everything')}} <i class="fa-solid fa-arrow-right"></i></a>
             </div>
-            <section class="container-categorias">
+            <section>
 
                 <div class="container__products-buyer">
                     <a href="#" class="image-product">
@@ -115,7 +114,7 @@
             </section>
         </div>
 
-        <h2 class="h2-forall" style="margin-bottom: 35px;">{{__('Most liked')}}</h2>
+        <h2 class="h2-forall texto_most_liked" style="margin-bottom: 35px;">{{__('Most liked')}}</h2>
         <section class="product">             
             <button class="pre-btn"><img src="{{ Vite::asset('resources/img/Images/arrow.png') }}"></button>
             <button class="nxt-btn"><img src="{{ Vite::asset('resources/img/Images/arrow.png') }}"></button>
@@ -247,7 +246,7 @@
             <div>
                 <h2 class="h2-forall modified-1">{{__('Our recommended')}}</h2>
             </div>
-            <section class="container-categorias">
+            <section>
 
                 <div class="container__products-buyer">
                     <a href="#" class="image-product">
@@ -361,18 +360,30 @@
         </div>
     
     </main>
+
+    {{--
+    <div class="part-app"  style="background-image: url( {{ Vite::asset('resources/img/Decoration/smartmockups_lkp05c4i.jpg') }} )">
+        <div>
+            <h2>Descarga nuestra APP</h2>
+            <p>Y disfruta de una mejor experiencia al alcanze de tu mano, sin restricciones!</p>
+            <a href="#">
+                <img class="google-play-link" src="{{ Vite::asset('resources/img/Decoration/google-play-badge.png') }}" alt="">
+            </a>
+        </div>
+    </div>
+    --}}
     
     <main class="principal-content">
         <div class="trending-month">
             <div>
-                <h2 class="h2-forall">Noticias</h2>
+                <h2 class="h2-forall">{{__('News')}}</h2>
             </div>
-            <section class="container-categorias">
+            <section>
 
                 <div class="trending__mont-1">
                     <div class="text">
-                        <h2>Gran semana!</h2>
-                        <p>¡Junio está lleno de sorpresas en Gonly! Del 22 al 30 de julio, únete a nuestra gran celebración de ofertas y descuentos exclusivos para todos.</p>
+                        <h2>{{__('Gran semana!')}}</h2>
+                        <p>{{__('')}}¡Junio está lleno de sorpresas en Gonly! Del 22 al 30 de julio, únete a nuestra gran celebración de ofertas y descuentos exclusivos para todos.</p>
                     </div>
                     <div class="trending__month-image-1">
                         <img src="{{ Vite::asset('resources/img/Decoration/juny.jpg') }}" alt="">
@@ -411,7 +422,8 @@
 
             </section>
         </div>
+
     </main>
+
     @include('layouts.footer-users')
-    @livewireScripts
 @endsection

@@ -206,6 +206,8 @@ body{
     display: flex;
     width: 100%;
     flex-direction: column;
+    margin: 0 auto;
+    
 }
 
 .famous__product-offer section .container__products-buyer .image-product img{
@@ -245,6 +247,7 @@ body{
     text-align: center;
     padding: 8px 0px;
     color: #000;
+    margin: 0 auto;
 }
 
 .famous__product-offer section .profile-buyer{
@@ -272,10 +275,9 @@ body{
 }
   
 .product-container {
-    padding: 0 3em;
+    padding: 0 3.1em;
     display: flex;
     overflow-x: hidden;
-    
     scroll-behavior: smooth;
 }
   
@@ -289,7 +291,7 @@ body{
     width: 250px;
     height: 29em;
     padding: 9px;
-    margin-right: 40px;
+    margin-right: 85px;
 }
   
 .product-image {
@@ -372,9 +374,9 @@ body{
     text-decoration: line-through;
 }
   
-.pre-btn, .nxt-btn {
+.pre-btn {
     border: none;
-    width: 5em;
+    width: 4.2em;
     height: 100%;
     position: absolute;
     top: 0;
@@ -387,6 +389,23 @@ body{
     z-index: 8;
 }
   
+
+.nxt-btn{
+    border: none;
+    width: 4.2em;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    cursor: pointer;
+    background-color: #f8f9f0;
+    z-index: 8;
+}
+
+
 .pre-btn {
     left: 0;
     transform: rotate(180deg);
@@ -394,6 +413,7 @@ body{
   
 .nxt-btn {
     right: 0;
+    
 }
   
 .pre-btn img, .nxt-btn img {
@@ -582,8 +602,30 @@ body{
     object-fit: cover;
     filter: hue-rotate(100deg);
 }
-
 /* Agrega media queries para tamaños de pantalla más pequeños */
+
+@media screen and (max-width: 500px) {
+    .home-present{
+        width: 100%;
+        padding: 20px 0px;
+    }
+
+    .texto_principal3{
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .texto_principal3 h1{
+        margin: 0;
+        padding: 0;
+    }
+
+    .home-present section div h1{
+        font-size: 40px;
+        margin-bottom: 0.4em;
+        text-align: center;
+    }
+}
 
 @media screen and (max-width: 700px) {
 
@@ -635,6 +677,15 @@ body{
     }
 }
 
+@media screen and (max-width: 1000px) {
+    .product{
+        display: none;
+    }
+    .texto_most_liked{
+        display: none;
+    }
+}
+
 
 @media screen and (max-width: 860px) {
     .container-text1{
@@ -657,4 +708,10 @@ body{
         margin: 60px 0  0 50px;
     }
     
+}
+
+@media screen and (max-width: 1070px) {  
+    .home-img-cont > img {
+        display: none;
+    }
 }
