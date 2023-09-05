@@ -42,14 +42,17 @@
                     <h1>Tus publicaciones</h1>
                     <p>Aquí se visualizarán los productos a vender que has publicado dentro de Gonly!</p>
                 </section>
-                <article class="articulos">
-                    @if ($products->isNotEmpty())
+                @if ($products->isNotEmpty())
                     <especificaciones-producto>
                         <aside>
                             <h1>Tu Panel de productos</h1>
                         </aside>
                         <h2>Tienes <b>{{ $productCount }}</b> producto subidos en venta actualmente</h2>
                     </especificaciones-producto>
+                @else
+                @endif
+                <article class="articulos">
+                    @if ($products->isNotEmpty())
                         @foreach ( $products as $productsUser )
                             <contenedor-productos>
                                 <h1>{{ $productsUser->tittle }}</h1>
