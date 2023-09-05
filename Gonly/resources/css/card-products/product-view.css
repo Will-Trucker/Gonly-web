@@ -215,15 +215,38 @@ img {
 @media screen and (max-width: 800px){
 	.container-main2 {
 		flex-direction: column;
+		margin: 0;
+	}
+
+	main{
+		margin: 0 auto;
 	}
 
 	.container-img{
 		max-width: 100%;
-		padding: 20px 20px 20px 20px;
+		padding: 5px;
 	}
 
 	.container-img > img{
 		max-width: 300px;
+	}
+	
+	.btn-increment-decrement {
+		margin-top: 5px;
+	}
+}
+
+
+@media screen and (max-width: 400px){
+	.input-quantity {
+		
+		width: 60px;
+		height: 60%;
+		margin-top: 15px;
+	}
+
+	.btn-increment-decrement {
+		margin-top: 16px;
 	}
 }
 

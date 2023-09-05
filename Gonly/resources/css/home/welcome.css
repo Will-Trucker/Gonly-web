@@ -608,7 +608,6 @@ body{
     .home-present{
         width: 100%;
         padding: 20px 0px;
-        border: 1px solid red;
     }
 
     .texto_principal3{
@@ -633,7 +632,6 @@ body{
     .home-present{
         width: 100%;
         padding: 50px 40px 50px 40px;
-        border: 1px solid red;
     }
    
     .container-text-and-img-1{
@@ -676,6 +674,15 @@ body{
 @media screen and (max-width: 1200px) {
     .home-present section div {
         margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .product{
+        display: none;
+    }
+    .texto_most_liked{
+        display: none;
     }
 }
 

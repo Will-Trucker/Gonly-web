@@ -58,7 +58,7 @@ main section{
     border-radius: 15px;
     background-color: #e9e7e7;
     grid-template-columns: 1fr 1fr;
-    padding: 1.5%;
+    padding: 2rem 1.5% 0.6rem;
 }
     
 .categories-grid img{
@@ -94,6 +94,17 @@ main section{
 .categories-grid div h3{
     font-size: 25px;
     font-weight: 500;
+}
+
+.categories-grid{
+    width: 600px;
+    grid-template-columns: 0.5fr;
+}
+.categories-grid img{
+    margin-left: 50%;
+}
+.categories-grid section{
+    display: none;
 }
     
 .cta {
