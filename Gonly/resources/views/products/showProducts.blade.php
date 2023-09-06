@@ -32,13 +32,13 @@
                             <img src="{{asset('uploads/product/large/'.$productImage->image)}}">
                         </label>
                         @endforeach
-                    </div>  
+                    </div>
                     @endif
                 </div>
                 </div>
                     <div class="container-info-product">
                         <div class="container-titulo">
-                            <span>{{ $products->title }}</span> 
+                            <span>{{ $products->title }}</span>
                         </div>
                         <div class="container-description">
                             <div class="title-description">
@@ -52,8 +52,8 @@
                             </div>
                         </div>
                         <div class="container-price">
-                            <span>${{ $products->price }}</span>  
-                        </div>	
+                            <span>${{ $products->price }}</span>
+                        </div>
                         <div class="container-add-cart">
                             <div>
                             </div>
@@ -64,11 +64,11 @@
                                     <i class="fa-solid fa-chevron-down" id="decrement"></i>
                                 </div>
                             </div>
-                            <a href="javascript:void(0);" onclick="addToCart({{ $products->id }});" class="btn btn-dark"><i class="fas fa-shopping-cart"></i>&nbsp;Añadir al carrito</a>
-                        </div>	
+                            <a href="javascript:void(0);" onclick="addToCart({{ $products->id }});" class="btn btn-dark"><i class="fas fa-shopping-cart"></i> Añadir al carrito</a>
+                        </div>
 
                </div>
-        </div>    
+        </div>
     </main>
 @include('layouts.footer-users')
 @endsection

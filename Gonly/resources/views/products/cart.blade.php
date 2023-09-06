@@ -27,12 +27,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button>
                   </div>
             </div>
-            @endif  
+            @endif
             @if(Cart::count() > 0)
             <h1>Carrito de compras</h1>
-          
+
             <table>
-                
+
                 <thead>
                     <tr class="titulos-producto">
                         <td class="product-img-td product-td">
@@ -57,7 +57,7 @@
                 </thead>
                 <!-- Segunda fila de información (la que se duplicará al agregar más productos) -->
                 <tbody>
-                
+
                     @foreach ($cartContent as $item)
                     <tr>
                         <td class="product-img-td">
@@ -86,7 +86,7 @@
                                     </button>
                                 </div>
                             </div>
-                        </td>  
+                        </td>
                         <td>
                             ${{ $item->price*$item->qty }}
                             </td>
@@ -96,8 +96,8 @@
                             </button>
                         </td>
                     </tr>
-                    
-                </tbody> 
+
+                </tbody>
                 @endforeach
                 <tr>
                     <td colspan="6">
@@ -115,22 +115,22 @@
                                     <div class="todos_subtotales_cont">
                                         <div class="subtotal">
                                             <b>SubTotal: &nbsp </b>
-                                            <i>  
+                                            <i>
                                                 $ {{ Cart::subtotal() }}
                                             </i>
-                                        </div> 
+                                        </div>
                                         <div class="subtotal">
                                             <b>Envio: &nbsp </b>
-                                            <i>  
-                                                $0 
+                                            <i>
+                                                $0
                                             </i>
-                                        </div> 
+                                        </div>
                                         <div class="subtotal final_total_apagar">
                                             <b>Total a pagar: &nbsp </b>
-                                            <i>  
+                                            <i>
                                                 $ {{ Cart::subtotal() }}
                                             </i>
-                                        </div> 
+                                        </div>
                                     </div>
                                 </div>
 
@@ -139,16 +139,16 @@
                     </td>
                 </tr>
                 <!-- Aquí finaliza el table row -->
-             
+
             </table>
-  
+
                     <div class="contenedor_td contenedor_td_responsive">
                         <div class="botones-contenedor">
                             <input type="button" value="Proceder a pagar" class="seguir-comprando-btn btn">
                             <input type="button" value="Volver al Inicio" class="comprar-btn btn">
                         </div>
                         <div class="factura_contenedor">
-                            
+
                             <div class="factura_borde">
                                 <h3>
                                     Summary
@@ -156,38 +156,38 @@
                                 <div class="todos_subtotales_cont">
                                     <div class="subtotal">
                                         <b>SubTotal: &nbsp </b>
-                                        <i>  
+                                        <i>
                                             $ {{ Cart::subtotal() }}
                                         </i>
-                                    </div> 
+                                    </div>
                                     <div class="subtotal">
                                         <b>Envio: &nbsp </b>
-                                        <i>  
-                                            $0 
+                                        <i>
+                                            $0
                                         </i>
-                                    </div> 
+                                    </div>
                                     <div class="subtotal final_total_apagar">
                                         <b>Total a pagar: &nbsp </b>
-                                        <i>  
+                                        <i>
                                             $ {{ Cart::subtotal() }}
                                         </i>
-                                    </div> 
+                                    </div>
                                 </div>
 
                             </div>
                             @else
                             <div class="col-md-12">
                                 <div class="card-body d-flex  justify-content-center align-items-center">
-                                    <h4>Your cart is empty!!</h4>
+                                    <h4>{{__('Your cart is empty!!')}}</h4>
                                 </div>
                             </div>
 @endif
                         </div>  <!--contenedor del cuadro de "factura" -->
                     </div>
-                    
+
         </div>  <!-- Aquí se cierra el div.contenedor-carrito -->
 
-        
+
    </main>
  @include('layouts.footer-users')
 @endsection
@@ -203,18 +203,18 @@
             var rowId = $(this).data('id');
             var newQty = qtyElement.val();
             updateCart(rowId,newQty);
-        }            
+        }
       });
 
       $('.sub').click(function(){
-        var qtyElement = $(this).parent().next(); 
+        var qtyElement = $(this).parent().next();
         var qtyValue = parseInt(qtyElement.val());
         if (qtyValue > 1) {
             qtyElement.val(qtyValue-1);
             var rowId = $(this).data('id');
             var newQty = qtyElement.val()
             updateCart(rowId,newQty);
-        }        
+        }
       });
 
     function updateCart(rowId,qty){
@@ -243,7 +243,7 @@
             });
         }
 
-       
+
     }
 
   </script>

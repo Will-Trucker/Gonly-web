@@ -36,11 +36,11 @@ class CartController extends Controller
       if($productAlreadyExist == false){
         Cart::add($product->id,$product->title, 1, $product->price, ['productImage' => (!empty($product->product_images)) ? $product->product_images->first() : '']);
 
-        $status = false;
+        $status = true;
         $message = $product->title.' added in cart successfully';
         session()->flash('success',$message);
          } else {
-          $status = true;
+          $status = false;
           $message = $product->title.' already added in cart successfully';
         }
      } else {
