@@ -71,7 +71,7 @@
                         <td>
                             ${{ $item->price }}
                         </td>
-                            <td>
+                        <td>
                             <div class="input-group quantity mx-auto" style="width: 100px;">
                                 <div class="input-group-btn">
                                     <button class="btn btn-sm btn-dark btn-minus p-2 pt-1 pb-1 sub" data-id="{{ $item->rowId }}">
@@ -79,13 +79,13 @@
                                 </div>
                                 <input type="number" readonly class="form-control form-control-sm  border-0 text-center numerito_q_incrementa" value="{{ $item->qty  }}">
                                 <div class="input-group-btn">
-                                <button class="btn btn-sm btn-dark btn-plus p-2 pt-1 pb-1 add" data-id="{{ $item->rowId }}">
-                                <i class="fa fa-plus"></i>
-                                </button>
-                                    </div>
+                                    <button class="btn btn-sm btn-dark btn-plus p-2 pt-1 pb-1 add" data-id="{{ $item->rowId }}">
+                                    <i class="fa fa-plus"></i>
+                                    </button>
                                 </div>
-                            </td>  
-                            <td>
+                            </div>
+                        </td>  
+                        <td>
                             ${{ $item->price*$item->qty }}
                             </td>
                         <td>
@@ -93,33 +93,12 @@
                                 <i class="fa-solid fa-trash fa-2x"></i>
                             </button>
                         </td>
-                       
                     </tr>
                     
                 </tbody> 
                 @endforeach
         @endif
-<tr>
-    <td>
-       <div class="input-group quantity mx-auto" style="width: 100px;">
-            <div class="input-group-btn">
-                <button class="btn btn-sm btn-dark btn-minus p-2 pt-1 pb-1 sub">
-                <i class="fa fa-minus"></i></button>
-                </div>
-                <input type="number" readonly class="form-control form-control-sm  border-0 text-center" value="3">
-                <div class="input-group-btn">
-                <button class="btn btn-sm btn-dark btn-plus p-2 pt-1 pb-1 add"">
-                <i class="fa fa-plus"></i>
-                </button>
-                    </div>
-                         </div>
-                        </td>  
-                        <td>
-                            <button class="fa-button-cont">
-                                <i class="fa-solid fa-trash fa-2x"></i>
-                            </button>
-                        </td>
-                    </tr>
+
                 <tr>
                     <td colspan="6">
                         <div class="contenedor_td contenedor_td_full">
@@ -128,7 +107,7 @@
                                 <input type="button" value="Comprar" class="comprar-btn btn">
                             </div>
                             <div class="factura_contenedor">
-                                
+
                                 <div class="factura_borde">
                                     <h3>
                                         Summary
