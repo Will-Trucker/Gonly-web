@@ -201,6 +201,7 @@
         
         </div>  <!-- Aquí se cierra el div.contenedor-carrito -->
 
+        
    </main>
  @include('layouts.footer-users')
 @endsection
