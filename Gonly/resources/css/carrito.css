@@ -7,7 +7,7 @@
 }
 
 main{
-    margin: 50px 65px;
+    margin: 50px 10px;
     text-align: center;
 }
 
@@ -48,7 +48,7 @@ tr{
     height: 52px;
 }
 
-tr:nth-last-child(1){
+tr:nth-last-child(0){
     /* border-bottom: 1px solid rgb(9, 208, 9); */
     border-bottom: 1px solid black;
 }
@@ -80,19 +80,28 @@ i > img{
 
 .botones-contenedor{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 30px;
     padding-bottom: 40px;
+    width: 70%;
+}
+
+.factura_contenedor{
+    width: 30%;
+    margin-top: 20px;
 }
 
 .btn{
-    width: 20%;
+    width: 45%;
     height: 46px;
     font-size: 17px;
     font-weight: 600;
-    line-height: 46px;
     border: none;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .seguir-comprando-btn{
@@ -107,11 +116,12 @@ i > img{
 
 /* Subtotal - total de compra */
 .subtotal{
-    border: 3.8px solid #D7F205;
     border-radius: 20px;
     padding: 0 16px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    height: 46px;
 }
 
 .subtotal > i{
@@ -129,7 +139,35 @@ input[type = number]{
     border-radius: 16px;
 }
 
+/* nuevas correcciones de subtotal de compra */
 
+.factura_contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.factura_borde h3{
+    border-bottom: 2px solid black;
+    padding: 4px 0;
+}
+
+.contenedor_td{
+    display: flex;
+    height: 184px;
+}
+
+.todos_subtotales_cont{
+    width: 227px;
+}
+
+.factura_borde{
+    border: 2px solid black;
+}
+
+.final_total_apagar b {
+    border-top: 1px solid black;
+    width: auto;
+}
 
 /* sección de montos extra, editar aqui */
 .monto-extra-cont{
@@ -192,3 +230,6 @@ input{
     }
 }
 
+.contenedor_td_responsive{
+    display: none;
+}
