@@ -242,7 +242,17 @@
         });
     }
 
-    function 
+    function deleteItem(rowId){
+        $.ajax({
+            url: '{{ route("shop.updateCart") }}',
+            type: 'post',
+            data: {rowId:rowId, qty:qty},
+            dataType: 'json',
+            success: function(response){
+                window.location.href = '{{ route("shop.cart") }}';
+            }
+        });
+    }
 
   </script>
 @endsection

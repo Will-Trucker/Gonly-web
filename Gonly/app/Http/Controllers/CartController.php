@@ -99,5 +99,19 @@ class CartController extends Controller
        ]);
    }
 
+   public function deleteItem(Request $request){
+     $itemInfo = Cart::get($rowId);
+     if($itemInfo == null){
+
+     }
+
+     Cart::remove($request->rowId);
+
+     return response()->json([
+      'status' => true,
+      'message' => $message
+     ]);
+   }
+
 
 }
