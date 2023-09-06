@@ -87,6 +87,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/cart',[App\Http\Controllers\CartController::class, 'cart'])->name('shop.cart');
 Route::post('/add-to-cart',[App\Http\Controllers\CartController::class, 'addToCart'])->name('shop.addToCart');
 Route::post('/update-cart',[App\Http\Controllers\CartController::class, 'updateCart'])->name('shop.updateCart');
+Route::post('/delete-item',[App\Http\Controllers\CartController::class, 'deleteItem'])->name('shop.deleteItem.cart');
 
 //Route::get('/shop/{categorySlug}', [App\Http\Controllers\ShopController::class, 'show'])->name('shop.index');
 

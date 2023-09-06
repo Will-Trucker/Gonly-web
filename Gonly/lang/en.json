@@ -106,5 +106,7 @@
     "You're logged in!": "You're logged in!",
     "Your email address is unverified.": "Your email address is unverified.",
     "News": "News",
-    "Your Action was Succesfull": "Your action was successfull"
+    "Your Action was Succesfull": "Your action was successfull",
+    "Are you sure you want to delete?": "Are you sure you want to delete?"
+
 }

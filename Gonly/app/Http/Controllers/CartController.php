@@ -37,16 +37,17 @@ class CartController extends Controller
         Cart::add($product->id,$product->title, 1, $product->price, ['productImage' => (!empty($product->product_images)) ? $product->product_images->first() : '']);
 
         $status = false;
-        $message = $product->title.' added in cart';
-
+        $message = '<strong> '.$product->title.'</strong> added in cart successfully';
+        session()->flash('success',$message);
          } else {
           $status = true;
-          $message = $product->title.' already added in cart';
+          $message = $product->title.' already added in cart successfully';
         }
      } else {
         Cart::add($product->id,$product->title, 1, $product->price, ['productImage' => (!empty($product->product_images)) ? $product->product_images->first() : '']);
         $status = true;
-        $message = $product->title.' added in cart';
+        $message = '<strong> '.$product->title.'</strong> added in cart successfully';
+        session()->flash('success',$message);
      }
 
      return response()->json([
@@ -100,17 +101,23 @@ class CartController extends Controller
    }
 
    public function deleteItem(Request $request){
-     $itemInfo = Cart::get($rowId);
+     $itemInfo = Cart::get($request->rowId);
      if($itemInfo == null){
-
+      $errorMessage = trans('messages.cart_notFound');
+      session()->flash('error',$errorMessage);
+      return response()->json([
+        'status' => false,
+        'message' => $errorMessage
+       ]);
      }
 
      Cart::remove($request->rowId);
-
-     return response()->json([
-      'status' => true,
-      'message' => $message
-     ]);
+     $message = trans('messages.cart_product_delete');
+     session()->flash('success',$message);
+      return response()->json([
+        'status' => true,
+        'message' => $message
+       ]);
    }
 
 

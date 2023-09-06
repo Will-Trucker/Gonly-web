@@ -27,9 +27,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button>
                   </div>
             </div>
-            @endif
+            @endif  
+            @if(Cart::count() > 0)
             <h1>Carrito de compras</h1>
+          
             <table>
+                
                 <thead>
                     <tr class="titulos-producto">
                         <td class="product-img-td product-td">
@@ -52,7 +55,6 @@
                         </td>
                     </tr>
                 </thead>
-                @if(!empty($cartContent))
                 <!-- Segunda fila de información (la que se duplicará al agregar más productos) -->
                 <tbody>
                 
@@ -89,7 +91,7 @@
                             ${{ $item->price*$item->qty }}
                             </td>
                         <td>
-                            <button class="fa-button-cont">
+                            <button class="fa-button-cont" onclick="deleteItem('{{ $item->rowId }}');">
                                 <i class="fa-solid fa-trash fa-2x"></i>
                             </button>
                         </td>
@@ -97,13 +99,11 @@
                     
                 </tbody> 
                 @endforeach
-        @endif
-
                 <tr>
                     <td colspan="6">
                         <div class="contenedor_td contenedor_td_full">
                             <div class="botones-contenedor">
-                                <input type="button" value="Seguir comprando" class="seguir-comprando-btn btn">
+                                <input type="button" value="Proceder a pagar" class="seguir-comprando-btn btn">
                                 <input type="button" value="Comprar" class="comprar-btn btn">
                             </div>
                             <div class="factura_contenedor">
@@ -139,13 +139,13 @@
                     </td>
                 </tr>
                 <!-- Aquí finaliza el table row -->
-
+             
             </table>
-
+  
                     <div class="contenedor_td contenedor_td_responsive">
                         <div class="botones-contenedor">
-                            <input type="button" value="Seguir comprando" class="seguir-comprando-btn btn">
-                            <input type="button" value="Comprar" class="comprar-btn btn">
+                            <input type="button" value="Proceder a pagar" class="seguir-comprando-btn btn">
+                            <input type="button" value="Volver al Inicio" class="comprar-btn btn">
                         </div>
                         <div class="factura_contenedor">
                             
@@ -173,11 +173,18 @@
                                         </i>
                                     </div> 
                                 </div>
-                            </div>
 
+                            </div>
+                            @else
+                            <div class="col-md-12">
+                                <div class="card-body d-flex  justify-content-center align-items-center">
+                                    <h4>Your cart is empty!!</h4>
+                                </div>
+                            </div>
+@endif
                         </div>  <!--contenedor del cuadro de "factura" -->
                     </div>
-        
+                    
         </div>  <!-- Aquí se cierra el div.contenedor-carrito -->
 
         
@@ -223,15 +230,20 @@
     }
 
     function deleteItem(rowId){
-        $.ajax({
-            url: '{{ route("shop.updateCart") }}',
-            type: 'post',
-            data: {rowId:rowId, qty:qty},
-            dataType: 'json',
-            success: function(response){
-                window.location.href = '{{ route("shop.cart") }}';
-            }
-        });
+
+        if(confirm("{{__('Are you sure you want to delete?')}}")){
+                $.ajax({
+                url: '{{ route("shop.deleteItem.cart") }}',
+                type: 'post',
+                data: {rowId:rowId},
+                dataType: 'json',
+                success: function(response){
+                    window.location.href = '{{ route("shop.cart") }}';
+                }
+            });
+        }
+
+       
     }
 
   </script>
