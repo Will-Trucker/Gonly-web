@@ -25,5 +25,5 @@ return[
     "cart_clean" => 'Çarrito vaciado con exito',
     "cart_product_delete" => 'Producto eliminado del carrito con éxito',
     "cart_notFound" => 'Producto no encontrado',
-    "cart_not_qty" => 'Cantidad solicitada('.$qty.') no disponible en stock'
+    "cart_not_qty" => 'Cantidad solicitada no disponible en stock'
 ];
