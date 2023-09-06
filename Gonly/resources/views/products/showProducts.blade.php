@@ -42,7 +42,7 @@
                         </div>
                         <div class="container-description">
                             <div class="title-description">
-                                <h4>Descripción General</h4>
+                                <h4>{{__('Description')}}</h4>
                                 <i class="fa-solid fa-chevron-down"></i>
                             </div>
                             <div class="text-description">
@@ -64,7 +64,7 @@
                                     <i class="fa-solid fa-chevron-down" id="decrement"></i>
                                 </div>
                             </div>
-                            <a href="javascript:void(0);" onclick="addToCart({{ $products->id }});" class="btn btn-dark"><i class="fas fa-shopping-cart"></i> Añadir al carrito</a>
+                            <a href="javascript:void(0);" onclick="addToCart({{ $products->id }});" class="btn btn-dark"><i class="fas fa-shopping-cart"></i> {{__('Add to cart')}}</a>
                         </div>
 
                </div>

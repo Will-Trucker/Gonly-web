@@ -70,12 +70,9 @@ Route::get('product/index', [SubCategoryProductUserController::class, 'index'])-
 Route::prefix('/products/{id}/preview/')->group(function() {
     // Ruta para subir imagenes adicionales
     Route::resource('moreimg', ImagesController::class)->middleware(['auth', 'verified']);
-    
+
 })->middleware(['auth', 'verified']);
 
-Route::get('categories', function () {
-    return view('categories');
-})->name('categories');
 
 Route::get('/products/{id}/preview', [ProductsUserController::class, 'additionalView'])->name('additional-view')->middleware(['auth', 'verified']);
 
@@ -170,7 +167,7 @@ Route::group(['prefix'  => 'admin'], function(){
           $slug = '';
            if(!empty($request->title)){
               $slug = Str::slug($request->title);
-           } 
+           }
            return response()->json([
               'status' => true,
               'slug' => $slug

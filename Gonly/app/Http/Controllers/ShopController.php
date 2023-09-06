@@ -25,7 +25,7 @@ class ShopController extends Controller
             $products = $products->get();
 
             if (!$subCategorySlug) {
-                return view('products.categories', ['category' => $category, 'products' => $products]);
+                return view('categories', ['category' => $category, 'products' => $products]);
             }
         }
 
@@ -46,7 +46,7 @@ class ShopController extends Controller
         $data['products'] = $products;
 
 
-        return view('products.shop', $data);
+        return view('categories', $data);
     }
 
     public function product($slug){

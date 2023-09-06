@@ -12,7 +12,7 @@
     "Beauty": "Beauty",
     "Before proceeding, please check your email for a verification link.": "Before proceeding, please check your email for a verification link.",
     "Cancel": "Cancel",
-    "Categories": "Categories",
+    "Categories":  "Categories",
     "Click here to re-send the verification email.": "Click here to re-send the verification email.",
     "click here to request another": "click here to request another",
     "Clothes": "Clothes",
@@ -108,6 +108,10 @@
     "News": "News",
     "Your Action was Succesfull": "Your action was successfull",
     "Are you sure you want to delete?": "Are you sure you want to delete?",
-    "Your cart is empty!!": "Your cart is empty!!"
-
+    "Your cart is empty!!": "Your cart is empty!!",
+    "Here are the categories provided by Gonly, in which you can buy everything you need": "Here are the categories provided by Gonly, in which you can buy everything you need",
+    "With the ones you can purchase only here, at Gonly": "With the ones you can purchase only here, at Gonly",
+    "Description": "Description",
+    "Here you will find the products displayed by the selected subcategory": "Here you will find the products displayed by the selected subcategory",
+    "Add to cart": "Add to cart"
 }

@@ -15,9 +15,9 @@
                 <div class="logo-image">
                     <a href="{{ route('welcome') }}" ><img class="logo-gonly-black-letters"  src="{{ Vite::asset('resources/img/Logos/logo-gonly-black-letters.png') }}"></a>
                 </div>
-                
+
                 <livewire:search-component/>
-                
+
                 <x-translateSwicht />
 
                 @if (Route::has('login'))
@@ -50,7 +50,7 @@
             </nav>
             <section class="container-menu">
                 <ul>
-                    <a href="{{ route('categories') }}"><li><i class="fa-solid fa-cubes-stacked"></i>{{__('Categories')}}</li></a>
+                    <a href="{{ route('shop.index') }}"><li><i class="fa-solid fa-cubes-stacked"></i>{{__('Categories')}}</li></a>
                     @if (Route::has('login'))
                         @auth
                         <a href="#"><li><i class="fa-solid fa-cart-shopping"></i>Carrito</li></a>
