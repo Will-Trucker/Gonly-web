@@ -65,7 +65,7 @@ class CartController extends Controller
    }
 
    public function updateCart(Request $request){
-   /*    $rowId = $request->rowId;
+       $rowId = $request->rowId;
        $qty = $request->qty;
 
        $itemInfo = Cart::get($rowId);
@@ -78,21 +78,25 @@ class CartController extends Controller
             Cart::update($rowId, $qty);
             $message = trans('messages.cart_update');
             $status = true;
+            session()->flash('success',$message);
           } else {
             $message = trans('messages.cart_not_qty');
             $status = false;
+             session()->flash('error',$message);
           }
        } else {
           Cart::update($rowId,$qty);
           $message = trans('messages.cart_update');
           $status = true;
+          session()->flash('success',$message);
        }
 
-       session()->flash('success',$message);
+       
+      
        return response()->json([
           'status' => true,
           'message' => $message
-       ]);*/
+       ]);
    }
 
 
