@@ -157,11 +157,11 @@ input[type = number]{
 }
 
 .todos_subtotales_cont{
-    width: 227px;
+    width: 250px;
 }
 
 .factura_borde{
-    border: 2px solid black;
+    border: 2.5px solid black;
 }
 
 .final_total_apagar b {
@@ -230,6 +230,86 @@ input{
     }
 }
 
+/* boton minus más cerca */
+
+.btn-minus{
+    float: right !important;
+}
+
+.input-group{
+    width: 107px !important;
+}
+
+/* mostrar u ocultar factura responsive */
 .contenedor_td_responsive{
     display: none;
 }
+
+@media screen and (max-width: 1080px) {
+    .contenedor_td_full{
+        display: none;
+    }
+
+    .contenedor_td_responsive{
+        display: flex;
+    }
+
+    .contenedor_td_responsive{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        height: 184px;
+    }
+
+    /* responsive de botones y factura */
+
+    .factura_contenedor{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .factura_borde h3{
+        border-bottom: 2px solid black;
+        padding: 4px 0;
+    }
+    
+    .todos_subtotales_cont{
+        width: 230px;
+    }
+    
+    .factura_borde{
+        border: 2px solid black;
+    }
+
+    /* parte 2 */
+
+    .botones-contenedor{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    
+    .factura_contenedor{
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    .btn{
+        width: 45%;
+        height: 46px;
+        font-size: 17px;
+        font-weight: 600;
+        border: none;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .input-group{
+        width: 106px !important;
+    }
+    
+    
+}
+
