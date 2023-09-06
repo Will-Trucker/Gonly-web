@@ -23,8 +23,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        return view('welcome', compact('productos'));
+    
     }
+    
     public function languageDemo(){
         return view('languageDemo');
     }

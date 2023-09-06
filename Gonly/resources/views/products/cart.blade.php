@@ -80,7 +80,7 @@
                                     <button class="btn btn-sm btn-dark btn-minus p-2 pt-1 pb-1 sub" data-id="{{ $item->rowId }}">
                                       <i class="fa fa-minus"></i></button>
                                 </div>
-                                <input type="number" readonly class="form-control form-control-sm  border-0 text-center" value="{{ $item->qty  }}">
+                                <input type="number" readonly class="form-control form-control-sm  border-0 text-center numerito_q_incrementa" value="{{ $item->qty  }}">
                                 <div class="input-group-btn">
                                 <button class="btn btn-sm btn-dark btn-plus p-2 pt-1 pb-1 add" data-id="{{ $item->rowId }}">
                                 <i class="fa fa-plus"></i>
@@ -105,32 +105,89 @@
                 
                 @endforeach
         @endif
+
+
+                <tr>
+                    <td colspan="6">
+                        <div class="contenedor_td contenedor_td_full">
+                            <div class="botones-contenedor">
+                                <input type="button" value="Seguir comprando" class="seguir-comprando-btn btn">
+                                <input type="button" value="Comprar" class="comprar-btn btn">
+                            </div>
+                            <div class="factura_contenedor">
+                                
+                                <div class="factura_borde">
+                                    <h3>
+                                        Summary
+                                    </h3>
+                                    <div class="todos_subtotales_cont">
+                                        <div class="subtotal">
+                                            <b>SubTotal: &nbsp </b>
+                                            <i>  
+                                                $ {{ Cart::subtotal() }}
+                                            </i>
+                                        </div> 
+                                        <div class="subtotal">
+                                            <b>Envio: &nbsp </b>
+                                            <i>  
+                                                $0 
+                                            </i>
+                                        </div> 
+                                        <div class="subtotal final_total_apagar">
+                                            <b>Total a pagar: &nbsp </b>
+                                            <i>  
+                                                $ {{ Cart::subtotal() }}
+                                            </i>
+                                        </div> 
+                                    </div>
+                                </div>
+
+                            </div> <!-- contenedor del cuadro de "factura"  -->
+                        </div>
+                    </td>
+                </tr>
+                <!-- Aquí finaliza el table row -->
+
             </table>
-        </div>
-       <div class="botones-contenedor">
-            <input type="button" value="Seguir comprando" class="seguir-comprando-btn btn">
-            <input type="button" value="Comprar" class="comprar-btn btn">
-            <div class="subtotal">
-                <b>SubTotal: &nbsp </b>
-                <i>  
-                    $ {{ Cart::subtotal() }}
-                </i>
-            </div> 
-            <div class="subtotal">
-                <b>Envio: &nbsp </b>
-                <i>  
-                    $0 
-                </i>
-            </div> 
-            <div class="subtotal">
-                <b>Total a pagar: &nbsp </b>
-                <i>  
-                    $ {{ Cart::subtotal() }}
-                </i>
-            </div> 
-           
-        </div>
-       
+
+                    <div class="contenedor_td contenedor_td_responsive">
+                        <div class="botones-contenedor">
+                            <input type="button" value="Seguir comprando" class="seguir-comprando-btn btn">
+                            <input type="button" value="Comprar" class="comprar-btn btn">
+                        </div>
+                        <div class="factura_contenedor">
+                            
+                            <div class="factura_borde">
+                                <h3>
+                                    Summary
+                                </h3>
+                                <div class="todos_subtotales_cont">
+                                    <div class="subtotal">
+                                        <b>SubTotal: &nbsp </b>
+                                        <i>  
+                                            $ {{ Cart::subtotal() }}
+                                        </i>
+                                    </div> 
+                                    <div class="subtotal">
+                                        <b>Envio: &nbsp </b>
+                                        <i>  
+                                            $0 
+                                        </i>
+                                    </div> 
+                                    <div class="subtotal final_total_apagar">
+                                        <b>Total a pagar: &nbsp </b>
+                                        <i>  
+                                            $ {{ Cart::subtotal() }}
+                                        </i>
+                                    </div> 
+                                </div>
+                            </div>
+
+                        </div>  <!--contenedor del cuadro de "factura" -->
+                    </div>
+        
+        </div>  <!-- Aquí se cierra el div.contenedor-carrito -->
+
    </main>
  @include('layouts.footer-users')
 @endsection

@@ -31,12 +31,13 @@ use Illuminate\Http\Request;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [HomeController::class, 'index'])->name('welcome');
 
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('dashboard', [ProductsUserController::class, 'dasboardPresent'])->middleware(['auth', 'verified'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('dashboard', [ProductsUserController::class, 'dasboardPresent'])->middleware(['auth', 'verified'])->name('dashboard');
 
 /*
 Route::get('/dashboard', function () {

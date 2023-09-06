@@ -11,9 +11,6 @@
 @section('content-everyone')
     @include('layouts.nav-users-guest')
 
-    <div>
-        
-    </div>
     <section class="home-present" style="background-image: url( {{ Vite::asset('resources/img/Decoration/Curve-Line.svg') }} )">
         <section>
             <div class="texto_principal3">
