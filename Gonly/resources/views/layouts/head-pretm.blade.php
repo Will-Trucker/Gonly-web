@@ -24,7 +24,7 @@
     @yield('content-everyone')
     <script src="{{asset('admin-assets/js/demo.js')}}"></script>
     <script src="{{asset('admin-assets/plugins/jquery/jquery.min.js')}}"></script>
-   >
+    <script src="{{asset('admin-assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"> </script>
     <script>
 			$.ajaxSetup({
                  headers: {

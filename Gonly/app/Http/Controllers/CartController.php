@@ -65,17 +65,34 @@ class CartController extends Controller
    }
 
    public function updateCart(Request $request){
-       $rowId = $request->rowId;
+   /*    $rowId = $request->rowId;
        $qty = $request->qty;
 
-       Cart::update($rowId, $qty);
+       $itemInfo = Cart::get($rowId);
+       $product = Product::find($itemInfo->id);
 
-       $message = trans('messages.cart_update');
+       // Verificar qty si esta en stock
+
+       if($product->track_qty == 'Yes'){ 
+          if($qty <= $product->qty){
+            Cart::update($rowId, $qty);
+            $message = trans('messages.cart_update');
+            $status = true;
+          } else {
+            $message = trans('messages.cart_not_qty');
+            $status = false;
+          }
+       } else {
+          Cart::update($rowId,$qty);
+          $message = trans('messages.cart_update');
+          $status = true;
+       }
+
        session()->flash('success',$message);
        return response()->json([
           'status' => true,
           'message' => $message
-       ]);
+       ]);*/
    }
 
 
