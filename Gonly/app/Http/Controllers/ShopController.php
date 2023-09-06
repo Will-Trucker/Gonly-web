@@ -11,7 +11,7 @@ class ShopController extends Controller
 {
     public function index(Request $request, $categorySlug = null, $subCategorySlug = null){
 
-        $categories = Category::orderBy('name','ASC')->with('sub_category')->where('status',1)->get();
+        $categories = Category::orderBy('name','ASC')->with('subcategories')->where('status',1)->get();
 
         $products = Product::where('status',1);
 
@@ -40,7 +40,7 @@ class ShopController extends Controller
             return view('products.subcategory', ['subCategory' => $subCategory, 'products' => $products->paginate(6)]);
         }
     }
-        $products = $products->paginate();
+        $products = $products->paginate(6);
 
         $data['categories'] = $categories;
         $data['products'] = $products;
@@ -58,6 +58,9 @@ class ShopController extends Controller
       } 
 
       $data['products'] = $products; 
+
+
+
 
       return view('products.showProducts',$data);
   
