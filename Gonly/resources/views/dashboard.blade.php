@@ -73,7 +73,7 @@
                         @endforeach
                     @else
                         <img src="{{ Vite::asset('resources/img/Decoration/nosearch-publish.png') }}">
-                        <p>Por el momento no tienes ningún registro de publicación de algún producto ligado a este usuario, pero puedes vender, <a style="text-decoration: underline;" href="{{ route('products.create') }}">haz clic aquí.</a></p>
+                        <p>Por el momento no tienes ningún registro de publicación de algún producto ligado a este usuario, pero puedes vender, <a style="text-decoration: underline;" href="{{ route('productsUser-create') }}">haz clic aquí.</a></p>
                     @endif
                 </article>
             </div>

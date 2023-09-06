@@ -49,7 +49,6 @@ class ProductsUserController extends Controller
         $data['products'] = Products_user::where('user_id', $user_id)->paginate(6);
 
         return view('dashboard', $data);
-
     }
 
 
