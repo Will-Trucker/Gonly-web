@@ -94,45 +94,7 @@
                 
                 @endforeach
         @endif
-
-<tr>
-                        <td class="product-img-td">
-                            
-                            
-                            <img src="{{ Vite::asset('resources/img/default-150x150.png') }}" class="img-thumbnail default-product-image" width="150">
-                            
-                        </td>
-                        <td>
-                            rfrehxfhejx fje
-                        </td>
-                        <td>
-                            $57.3
-                        </td>
-                            <td>
-                            <div class="input-group quantity mx-auto" style="width: 100px;">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-dark btn-minus p-2 pt-1 pb-1 sub">
-                                      <i class="fa fa-minus"></i></button>
-                                </div>
-                                <input type="number" readonly class="form-control form-control-sm  border-0 text-center" value="3">
-                                <div class="input-group-btn">
-                                <button class="btn btn-sm btn-dark btn-plus p-2 pt-1 pb-1 add"">
-                                <i class="fa fa-plus"></i>
-                                </button>
-                                    </div>
-                                </div>
-                            </td>  
-                            <td>
-                            $45
-                            </td>
-                        <td>
-                            <button class="fa-button-cont">
-                                <i class="fa-solid fa-trash fa-2x"></i>
-                            </button>
-                        </td>
-                       
-                    </tr>
-
+        
                 <tr>
                     <td colspan="6">
                         <div class="contenedor_td contenedor_td_full">
