@@ -53,12 +53,13 @@ tr:nth-last-child(0){
     border-bottom: 1px solid black;
 }
 
-img{
-    width: 90px;
-}
 
 i > img{
     width: 40px;
+}
+
+.default-product-image{
+    width: 90px;
 }
 
 .product-td{
