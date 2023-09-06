@@ -32,7 +32,7 @@
                 <div>
                     <h3>{{ $category->name }}  </a></h3>      
                     <p>Con los que puedes adquirir solo aquí, en Gonly</p>
-                    @if ($category->sub_category->isNotEmpty())
+                    @if ($category->subcategories->isNotEmpty())
                    
                     @else 
                     <a href="{{ route("shop.index",$category->slug) }}" class="cta">
@@ -43,8 +43,8 @@
                     </a>
                     @endif
               
-                    @if ($category->sub_category->isNotEmpty())
-                    @foreach ( $category->sub_category as $subCategory)
+                    @if ($category->subcategories->isNotEmpty())
+                    @foreach ( $category->subcategories as $subCategory)
                     <a href="{{ route("shop.index",[$category->slug,$subCategory->slug]) }}" class="cta">
                         <span class="hover-underline-animation"> {{$subCategory->name}} </span>
                         <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
@@ -59,11 +59,7 @@
     </div>
             @endforeach
             @endif
-        </section>
-
-         
-            
-
+    </section>
     </main>
     @include('layouts.footer-users')
 @endsection

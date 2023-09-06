@@ -18,6 +18,11 @@ return [
      'products_error' => 'Product not found',
      'login_error' => 'Credentials are incorrect',
      'login_not_autorized' => 'Your access is not authorized',
-     "products_delete" => 'Product deleted successfully'
-     
+     "products_delete" => 'Product deleted successfully',
+     "cart_add" => 'Product added successfully',
+     "cart_already_add" => 'Product already added to cart successfully',
+     "cart_update" => 'Cart updated successfully',
+     "cart_clean" => 'Cart was emptied successfully',
+     "cart_product_delete" => 'Product removed from cart',
+     "cart_notFound" => 'Product not found',
 ];

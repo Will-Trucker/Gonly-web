@@ -18,5 +18,11 @@ return[
     'products_error' => 'Producto no encontrado',
     'login_error' => 'Credenciales incorrectas',
     'login_not_autorized' => 'Su acceso no esta autorizado',
-    'products_delete' => 'Producto elimiando exitosamente'
+    'products_delete' => 'Producto elimiando exitosamente',
+    "cart_add" => 'Producto agregado con éxito',
+    "cart_already_add" => 'Producto ya añadido al carrito',
+    "cart_update" =>  'Carrito actualizado con éxito',
+    "cart_clean" => 'Çarrito vaciado con exito',
+    "cart_product_delete" => 'Producto eliminado del carrito con éxito',
+    "cart_notFound" => 'Producto no encontrado'
 ];
