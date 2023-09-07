@@ -52,14 +52,14 @@
           <h6>Servicios</h6>
           <ul class="links">
             <li><a href="/shop">Categorías</a></li>
+            <li><a target="_blank" href="https://linktr.ee/GonlyStore">Redes Sociales</a></li>
           </ul>
         </div>
         <div class="footer-widget">
           <h6>Contactos &amp; Ayuda</h6>
           <ul class="links">
-            <li>+503 60069752</li>
-            <li>gonly@gmail.com</li>
-            <li><a target="_blank" href="https://linktr.ee/GonlyStore">Redes Sociales</a></li>
+            <li>+503 6006 - 9752</li>
+            <li>gonlycontact@gmail.com</li>
           </ul>
         </div>
       </div>
