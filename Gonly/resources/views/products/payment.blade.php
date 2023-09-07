@@ -9,13 +9,13 @@
 @endsection
 
 @section('content-everyone')
-    @include('layouts.nav-users-loged')
+    @include('layouts.nav-users-guest')
 
     <main>
 
     <div class="contenedor">
 <center>
-    <form action="{{url('EnvioPago')}}" method="post" enctype="multipart/form-data">
+    <form action="" method="post" enctype="multipart/form-data">
        @csrf
         <div class="row">
 
