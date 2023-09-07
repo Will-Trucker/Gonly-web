@@ -35,27 +35,30 @@
         <div class="footer-widget">
           <h6>Opciones principales</h6>
           <ul class="links">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Registro</a></li>
-            <li><a href="#">Ingreso</a></li>
+            @if (Route::has('login'))
+              @auth  
+                @else
+                <li><a href="{{ route('login') }}">Ingreso</a></li>
+                @if (Route::has('register'))
+                  <li><a href="{{ route('register') }}">Registro</a></li>
+                @endif
+              @endauth
+            @endif
+            <li><a href="{{ route('welcome') }}">Inicio</a></li>
             <li><a href="#">Información</a></li>
-            <li><a href="#">Contacto</a></li>
           </ul>
         </div>
         <div class="footer-widget">
           <h6>Servicios</h6>
           <ul class="links">
-            <li><a href="#">Categorías</a></li>
-            <li><a href="#">Destacados</a></li>
-            <li><a href="#">Productos de la semana</a></li>
-            <li><a href="#">Descuentos</a></li>
+            <li><a href="/shop">Categorías</a></li>
           </ul>
         </div>
         <div class="footer-widget">
           <h6>Contactos &amp; Ayuda</h6>
           <ul class="links">
-            <li><a href="#">+503 60069752</a></li>
-            <li><a href="#">gonly@gmail.com</a></li>
+            <li>+503 60069752</li>
+            <li>gonly@gmail.com</li>
             <li><a target="_blank" href="https://linktr.ee/GonlyStore">Redes Sociales</a></li>
           </ul>
         </div>
