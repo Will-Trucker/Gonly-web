@@ -37,16 +37,17 @@ class CartController extends Controller
         Cart::add($product->id,$product->title, 1, $product->price, ['productImage' => (!empty($product->product_images)) ? $product->product_images->first() : '']);
 
         $status = false;
-        $message = $product->title.' added in cart';
-
+        $message = $product->title.' added in cart successfully';
+        session()->flash('success',$message);
          } else {
           $status = true;
-          $message = $product->title.' already added in cart';
+          $message = $product->title.' already added in cart successfully';
         }
      } else {
         Cart::add($product->id,$product->title, 1, $product->price, ['productImage' => (!empty($product->product_images)) ? $product->product_images->first() : '']);
         $status = true;
-        $message = $product->title.' added in cart';
+        $message = $product->title.' added in cart successfully';
+        session()->flash('success',$message);
      }
 
      return response()->json([
@@ -68,14 +69,62 @@ class CartController extends Controller
        $rowId = $request->rowId;
        $qty = $request->qty;
 
-       Cart::update($rowId, $qty);
+       $itemInfo = Cart::get($rowId);
+       $product = Product::find($itemInfo->id);
 
-       $message = trans('messages.cart_update');
-       session()->flash('success',$message);
+       // Verificar qty si esta en stock
+
+       if($product->track_qty == 'Yes'){
+          if($qty <= $product->qty){
+            Cart::update($rowId, $qty);
+            $message = trans('messages.cart_update');
+            $status = true;
+            session()->flash('success',$message);
+          } else {
+            $message = trans('messages.cart_not_qty');
+            $status = false;
+             session()->flash('error',$message);
+          }
+       } else {
+          Cart::update($rowId,$qty);
+          $message = trans('messages.cart_update');
+          $status = true;
+          session()->flash('success',$message);
+       }
+
+
+
        return response()->json([
           'status' => true,
           'message' => $message
        ]);
+   }
+
+   public function deleteItem(Request $request){
+     $itemInfo = Cart::get($request->rowId);
+     if($itemInfo == null){
+      $errorMessage = trans('messages.cart_notFound');
+      session()->flash('error',$errorMessage);
+      return response()->json([
+        'status' => false,
+        'message' => $errorMessage
+       ]);
+     }
+
+     Cart::remove($request->rowId);
+     $message = trans('messages.cart_product_delete');
+     session()->flash('success',$message);
+      return response()->json([
+        'status' => true,
+        'message' => $message
+       ]);
+   }
+
+   public function payment(){
+
+    
+
+     return view('products.payment');
    }
 
 

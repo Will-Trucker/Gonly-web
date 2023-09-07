@@ -102,7 +102,7 @@
     "Data Not Found": "Datos No Encontrados",
     "Delete": "Borrar",
     "Delete Products": "Borrar Productos",
-    "Description": "Descripción",
+    "Description": "Descripción General",
     "Drag the files or press the button": "Arrastre los archivo o presione el boton",
     "Drop files here or click to upload": "Suelte los archivos aquí o haga clic para cargarlos",
     "Edit Brands": "Editar Marcas",
@@ -179,5 +179,13 @@
     "Track Quantity": "Control de Existencias",
     "Unauthorized": "No autorizado",
     "Update": "Editar",
-    "Users": "Usuarios"
+    "Users": "Usuarios",
+    "Your Action was Succesfull": "Su acción fue exitosa",
+    "Are you sure you want to delete?": "¿Estás seguro de borrar esto?",
+    "Your cart is empty!!": "Tu carrito está vacio",
+    "Here are the categories provided by Gonly, in which you can buy everything you need": "Aquí se encuentran las categorías proporcionadas por Gonly, en las que puedes comprar todo lo que necesites",
+    "With the ones you can purchase only here, at Gonly": "Con los que puedes adquirir solo aquí, en Gonly",
+    "Here you will find the products displayed by the selected subcategory": "Aquí se encuentran los productos mostrados por la subcategoria seleccionada",
+    "Add to cart": "Añadir al carrito"
+
 }

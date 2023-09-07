@@ -25,14 +25,14 @@ class ShopController extends Controller
             $products = $products->get();
 
             if (!$subCategorySlug) {
-                return view('products.categories', ['category' => $category, 'products' => $products]);
+                return view('categories', ['category' => $category, 'products' => $products]);
             }
         }
 
     if ($subCategorySlug) {
-      
+
         $subCategory = SubCategory::where('slug', $subCategorySlug)->first();
-        
+
         if ($subCategory) {
 
             $products->where('sub_category_id', $subCategory->id);
@@ -46,27 +46,23 @@ class ShopController extends Controller
         $data['products'] = $products;
 
 
-        return view('products.shop', $data);
+        return view('categories', $data);
     }
 
     public function product($slug){
       // echo $slug;
       $products = Product::where('slug',$slug)->with('product_images')->first();
-      
+
       if($products == null){
         abort(404);
-      } 
+      }
 
-      $data['products'] = $products; 
-
-
-
-
+      $data['products'] = $products;
       return view('products.showProducts',$data);
-  
+
     }
 
-   
+
 /*
     public function show(Request $request, $categorySlug = null, $subCategorySlug = null){
 
@@ -102,6 +98,6 @@ class ShopController extends Controller
 
         return view('products.categories', $data);
 
-    } 
+    }
     */
 }

@@ -25,4 +25,5 @@ return [
      "cart_clean" => 'Cart was emptied successfully',
      "cart_product_delete" => 'Product removed from cart',
      "cart_notFound" => 'Product not found',
+     "cart_not_qty" => 'Requested quantity not available in stock'
 ];

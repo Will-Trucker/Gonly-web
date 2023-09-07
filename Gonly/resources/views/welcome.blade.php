@@ -17,12 +17,12 @@
                 <h1><b>{{__('Gonly')}}</b> {{__('is your best option')}}</h1>
                 <p>{{__('To get what you need, just immerse yourself in our APP to find everything you want, what you want and when you want.')}}</p>
                 <div>
-                    <a href="">{{__('Offers of the day')}}</a>
+                    <a href="{{route('register')}}">{{__('Offers of the day')}}</a>
                 </div>
             </div>
             <article class="container-img home-img-cont">
                 <img src="{{ Vite::asset('resources/img/Decoration/ilustration-removebg-preview.png') }}" alt="">
-            </article>  
+            </article>
         </section>
     </section>
     <main class="principal-content">
@@ -76,7 +76,7 @@
         </div>
 
         <h2 class="h2-forall texto_most_liked" style="margin-bottom: 35px;">{{__('Most liked')}}</h2>
-        <section class="product">             
+        <section class="product">
             <button class="pre-btn"><img src="{{ Vite::asset('resources/img/Images/arrow.png') }}"></button>
             <button class="nxt-btn"><img src="{{ Vite::asset('resources/img/Images/arrow.png') }}"></button>
             <div class="product-container">
@@ -134,7 +134,7 @@
 
             </section>
         </div>
-    
+
     </main>
     
     <main class="principal-content">

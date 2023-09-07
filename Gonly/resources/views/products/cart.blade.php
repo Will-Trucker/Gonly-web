@@ -20,8 +20,19 @@
                   </div>
             </div>
             @endif
-            <h1>Carrito de compras</h1>
+            @if(Session::has('error'))
+            <div class="col-md-12">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ Session::get('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+            </div>
+            @endif
+            @if(Cart::count() > 0)
+            <h1 class="cart-title">Carrito de compras</h1>
+
             <table>
+
                 <thead>
                     <tr class="titulos-producto">
                         <td class="product-img-td product-td">
@@ -44,10 +55,9 @@
                         </td>
                     </tr>
                 </thead>
-                @if(!empty($cartContent))
                 <!-- Segunda fila de información (la que se duplicará al agregar más productos) -->
                 <tbody>
-                
+
                     @foreach ($cartContent as $item)
                     <tr>
                         <td class="product-img-td">
@@ -63,63 +73,82 @@
                         <td>
                             ${{ $item->price }}
                         </td>
-                            <td>
+                        <td>
                             <div class="input-group quantity mx-auto" style="width: 100px;">
                                 <div class="input-group-btn">
                                     <button class="btn btn-sm btn-dark btn-minus p-2 pt-1 pb-1 sub" data-id="{{ $item->rowId }}">
                                       <i class="fa fa-minus"></i></button>
                                 </div>
-                                <input type="number" readonly class="form-control form-control-sm  border-0 text-center" value="{{ $item->qty  }}">
+                                <input type="number" readonly class="form-control form-control-sm  border-0 text-center numerito_q_incrementa" value="{{ $item->qty  }}">
                                 <div class="input-group-btn">
-                                <button class="btn btn-sm btn-dark btn-plus p-2 pt-1 pb-1 add" data-id="{{ $item->rowId }}">
-                                <i class="fa fa-plus"></i>
-                                </button>
-                                    </div>
+                                    <button class="btn btn-sm btn-dark btn-plus p-2 pt-1 pb-1 add" data-id="{{ $item->rowId }}">
+                                    <i class="fa fa-plus"></i>
+                                    </button>
                                 </div>
-                            </td>  
-                            <td>
+                            </div>
+                        </td>
+                        <td>
                             ${{ $item->price*$item->qty }}
                             </td>
                         <td>
-                            <button class="fa-button-cont">
+                            <button class="fa-button-cont" onclick="deleteItem('{{ $item->rowId }}');">
                                 <i class="fa-solid fa-trash fa-2x"></i>
                             </button>
                         </td>
-                       
                     </tr>
-                    
-                </tbody> 
-               
-                  
-                
+
+                </tbody>
                 @endforeach
-        @endif
+                <tr>
+                    <td colspan="6">
+                        <div class="contenedor_td contenedor_td_full">
+                            <div class="botones-contenedor">
+                               
+                                <button class="seguir-comprando-btn btn"><a href="{{route('shop.payment')}}">Proceder a pagar</a></button>
+                                <button class="comprar-btn btn"><a href="{{route('welcome')}}">Seguir Comprando</a></button>
+                            </div>
+                            <div class="factura_contenedor">
+
+                                <div class="factura_borde">
+                                    <h3>
+                                        Summary
+                                    </h3>
+                                    <div class="todos_subtotales_cont">
+                                        <div class="subtotal">
+                                            <b>SubTotal: &nbsp </b>
+                                            <i>
+                                                $ {{ Cart::subtotal() }}
+                                            </i>
+                                        </div>
+                                        <div class="subtotal">
+                                            <b>Envio: &nbsp </b>
+                                            <i>
+                                                $0
+                                            </i>
+                                        </div>
+                                        <div class="subtotal final_total_apagar">
+                                            <b>Total a pagar: &nbsp </b>
+                                            <i>
+                                                $ {{ Cart::subtotal() }}
+                                            </i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div> <!-- contenedor del cuadro de "factura"  -->
+                        </div>
+                    </td>
+                </tr>
+                <!-- Aquí finaliza el table row -->
+
             </table>
-        </div>
-       <div class="botones-contenedor">
-            <input type="button" value="Seguir comprando" class="seguir-comprando-btn btn">
-            <input type="button" value="Comprar" class="comprar-btn btn">
-            <div class="subtotal">
-                <b>SubTotal: &nbsp </b>
-                <i>  
-                    $ {{ Cart::subtotal() }}
-                </i>
-            </div> 
-            <div class="subtotal">
-                <b>Envio: &nbsp </b>
-                <i>  
-                    $0 
-                </i>
-            </div> 
-            <div class="subtotal">
-                <b>Total a pagar: &nbsp </b>
-                <i>  
-                    $ {{ Cart::subtotal() }}
-                </i>
-            </div> 
-           
-        </div>
-       
+@endif
+                        </div>  <!--contenedor del cuadro de "factura" -->
+                    </div>
+
+        </div>  <!-- Aquí se cierra el div.contenedor-carrito -->
+
+
    </main>
  @include('layouts.footer-users')
 @endsection
@@ -135,34 +164,48 @@
             var rowId = $(this).data('id');
             var newQty = qtyElement.val();
             updateCart(rowId,newQty);
-        }            
+        }
       });
 
       $('.sub').click(function(){
-        var qtyElement = $(this).parent().next(); 
+        var qtyElement = $(this).parent().next();
         var qtyValue = parseInt(qtyElement.val());
         if (qtyValue > 1) {
             qtyElement.val(qtyValue-1);
             var rowId = $(this).data('id');
             var newQty = qtyElement.val()
             updateCart(rowId,newQty);
-        }        
+        }
       });
 
     function updateCart(rowId,qty){
         $.ajax({
             url: '{{ route("shop.updateCart") }}',
             type: 'post',
-            data: {rowId:rowId,qty:qty},
+            data: {rowId:rowId, qty:qty},
             dataType: 'json',
             success: function(response){
-              if(response.status == true){
                 window.location.href = '{{ route("shop.cart") }}';
-              }
             }
         });
     }
 
+    function deleteItem(rowId){
+
+        if(confirm("{{__('Are you sure you want to delete?')}}")){
+                $.ajax({
+                url: '{{ route("shop.deleteItem.cart") }}',
+                type: 'post',
+                data: {rowId:rowId},
+                dataType: 'json',
+                success: function(response){
+                    window.location.href = '{{ route("shop.cart") }}';
+                }
+            });
+        }
+
+
+    }
 
   </script>
 @endsection

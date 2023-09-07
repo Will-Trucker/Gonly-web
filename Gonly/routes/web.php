@@ -57,6 +57,9 @@ Route::get('/products', function () {
     return view('products/showProducts');
 })->name('products');
 
+Route::get('/payment', function () {
+    return view('products/payment');
+})->name('payment');
 
 Route::resource('productsUser', ProductsUserController::class)->middleware(['auth', 'verified']);
 Route::get('productsUser', [ProductsUserController::class, 'index'])->middleware(['auth', 'verified'])->name('productsUser-index');
@@ -67,12 +70,9 @@ Route::get('product/index', [SubCategoryProductUserController::class, 'index'])-
 Route::prefix('/products/{id}/preview/')->group(function() {
     // Ruta para subir imagenes adicionales
     Route::resource('moreimg', ImagesController::class)->middleware(['auth', 'verified']);
-    
+
 })->middleware(['auth', 'verified']);
 
-Route::get('categories', function () {
-    return view('categories');
-})->name('categories');
 
 Route::get('/products/{id}/preview', [ProductsUserController::class, 'additionalView'])->name('additional-view')->middleware(['auth', 'verified']);
 
@@ -83,13 +83,16 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Shopping Cart
 Route::get('/cart',[App\Http\Controllers\CartController::class, 'cart'])->name('shop.cart');
 Route::post('/add-to-cart',[App\Http\Controllers\CartController::class, 'addToCart'])->name('shop.addToCart');
+Route::post('/update-cart',[App\Http\Controllers\CartController::class, 'updateCart'])->name('shop.updateCart');
+Route::post('/delete-item',[App\Http\Controllers\CartController::class, 'deleteItem'])->name('shop.deleteItem.cart');
+Route::get('/payment',[App\Http\Controllers\CartController::class, 'payment'])->name('shop.payment')->middleware(['auth', 'verified']);;
 
 //Route::get('/shop/{categorySlug}', [App\Http\Controllers\ShopController::class, 'show'])->name('shop.index');
 
 
 Route::get('/shop/{categorySlug?}/{subCategorySlug?}',[App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
 
-Route::get('/product/{slug}',[App\Http\Controllers\ShopController::class, 'product'])->name('shop.product');
+Route::get('/product/{slug}',[App\Http\Controllers\ShopController::class, 'product'])->name('shop.product')->middleware(['auth', 'verified']);
 
 
 
@@ -165,7 +168,7 @@ Route::group(['prefix'  => 'admin'], function(){
           $slug = '';
            if(!empty($request->title)){
               $slug = Str::slug($request->title);
-           } 
+           }
            return response()->json([
               'status' => true,
               'slug' => $slug
