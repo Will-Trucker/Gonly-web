@@ -11,6 +11,7 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\SubCategoryPController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\admin\AdminLoginController;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\CategoryController;
@@ -57,9 +58,7 @@ Route::get('/products', function () {
     return view('products/showProducts');
 })->name('products');
 
-Route::get('/payment', function () {
-    return view('products/payment');
-})->name('payment');
+
 
 Route::resource('productsUser', ProductsUserController::class)->middleware(['auth', 'verified']);
 Route::get('productsUser', [ProductsUserController::class, 'index'])->middleware(['auth', 'verified'])->name('productsUser-index');
@@ -85,7 +84,8 @@ Route::get('/cart',[App\Http\Controllers\CartController::class, 'cart'])->name('
 Route::post('/add-to-cart',[App\Http\Controllers\CartController::class, 'addToCart'])->name('shop.addToCart');
 Route::post('/update-cart',[App\Http\Controllers\CartController::class, 'updateCart'])->name('shop.updateCart');
 Route::post('/delete-item',[App\Http\Controllers\CartController::class, 'deleteItem'])->name('shop.deleteItem.cart');
-Route::get('/payment',[App\Http\Controllers\CartController::class, 'payment'])->name('shop.payment')->middleware(['auth', 'verified']);;
+Route::get('/payment',[App\Http\Controllers\PaymentController::class, 'payment'])->name('shop.payment')->middleware(['auth', 'verified']);
+Route::post('/payment/store',[App\Http\Controllers\PaymentController::class, 'agregar'])->name('shop.agregar');
 
 //Route::get('/shop/{categorySlug}', [App\Http\Controllers\ShopController::class, 'show'])->name('shop.index');
 

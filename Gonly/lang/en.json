@@ -117,5 +117,9 @@
     "Payment Data": "Payment Data",
     "Names": "Names",
     "Country": "Country",
-    "Select a country": "Select a country"
+    "Select a country": "Select a country",
+    "Address": "Address",
+    "Birth Date": "Birth Date",
+    "Payment Details": "Payment Details",
+    "Pay": "Pay"
 }

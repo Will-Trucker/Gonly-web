@@ -15,7 +15,8 @@
 
     <div class="contenedor">
 <center>
-    <form action="" method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data" id="paymentForm" name="paymentForm">
+
         <div class="row">
             <div class="col">
                 <h1 class="title">{{__('Payment Data')}}</h1>
@@ -28,86 +29,43 @@
                     <input type="email" placeholder="cliente234@mail.com" name="correo" id="correo">
                 </div>
                 <div class="inputBox">
-                  <span>{{__('Country')}}</span>
-                  <div class="mb-3">
-                     <select name="country" id="country" class="form-control">
-                        <option value="">{{__('Select a country')}}</option>
-                        @if ($countries->isNotEmpty())
-                            @foreach ($countries as $country)
-                                <option value="{{ $country->id  }}">{{ $country->name }}</option>
-                            @endforeach
-                        @endif
-                     </select>
-                  </div>
-              </div>
-                <div class="inputBox">
                     <span>{{__('Address')}}</span>
                     <input  type="text" placeholder="Ciudad, Calle, Residencia, Casa" name="direccion" id="direccion">
                 </div>
-                <div class="inputBox">
-                    <span>Fecha de nacimiento</span>
-                    <input type="date" placeholder="Nacimiento" name="caducidad" id="caducidad" min="1945-01-01" max="2005-03-31">
-                    <br>
-                </div>
+              
               
                 <div class="flex">
                     <div class="inputBox">
-                        <span>Total a Pagar</span>
-                        <input type="text" name="subtotal" value="$ {{ Cart::subtotal() }}" readonly>
+                        <span>Total</span>
+                        <input type="text" name="total" id="total" value="$ {{ Cart::subtotal() }}" readonly>
                     </div>
                 </div>
               
-                <!-- información de la tarjeta -->
-                <legend class="detalles_de_tu_tarjeta_txt">Detalles de pago</legend>
+                <div class="flex">
+                  <div class="inputBox">
+                    <span>Tarjeta</span>
+                    <input class="card-number form-control" autocomplete="off" type="tel" placeholder="1813-2582-3943-4540" name="tarjeta" id="tarjeta">
+                  </div>
+                </div>
 
-                <div class="card-js form-group">
+                <div class="flex">
+                  <div class="inputBox">
+                    <span>Mes de caducidad:</span>
+                    <input type="month" placeholder="Vencimiento" name="caducidad" id="caducidad">
+                  </div>
+                </div>
 
-                    <div class="inputBox">
-                        <input class="card-number form-control"
-                                name="my-custom-form-field__card-number"
-                                placeholder="Ingresa tu número de tarjeta"
-                                autocomplete="off"
-                                required>
-                    </div>
-
-
-                    <input class="name form-control"
-                            id="the-card-name-id"
-                            name="my-custom-form-field__card-name"
-                            placeholder="Ingresa el nombre en tu tarjeta"
-                            autocomplete="off"
-                            required>
-
-
-                    <!-- Card expiry (element that is displayed) -->
-                    <input class="expiry form-control"
-                            autocomplete="off"
-                            required>
-
-                    <!-- Card expiry - Month (hidden) -->
-                    <input class="expiry-month" name="my-custom-form-field__card-expiry-month">
-
-                    <!-- Card expiry - Year (hidden) -->
-                    <input class="expiry-year" name="my-custom-form-field__card-expiry-year">
-
-
-                    <!-- Card CVC -->
-                    <input class="cvc form-control"
-                            name="my-custom-form-field__card-cvc"
-                            autocomplete="off"
-                            required>
-
-                </div><!-- END .card-js wrapper -->
+                <div class="flex">
+                  <div class="inputBox">
+                      <span>Codigo de Seguridad:</span>
+                      <input type="number" placeholder="124" name="cvc" min="0" max="999" id="cvc">
+                  </div>
+                </div>
 
             </div>
         </div>
 
-    <!--
-      -- Submit button
-      --
-      -- (Must be outside of the div with class 'card-js')
-      -->
-    <button type="submit" class="btn-enviar-todo3">Pagar</button>
+    <button type="submit" class="btn-enviar-todo3">{{__('Pay')}}</button>
 
 </form>
 </center>
@@ -116,4 +74,32 @@
     </main>
 
     @include('layouts.footer-users')
+@endsection
+
+@section('customJs')
+   <script type="text/javascript">
+      $("#paymentForm").submit(function(event){
+        event.preventDefault();
+       var element = $(this);
+       $("button[type=submit]").prop('disabled',true);
+
+       $.ajax({  
+          url: '{{route("shop.agregar")}}',
+          type: 'post',
+          data: element.serializeArray(),
+          dataType: 'json',
+          success: function(response){
+            $("button[type=submit]").prop('disabled',false);
+            alert(response.message);
+                // Redirige a la página de bienvenida o realiza otra acción necesaria
+                window.location.href ='/';
+            },
+            error: function(xhr, status, error) {
+                // Maneja los errores aquí (por ejemplo, muestra un mensaje de error)
+                console.error(xhr.responseText);
+            }
+        });
+    });
+
+   </script>
 @endsection

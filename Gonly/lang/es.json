@@ -190,5 +190,9 @@
     "Payment Data": "Datos de Pago",
     "Names": "Nombres",
     "Country": "Pais",
-    "Select a country": "Seleccione un país"
+    "Select a country": "Seleccione un país",
+    "Address": "Dirección",
+    "Birth Date": "Fecha de nacimiento",
+    "Payment Details": "Detalles de pago",
+    "Pay": "Pagar"
 }
