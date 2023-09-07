@@ -133,22 +133,15 @@
                                             </i>
                                         </div>
                                     </div>
-                                </div>
-
-                            </div> <!-- contenedor del cuadro de "factura"  -->
-                        </div>
-                    </td>
-                </tr>
-                <!-- Aquí finaliza el table row -->
-
-            </table>
-@endif
-                        </div>  <!--contenedor del cuadro de "factura" -->
-                    </div>
-
-        </div>  <!-- Aquí se cierra el div.contenedor-carrito -->
-
-
+                                    @else
+                                    <div class="col-md-12">
+                                        <div class="card-body d-flex  justify-content-center align-items-center">
+                                            <h4>Your cart is empty!!</h4>
+                                        </div>
+                                    </div>
+                               @endif
+                           </div>  <!--contenedor del cuadro de "factura" -->
+                           </div>
    </main>
  @include('layouts.footer-users')
 @endsection

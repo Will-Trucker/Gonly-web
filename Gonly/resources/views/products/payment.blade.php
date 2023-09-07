@@ -18,21 +18,30 @@
     <form action="" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="col">
-                <h1 class="title">Datos de pago</h1>
+                <h1 class="title">{{__('Payment Data')}}</h1>
                 <div class="inputBox">
-                    <span>Nombre</span>
+                    <span>{{__('Names')}}</span>
                     <input type="text" placeholder="Pablo Perez" name="cliente" id="cliente">
                 </div>
                 <div class="inputBox">
-                    <span>Correo</span>
+                    <span>E-mail</span>
                     <input type="email" placeholder="cliente234@mail.com" name="correo" id="correo">
                 </div>
                 <div class="inputBox">
-                  <span>Pais</span>
-                  
+                  <span>{{__('Country')}}</span>
+                  <div class="mb-3">
+                     <select name="country" id="country" class="form-control">
+                        <option value="">{{__('Select a country')}}</option>
+                        @if ($countries->isNotEmpty())
+                            @foreach ($countries as $country)
+                                <option value="{{ $country->id  }}">{{ $country->name }}</option>
+                            @endforeach
+                        @endif
+                     </select>
+                  </div>
               </div>
                 <div class="inputBox">
-                    <span>Direccion</span>
+                    <span>{{__('Address')}}</span>
                     <input  type="text" placeholder="Ciudad, Calle, Residencia, Casa" name="direccion" id="direccion">
                 </div>
                 <div class="inputBox">

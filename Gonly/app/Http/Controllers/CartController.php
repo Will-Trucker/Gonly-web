@@ -125,7 +125,10 @@ class CartController extends Controller
 
      $countries = Country::orderBy('name','ASC')->get();
 
-     return view('products.payment');
+     return view('products.payment',[
+         'countries' => $countries,
+         
+     ]);
    }
 
 
