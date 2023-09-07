@@ -105,7 +105,9 @@
                             <div class="botones-contenedor">
                                
                                 <button class="seguir-comprando-btn btn"><a href="{{route('shop.payment')}}">Proceder a pagar</a></button>
-                                <button class="comprar-btn btn">Comprar</button>
+
+
+                                <button class="comprar-btn btn"><a href="{{route('welcome')}}">Comprar</a></button>
                             </div>
                             <div class="factura_contenedor">
 

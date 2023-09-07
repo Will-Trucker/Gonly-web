@@ -42,13 +42,6 @@
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <!-- <i class="nav-icon fas fa-tag"></i> -->
-                        <i class="fas fa-truck nav-icon"></i>
-                        <p>{{__('Shipping')}}</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-shopping-bag"></i>
                         <p>{{__('Orders')}}</p>
                     </a>
