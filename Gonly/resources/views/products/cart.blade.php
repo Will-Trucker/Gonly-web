@@ -103,8 +103,8 @@
                     <td colspan="6">
                         <div class="contenedor_td contenedor_td_full">
                             <div class="botones-contenedor">
-                                <input type="button" value="Proceder a pagar" class="seguir-comprando-btn btn">
-                                <input type="button" value="Comprar" class="comprar-btn btn">
+                                <button class="seguir-comprando-btn btn">Proceder a pagar</button>
+                                <button class="comprar-btn btn">Comprar</button>
                             </div>
                             <div class="factura_contenedor">
 
