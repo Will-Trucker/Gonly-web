@@ -90,8 +90,8 @@ header nav .logo-gonly-black-letters{
     border-top-left-radius: 5px;
     border-bottom-right-radius: 5px;
     padding: 0px 20px;
-    margin-top: 2px;
-    height: 100%;
+    margin-top: -2px;
+    height: 95%;
     display: flex;
     align-items: center;
     justify-content: center;
