@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductsUserController;
 use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryPController;
+use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\SubCategoryPController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ShopController;
@@ -31,11 +32,7 @@ use Illuminate\Http\Request;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', [HomeController::class, 'index'])->name('welcome');
-
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
 Route::get('dashboard', [ProductsUserController::class, 'dasboardPresent'])->middleware(['auth', 'verified'])->name('dashboard');
 

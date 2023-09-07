@@ -29,85 +29,49 @@
         <div class="famous-categories">
             <h2 class="h2-forall">{{__('Featured Categories')}}</h2>
             <div>
-                <a href="#">
-                    <img src="{{ Vite::asset('resources/img/Categories/Accesories.png') }}" alt="">
-                    <h3>{{__('Accessories')}}</h3>
-                </a >
+                @php
+                    $otrocontador = 0;
+                @endphp
 
-                <a href="">
-                    <img src="{{ Vite::asset('resources/img/Categories/Beauty.png') }}" alt="">
-                    <h3>{{__('Beauty')}}</h3>
-                </a>
-
-                <a href="#">
-                    <img src="{{ Vite::asset('resources/img/Categories/Tecnology.png') }}" alt="">
-                    <h3>{{__('Tecnology')}}</h3>
-                </a>
-
-                <a href="#">
-                    <img src="{{ Vite::asset('resources/img/Categories/Clothes.png') }}" alt="">
-                    <h3>{{__('Clothes')}}</h3>
-                </a>
-
-                <a href="#">
-                    <img src="{{ Vite::asset('resources/img/Categories/Cosmetics.png') }}" alt="">
-                    <h3>{{__('Cosmetics')}}</h3>
-                </a>
-
-                <a href="#">
-                    <img src="{{ Vite::asset('resources/img/Categories/Footwear.png') }}" alt="">
-                    <h3>{{__('Footwear')}}</h3>
-                </a>
+                @foreach ($categorías as $categoría)
+                    @if ($otrocontador < 6)
+                        <a href="#">
+                            <img src="{{ asset('uploads/category/thumb/'.$categoría->image) }}" alt="">
+                            <h3>{{ $categoría->name }}</h3>
+                        </a >
+                        @php
+                            $otrocontador++;
+                        @endphp
+                    @endif
+                @endforeach
             </div>
         </div>
 
         <div class="famous__product-offer">
             <div>
                 <h2 class="h2-forall modified-1">{{__('Most sold')}}</h2>
-                <a href="#" class="all">{{__('See everything')}} <i class="fa-solid fa-arrow-right"></i></a>
             </div>
             <section>
+            @php
+                $contador = 0;
+            @endphp
 
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/smartphone.png') }}" alt="Smartphone">
-                        <h2>iPhone 18X MAX</h2>
-                        <p>Iphone 18x MAX de 15 memorias de ram y 180 de almacenamiento interno core i3 8° generación.</p>
-                    </a>
-                    <div class="price-products-buyer">$1.500</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/shoes.jpeg') }}" alt="Shoes">
-                        <h2>Zapatos Jordan</h2>
-                        <p>Con estos zapatos el bicho metió unas buenas canastas conta los lakres, los humilló mucho.</p>
-                    </a>
-                    <div class="price-products-buyer">$350</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/sofa.jpeg') }}" alt="Sofa">
-                        <h2>Zofa Umbro</h2>
-                        <p>Este sofa ha tenido el mismísimo culo de lo que es el MmPapel y MesiNaldo, unas leyendas.</p>
-                    </a>
-                    <div class="price-products-buyer">$750</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/pc.png') }}" alt="PC">
-                        <h2>PC Razer X-PRO</h2>
-                        <p>Con esta pc, logré ganar Crea-J y tener 80 novias, como te quedas chaval, aprende de mi.</p>
-                    </a>
-                    <div class="price-products-buyer">$2,550</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
+            @foreach ($productos as $producto)
+                @if ($contador < 4)
+                    <div class="container__products-buyer">
+                        <a href="#" class="image-product">
+                            <img src="{{ asset('storage/' . $producto->photos) }}" alt="{{ $producto->tittle }}">
+                            <h2>{{ $producto->tittle }}</h2>
+                            <p>{{ $producto->description }}</p>
+                        </a>
+                        <div class="price-products-buyer">${{ $producto->price }}</div>
+                        <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                    @php
+                        $contador++;
+                    @endphp
+                @endif
+            @endforeach
             </section>
         </div>
 
@@ -116,126 +80,29 @@
             <button class="pre-btn"><img src="{{ Vite::asset('resources/img/Images/arrow.png') }}"></button>
             <button class="nxt-btn"><img src="{{ Vite::asset('resources/img/Images/arrow.png') }}"></button>
             <div class="product-container">
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="discount-tag">50% off</span>
-                        <img src="{{ Vite::asset('resources/img/Images/card1.jpg') }}" class="product-thumb" alt="">
-                        <button class="card-btn">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                @php
+                    $elementosMostrados = [];
+                    $contador = 0;
+                @endphp
+                @foreach ($productos as $producto)
+                    @if (!in_array($producto->id, $elementosMostrados) && $contador < 10)
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="{{ asset('storage/' . $producto->photos) }}" alt="{{ $producto->tittle }}">
+                            <button class="card-btn">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                        <div class="product-info">
+                            <h2 class="product-brand">{{ $producto->tittle }}</h2>
+                            <p class="product-short-description">{{ $producto->description }}</p>
+                            <span class="price">{{$producto->price}}</span>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <h2 class="product-brand">Zapatos Clorts</h2>
-                        <p class="product-short-description">Los mejores zapatos del mundo</p>
-                        <span class="price">$20</span>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="discount-tag">50% off</span>
-                        <img src="{{ Vite::asset('resources/img/Images/card2.jpg') }}" class="product-thumb" alt="">
-                        <button class="card-btn">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-brand">Zapatos Clorts</h2>
-                        <p class="product-short-description">Los mejores zapatos del mundo</p>
-                        <span class="price">$20</span>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="discount-tag">50% off</span>
-                        <img src="{{ Vite::asset('resources/img/Images/card3.jpg') }}" class="product-thumb" alt="">
-                        <button class="card-btn">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-brand">Zapatos Clorts</h2>
-                        <p class="product-short-description">Los mejores zapatos del mundo</p>
-                        <span class="price">$20</span>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="discount-tag">50% off</span>
-                        <img src="{{ Vite::asset('resources/img/Images/card4.jpg') }}" class="product-thumb" alt="">
-                        <button class="card-btn">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-brand">Zapatos Clorts</h2>
-                        <p class="product-short-description">Los mejores zapatos del mundo</p>
-                        <span class="price">$20</span>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="discount-tag">50% off</span>
-                        <img src="{{ Vite::asset('resources/img/Images/card5.jpg') }}" class="product-thumb" alt="">
-                        <button class="card-btn">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-brand">Zapatos Clorts</h2>
-                        <p class="product-short-description">Los mejores zapatos del mundo</p>
-                        <span class="price">$20</span>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="discount-tag">50% off</span>
-                        <img src="{{ Vite::asset('resources/img/Images/card6.jpg') }}" class="product-thumb" alt="">
-                        <button class="card-btn">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-brand">Zapatos Clorts</h2>
-                        <p class="product-short-description">Los mejores zapatos del mundo</p>
-                        <span class="price">$20</span>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="discount-tag">50% off</span>
-                        <img src="{{ Vite::asset('resources/img/Images/card7.jpg') }}" class="product-thumb" alt="">
-                        <button class="card-btn">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-brand">Zapatos Clorts</h2>
-                        <p class="product-short-description">Los mejores zapatos del mundo</p>
-                        <span class="price">$20</span>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="discount-tag">50% off</span>
-                        <img src="{{ Vite::asset('resources/img/Images/card8.jpg') }}" class="product-thumb" alt="">
-                        <button class="card-btn">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-brand">Zapatos Clorts</h2>
-                        <p class="product-short-description">Los mejores zapatos del mundo</p>
-                        <span class="price">$20</span>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="discount-tag">50% off</span>
-                        <img src="{{ Vite::asset('resources/img/Images/card9.jpg') }}" class="product-thumb" alt="">
-                        <button class="card-btn">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-brand">Zapatos Clorts</h2>
-                        <p class="product-short-description">Los mejores zapatos del mundo</p>
-                        <span class="price">$20</span>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="discount-tag">50% off</span>
-                        <img src="{{ Vite::asset('resources/img/Images/card10.jpg') }}" class="product-thumb" alt="">
-                        <button class="card-btn">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-brand">Zapatos Clorts</h2>
-                        <p class="product-short-description">Los mejores zapatos del mundo</p>
-                        <span class="price">$20</span>
-                    </div>
-                </div>
+                        @php
+                            $elementosMostrados[] = $producto->id;
+                            $contador++;
+                        @endphp
+                    @endif
+                @endforeach
             </div>
         </section>
 
@@ -245,131 +112,31 @@
             </div>
             <section>
 
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/smartphone.png') }}" alt="Smartphone">
-                        <h2>iPhone 18X MAX</h2>
-                    </a>
-                    <div class="price-products-buyer">$1.500</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
+            @php
+                $otrocontadorrandom = 0;
+            @endphp
 
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/smartphone.png') }}" alt="Smartphone">
-                        <h2>iPhone 18X MAX</h2>
-                    </a>
-                    <div class="price-products-buyer">$1.500</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/smartphone.png') }}" alt="Smartphone">
-                        <h2>iPhone 18X MAX</h2>
-                    </a>
-                    <div class="price-products-buyer">$1.500</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/smartphone.png') }}" alt="Smartphone">
-                        <h2>iPhone 18X MAX</h2>
-                    </a>
-                    <div class="price-products-buyer">$1.500</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/smartphone.png') }}" alt="Smartphone">
-                        <h2>iPhone 18X MAX</h2>
-                    </a>
-                    <div class="price-products-buyer">$1.500</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/smartphone.png') }}" alt="Smartphone">
-                        <h2>iPhone 18X MAX</h2>
-                    </a>
-                    <div class="price-products-buyer">$1.500</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/smartphone.png') }}" alt="Smartphone">
-                        <h2>iPhone 18X MAX</h2>
-                    </a>
-                    <div class="price-products-buyer">$1.500</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/smartphone.png') }}" alt="Smartphone">
-                        <h2>iPhone 18X MAX</h2>
-                    </a>
-                    <div class="price-products-buyer">$1.500</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/smartphone.png') }}" alt="Smartphone">
-                        <h2>iPhone 18X MAX</h2>
-                    </a>
-                    <div class="price-products-buyer">$1.500</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/smartphone.png') }}" alt="Smartphone">
-                        <h2>iPhone 18X MAX</h2>
-                    </a>
-                    <div class="price-products-buyer">$1.500</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/smartphone.png') }}" alt="Smartphone">
-                        <h2>iPhone 18X MAX</h2>
-                    </a>
-                    <div class="price-products-buyer">$1.500</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="container__products-buyer">
-                    <a href="#" class="image-product">
-                        <img src="{{ Vite::asset('resources/img/Products/smartphone.png') }}" alt="Smartphone">
-                        <h2>iPhone 18X MAX</h2>
-                    </a>
-                    <div class="price-products-buyer">$1.500</div>
-                    <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
+            @foreach ($productos as $producto)
+                @if ($otrocontadorrandom < 14)
+                    <div class="container__products-buyer">
+                        <a href="#" class="image-product">
+                            <img src="{{ asset('storage/' . $producto->photos) }}" alt="{{ $producto->tittle }}" alt="Smartphone">
+                            <h2>{{ $producto->tittle }}</h2>
+                        </a>
+                        <div class="price-products-buyer">{{ $producto->price }}</div>
+                        <a class="car" href="#">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                    @php
+                        $otrocontadorrandom++;
+                    @endphp
+                @endif
+            @endforeach
 
             </section>
         </div>
 
     </main>
-
-    {{--
-    <div class="part-app"  style="background-image: url( {{ Vite::asset('resources/img/Decoration/smartmockups_lkp05c4i.jpg') }} )">
-        <div>
-            <h2>Descarga nuestra APP</h2>
-            <p>Y disfruta de una mejor experiencia al alcanze de tu mano, sin restricciones!</p>
-            <a href="#">
-                <img class="google-play-link" src="{{ Vite::asset('resources/img/Decoration/google-play-badge.png') }}" alt="">
-            </a>
-        </div>
-    </div>
-    --}}
-
+    
     <main class="principal-content">
         <div class="trending-month">
             <div>

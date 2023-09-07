@@ -187,7 +187,7 @@ body{
 .famous__product-offer section .container__products-buyer{
     flex-direction: column;
     margin: 25px 10px;
-    min-width: 240px;
+    min-width: 280px;
     max-width: 210px;
     background-color: #b5fae0;
     border-radius: 5px;
@@ -212,12 +212,18 @@ body{
 
 .famous__product-offer section .container__products-buyer .image-product img{
     width: 100%;
-    height: 20em;
+    height: 25em;
     transition: .2s ease-in ;   
 }
 
 .famous__product-offer section .container__products-buyer .image-product h2, p{
     color: #000;
+}
+
+.famous__product-offer section .container__products-buyer .image-product p{
+    color: #000;
+    height: 11em;
+    overflow: hidden;
 }
 
 .famous__product-offer section .container__products-buyer .image-product h2{
@@ -299,6 +305,11 @@ body{
     width: 100%;
     height: 350px;
     overflow: hidden;
+}
+
+.product-image img{
+    width: 100%;
+    height: 100%;
 }
   
 .product-thumb {
@@ -476,6 +487,9 @@ body{
 
 .modified-2 section .container__products-buyer .image-product h2{
     font-size: medium;
+    height: 2.4em;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .modified-2 section .container__products-buyer .price-products-buyer{

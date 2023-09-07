@@ -179,7 +179,6 @@ class ProductController extends Controller
        $product->description = $request->description;
        $product->price = $request->price;
        $product->compare_price = $request->compare_price;
-       $product->barcode = $request->barcode;
        $product->track_qty = $request->track_qty;
        $product->qty = $request->qty;
        $product->status = $request->status;
