@@ -186,6 +186,13 @@
     "Here are the categories provided by Gonly, in which you can buy everything you need": "Aquí se encuentran las categorías proporcionadas por Gonly, en las que puedes comprar todo lo que necesites",
     "With the ones you can purchase only here, at Gonly": "Con los que puedes adquirir solo aquí, en Gonly",
     "Here you will find the products displayed by the selected subcategory": "Aquí se encuentran los productos mostrados por la subcategoria seleccionada",
-    "Add to cart": "Añadir al carrito"
-
+    "Add to cart": "Añadir al carrito",
+    "Payment Data": "Datos de Pago",
+    "Names": "Nombres",
+    "Country": "Pais",
+    "Select a country": "Seleccione un país",
+    "Address": "Dirección",
+    "Birth Date": "Fecha de nacimiento",
+    "Payment Details": "Detalles de pago",
+    "Pay": "Pagar"
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Models\Product;
 use App\Models\Country;
+use DB;
 
 class CartController extends Controller
 {
@@ -123,10 +124,8 @@ class CartController extends Controller
 
    public function payment(){
 
-     $countries = Country::orderBy('name','ASC')->get();
-
      return view('products.payment');
-   }
 
+   }
 
 }

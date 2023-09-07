@@ -29,7 +29,7 @@
             </div>
             @endif
             @if(Cart::count() > 0)
-            <h1 class="cart-title">Carrito de compras</h1>
+            <h1>Carrito de compras</h1>
 
             <table>
 
@@ -105,7 +105,7 @@
                             <div class="botones-contenedor">
                                
                                 <button class="seguir-comprando-btn btn"><a href="{{route('shop.payment')}}">Proceder a pagar</a></button>
-                                <button class="comprar-btn btn"><a href="{{route('welcome')}}">Seguir Comprando</a></button>
+                                <button class="comprar-btn btn">Comprar</button>
                             </div>
                             <div class="factura_contenedor">
 
@@ -142,11 +142,18 @@
                 <!-- Aquí finaliza el table row -->
 
             </table>
-@endif
-                        </div>  <!--contenedor del cuadro de "factura" -->
-                    </div>
+                        <div class="factura_contenedor">
 
-        </div>  <!-- Aquí se cierra el div.contenedor-carrito -->
+
+                            </div>
+                            @else
+                            <div class="col-md-12">
+                                <div class="card-body d-flex  justify-content-center align-items-center">
+                                    <h4>{{__('Your cart is empty!!')}}</h4>
+                                </div>
+                            </div>
+@endif
+                         <!-- Aquí se cierra el div.contenedor-carrito -->
 
 
    </main>
