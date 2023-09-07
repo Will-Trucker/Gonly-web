@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Models\Product;
-use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -123,15 +122,7 @@ class CartController extends Controller
 
    public function payment(){
 
-    // Si el carrito está vacío, muestra la vista del carrito
-    if (Cart::count() == 0) {
-      return redirect()->route('shop.cart');
-    }
-
-  // Si el usuario no está logeado, muestra la vista del login del usuario
-    if (!Auth::check() == false) {
-      return redirect()->route('login');
-    }
+    
 
      return view('products.payment');
    }

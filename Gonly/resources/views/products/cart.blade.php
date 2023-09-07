@@ -29,7 +29,7 @@
             </div>
             @endif
             @if(Cart::count() > 0)
-            <h1>Carrito de compras</h1>
+            <h1 class="cart-title">Carrito de compras</h1>
 
             <table>
 
@@ -103,8 +103,9 @@
                     <td colspan="6">
                         <div class="contenedor_td contenedor_td_full">
                             <div class="botones-contenedor">
-                                <button class="seguir-comprando-btn btn">Proceder a pagar</button>
-                                <button class="comprar-btn btn">Comprar</button>
+                               
+                                <button class="seguir-comprando-btn btn"><a href="{{route('shop.payment')}}">Proceder a pagar</a></button>
+                                <button class="comprar-btn btn"><a href="{{route('welcome')}}">Seguir Comprando</a></button>
                             </div>
                             <div class="factura_contenedor">
 
@@ -141,46 +142,6 @@
                 <!-- Aquí finaliza el table row -->
 
             </table>
-
-                    <div class="contenedor_td contenedor_td_responsive">
-                        <div class="botones-contenedor">
-                            <input type="button" value="Proceder a pagar" class="seguir-comprando-btn btn">
-                            <input type="button" value="Volver al Inicio" class="comprar-btn btn">
-                        </div>
-                        <div class="factura_contenedor">
-
-                            <div class="factura_borde">
-                                <h3>
-                                    Summary
-                                </h3>
-                                <div class="todos_subtotales_cont">
-                                    <div class="subtotal">
-                                        <b>SubTotal: &nbsp </b>
-                                        <i>
-                                            $ {{ Cart::subtotal() }}
-                                        </i>
-                                    </div>
-                                    <div class="subtotal">
-                                        <b>Envio: &nbsp </b>
-                                        <i>
-                                            $0
-                                        </i>
-                                    </div>
-                                    <div class="subtotal final_total_apagar">
-                                        <b>Total a pagar: &nbsp </b>
-                                        <i>
-                                            $ {{ Cart::subtotal() }}
-                                        </i>
-                                    </div>
-                                </div>
-
-                            </div>
-                            @else
-                            <div class="col-md-12">
-                                <div class="card-body d-flex  justify-content-center align-items-center">
-                                    <h4>{{__('Your cart is empty!!')}}</h4>
-                                </div>
-                            </div>
 @endif
                         </div>  <!--contenedor del cuadro de "factura" -->
                     </div>

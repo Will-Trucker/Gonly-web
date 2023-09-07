@@ -53,7 +53,7 @@
                     <a href="{{ route('shop.index') }}"><li><i class="fa-solid fa-cubes-stacked"></i>{{__('Categories')}}</li></a>
                     @if (Route::has('login'))
                         @auth
-                        <a href="#"><li><i class="fa-solid fa-cart-shopping"></i>Carrito</li></a>
+                        <a href="{{route('shop.cart')}}"><li><i class="fa-solid fa-cart-shopping"></i>Carrito</li></a>
                         <a href="{{ Route('dashboard') }}"><li><i class="fa-solid fa-gauge"></i>Panel</li></a>
                         @else
                             <a href="{{ route('login') }}"><li><i class="fa-solid fa-right-from-bracket"></i>{{__('Log in')}}</li></a>

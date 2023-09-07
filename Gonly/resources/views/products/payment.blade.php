@@ -9,7 +9,7 @@
 @endsection
 
 @section('content-everyone')
-    @include('layouts.nav-users-guest')
+    @include('layouts.nav-users-loged')
 
     <main>
 

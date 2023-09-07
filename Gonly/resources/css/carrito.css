@@ -13,9 +13,12 @@ main{
 }
 
 h1{
-    line-height: 75px;
+    line-height: 95px;
     font-weight: 600;
+    font-size: 2rem;
 }
+
+
 
 table{
     display: block;

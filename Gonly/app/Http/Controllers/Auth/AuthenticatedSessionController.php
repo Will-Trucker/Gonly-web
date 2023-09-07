@@ -47,15 +47,5 @@ class AuthenticatedSessionController extends Controller
         return redirect('/');
     }
 
-    protected function authenticated(Request $request, $user)
-    {
-        // Si el carrito está vacío, redirige al carrito
-        if (Cart::count() == 0) {
-            return redirect()->route('shop.cart');
-        }
-
-        // Redirige al usuario a la página de pago
-        return redirect()->route('products.payment');
-    }
 
 }
