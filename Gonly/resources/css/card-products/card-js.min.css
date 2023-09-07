@@ -232,3 +232,30 @@ form button {
     font-size: 12px;
     padding: 8px 12px;
 }
+
+
+/* edité desde aquí */
+
+.card-js{
+    height: 145px;
+}
+
+.btn-enviar-todo3{
+    background-color: rgb(45, 45, 255);
+    border-radius: 20px;
+    color: white;
+    width: 40%;
+    height: 50px;
+    font-size: 17px;
+    font-weight: 600;
+    transition: transform 0.5s ease;
+}
+
+.btn-enviar-todo3:hover{
+    background-color: rgb(75, 75, 255);
+    transform: scale(1.01);
+}
+
+.detalles_de_tu_tarjeta_txt{
+    margin: 10px 0 16px;
+}

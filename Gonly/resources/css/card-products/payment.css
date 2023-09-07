@@ -28,10 +28,13 @@ a{
 }
 
 .contenedor form{
-  padding:20px;
-  width:700px;
+  padding: 40px 60px;
+  width: 80%;
   background: #fff;
-  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  border: 1.6px solid black;
+  border-right: 2.5px solid black;
+  border-top: 2.5px solid black;
+  border-radius: 14px;
 }
 
 .contenedor form .row{
@@ -46,22 +49,22 @@ a{
 
 .contenedor form .row .col .title{
   font-size: 2.5rem;
-  color:#333;
+  color:#000000;
   padding-bottom: 5px;
   text-transform: uppercase;
   font-weight: bold;
 }
 
-.contenedor form .row .col .inputBox{
+.inputBox{
   margin:15px 0;
 }
 
-.contenedor form .row .col .inputBox span{
+.inputBox span{
   margin-bottom: 10px;
   display: block;
 }
 
-.contenedor form .row .col .inputBox input{
+.inputBox input{
   width: 100%;
   border:1px solid #ccc;
   padding:10px 15px;
@@ -69,7 +72,7 @@ a{
   text-transform: none;
 }
 
-.contenedor form .row .col .inputBox input:focus{
+.inputBox input:focus{
   border:1px solid #000;
 }
 
@@ -78,25 +81,8 @@ a{
   gap:15px;
 }
 
-.contenedor form .row .col .flex .inputBox{
+.inputBox{
   margin-top: 5px;
-}
-
-.contenedor form .row .col .inputBox img{
-  height: 34px;
-  margin-top: 5px;
-  filter: drop-shadow(0 0 1px #000);
-}
-
-.contenedor form .submit-btn{
-  width: 100%;
-  padding:12px;
-  font-size: 17px;
-  background: #000;
-  color:#fff;
-  margin-top: 5px;
-  cursor: pointer;
-  border: none;
 }
 
 .contenedor form .submit-btn:hover{
@@ -112,3 +98,10 @@ a{
     text-align: justify;
   }
 
+@media screen and (max-width: 500px) {
+    .contenedor form{
+        padding: 40px 10px;
+        width: 99%;
+        border: none;
+      }
+}
