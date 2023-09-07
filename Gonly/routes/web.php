@@ -60,6 +60,9 @@ Route::get('/products', function () {
     return view('products/showProducts');
 })->name('products');
 
+Route::get('/payment', function () {
+    return view('products/payment');
+})->name('payment');
 
 Route::resource('productsUser', ProductsUserController::class)->middleware(['auth', 'verified']);
 Route::get('productsUser', [ProductsUserController::class, 'index'])->middleware(['auth', 'verified'])->name('productsUser-index');

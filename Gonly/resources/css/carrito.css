@@ -8,6 +8,7 @@
 
 main{
     margin: 50px 10px;
+    padding-bottom: 15px !important;
     text-align: center;
 }
 
@@ -90,7 +91,7 @@ i > img{
 
 .factura_contenedor{
     width: 30%;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .btn{
