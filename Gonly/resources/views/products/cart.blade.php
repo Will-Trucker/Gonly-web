@@ -150,13 +150,12 @@
                             </div>
                             @else
                             <div class="col-md-12">
-                                <div class="card-body d-flex  justify-content-center align-items-center">
-                                    <h4>{{__('Your cart is empty!!')}}</h4>
-                                </div>
+                                <section class="not-registers">        
+                                    <img src="{{ Vite::asset('resources/img/Decoration/cart-empty.png') }}" alt="">
+                                    <h1>{{__('Your cart is empty!!')}}</h1>
+                                </section> 
                             </div>
 @endif
-                         <!-- Aquí se cierra el div.contenedor-carrito -->
-
 
    </main>
  @include('layouts.footer-users')
