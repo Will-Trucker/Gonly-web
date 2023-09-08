@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\SubCategory;
+use Illuminate\Support\Facades\Validator;
 
 class ShopController extends Controller
 {
