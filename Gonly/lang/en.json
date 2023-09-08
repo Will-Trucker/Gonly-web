@@ -121,5 +121,14 @@
     "Address": "Address",
     "Birth Date": "Birth Date",
     "Payment Details": "Payment Details",
-    "Pay": "Pay"
+    "Pay": "Pay",
+    "Create a product": "Create a product",
+    "Caution": "Caution",
+    "Shopping Cart": "Shopping Cart",
+    "More options": "More options",
+    "Summary": "Summary",
+    "Buy": "Buy",
+    "Actions": "Actions",
+    "Card": "Card",
+    "Expiry month": "Expiry month"
 }

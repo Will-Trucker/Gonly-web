@@ -35,7 +35,7 @@
 
                 @foreach ($categorías as $categoría)
                     @if ($otrocontador < 6)
-                        <a href="#">
+                        <a href="{{route('shop.index',$categoría->slug)}}">
                             <img src="{{ asset('uploads/category/thumb/'.$categoría->image) }}" alt="">
                             <h3>{{ $categoría->name }}</h3>
                         </a >

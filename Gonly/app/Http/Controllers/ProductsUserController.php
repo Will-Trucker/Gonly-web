@@ -109,7 +109,7 @@ class ProductsUserController extends Controller
         $dataProduct['user_id'] = auth()->user()->id;
         Products_user::insert($dataProduct);
 
-        return redirect(route('productsUser-index'))->with('message', 'Enhorabuena! El producto se ha creado exitosamente');
+        return redirect(route('productsUser-index'))->with('message', trans('messages.product_success'));
 
     }
 

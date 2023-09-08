@@ -39,7 +39,7 @@ class PaymentController extends Controller
             $pago->total=Cart::subtotal();
             
            /* $data = $pago->cliente;*/
-        
+            Cart::destroy();
             $pago->save();
     
             DB::commit(); //enviar transaccion

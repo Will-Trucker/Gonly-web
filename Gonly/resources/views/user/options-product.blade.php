@@ -10,7 +10,7 @@
 @endsection
 
 @section('Welcome')
-    Edicióm producto | Gonly
+    {{__('Edit Products')}} | Gonly
 @endsection
 
 @section('content-everyone')
@@ -25,7 +25,7 @@
                     </svg>
                     <span class="sr-only">Info</span>
                     <div>
-                      <span class="text-xl">Aviso</span><span class="text-lg mx-4">esta es la previsualización del producto en cuestión para todos los usuarios.</span>
+                      <span class="text-xl">{{__('Caution')}}</span><span class="text-lg mx-4">esta es la previsualización del producto en cuestión para todos los usuarios.</span>
                     </div>
                 </div>
             </article>
