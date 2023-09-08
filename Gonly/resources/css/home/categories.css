@@ -14,10 +14,11 @@
 
 body{
     background-color: #ebfbfb;
+        margin: 50px 65px;
 }
 
 main{
-    margin: 40px;
+    margin: 50px 65px !important;
 }
 
 article{
@@ -41,6 +42,23 @@ article div{
 article div h2{
     font-size: 3em;
     font-weight: 500;
+}
+
+main .not-registers{
+    background-color: #fff;
+    display: flex;
+    padding: 5em 0;
+    align-items: center;
+    flex-direction: column;
+}
+
+main .not-registers img{
+    height: 22em;
+    margin-bottom: -3em;
+}
+
+main .not-registers h1{
+    font-size: 1.5em;
 }
 
 main section{
