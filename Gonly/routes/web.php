@@ -80,12 +80,12 @@ require __DIR__.'/auth.php';
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Shopping Cart
-Route::get('/cart',[App\Http\Controllers\CartController::class, 'cart'])->name('shop.cart');
-Route::post('/add-to-cart',[App\Http\Controllers\CartController::class, 'addToCart'])->name('shop.addToCart');
-Route::post('/update-cart',[App\Http\Controllers\CartController::class, 'updateCart'])->name('shop.updateCart');
+Route::get('/cart',[App\Http\Controllers\CartController::class, 'cart'])->name('shop.cart')->middleware(['auth', 'verified']);
+Route::post('/add-to-cart',[App\Http\Controllers\CartController::class, 'addToCart'])->name('shop.addToCart')->middleware(['auth', 'verified']);
+Route::post('/update-cart',[App\Http\Controllers\CartController::class, 'updateCart'])->name('shop.updateCart')->middleware(['auth', 'verified']);
 Route::post('/delete-item',[App\Http\Controllers\CartController::class, 'deleteItem'])->name('shop.deleteItem.cart');
 Route::get('/payment',[App\Http\Controllers\PaymentController::class, 'payment'])->name('shop.payment')->middleware(['auth', 'verified']);
-Route::post('/payment/store',[App\Http\Controllers\PaymentController::class, 'agregar'])->name('shop.agregar');
+Route::post('/payment/store',[App\Http\Controllers\PaymentController::class, 'agregar'])->name('shop.agregar')->middleware(['auth', 'verified']);;
 
 //Route::get('/shop/{categorySlug}', [App\Http\Controllers\ShopController::class, 'show'])->name('shop.index');
 
