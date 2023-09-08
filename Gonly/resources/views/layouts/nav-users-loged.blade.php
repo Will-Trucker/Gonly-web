@@ -39,7 +39,6 @@
       <ul>
         <a href="{{ route('dashboard') }}" class="link-1"><li>Mis balances  <i class="fa-solid fa-scale-balanced"></i></li></a>
         <a href="{{ route('productsUser-index') }}" class="link-2"><li>Mis publicaciones  <i class="fa-solid fa-newspaper"></i></li></a>
-        <a href="#" class="link-3"><li>Mis ventas  <i class="fa-solid fa-tag"></i></li></a>
         <a href="#" class="link-4"><li>Mis compras  <i class="fa-solid fa-bag-shopping"></i></li></a>
         <a href="{{ route('profile.edit') }}" class="link-5"><li>Mi perfil <i class="fa-solid fa-user"></i></li></a>
       </ul>
