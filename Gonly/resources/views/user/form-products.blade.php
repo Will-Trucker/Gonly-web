@@ -8,7 +8,7 @@
 @endsection
 
 @section('Welcome')
-    Crear productos | Gonly
+    {{__('Products')}} | Gonly
 @endsection
 
 @section('content-everyone')
@@ -18,7 +18,7 @@
         
         <form action="{{ route('productsUser-store') }}" method="POST" class="form-container" enctype="multipart/form-data">
         
-            @include('layouts.form-user-products', ['nameLook' => 'Creación de un nuevo producto', 'actionForm' => route('productsUser-store'), 'submitForm' => 'Crear producto' ])
+            @include('layouts.form-user-products', ['nameLook' => 'Create a product', 'actionForm' => route('productsUser-store'), 'submitForm' => 'Create a product' ])
 
         </form>
 

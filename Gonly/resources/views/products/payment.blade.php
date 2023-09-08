@@ -43,22 +43,22 @@
               
                 <div class="flex">
                   <div class="inputBox">
-                    <span>Tarjeta</span>
+                    <span>{{__('Card')}}</span>
                     <input class="card-number form-control" autocomplete="off" type="tel" placeholder="1813-2582-3943-4540" name="tarjeta" id="tarjeta">
                   </div>
                 </div>
 
                 <div class="flex">
                   <div class="inputBox">
-                    <span>Mes de caducidad:</span>
-                    <input type="month" placeholder="Vencimiento" name="caducidad" id="caducidad">
+                    <span>{{__('Expiry month')}}</span>
+                    <input type="date" placeholder="Vencimiento" name="caducidad" id="caducidad" min="2023-09-07">
                   </div>
                 </div>
 
                 <div class="flex">
                   <div class="inputBox">
-                      <span>Codigo de Seguridad:</span>
-                      <input type="number" placeholder="124" name="cvc" min="0" max="999" id="cvc">
+                      <span>CVC</span>
+                      <input type="number" placeholder="124" name="cvc" min="123" max="999" id="cvc">
                   </div>
                 </div>
 

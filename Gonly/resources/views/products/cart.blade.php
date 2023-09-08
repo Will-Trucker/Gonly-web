@@ -5,7 +5,7 @@
 @endsection
 
 @section('Welcome')
-    Carrito de Compras | Gonly
+   {{__('Shopping Cart')}} | Gonly
 @endsection
 
 @section('content-everyone')
@@ -29,29 +29,29 @@
             </div>
             @endif
             @if(Cart::count() > 0)
-            <h1>Carrito de compras</h1>
+            <h1>{{__('Shopping Cart')}}</h1>
 
             <table>
 
                 <thead>
                     <tr class="titulos-producto">
                         <td class="product-img-td product-td">
-                            Imagen
+                            {{__('Media')}}
                         </td>
                         <td class="nombre-td product-td">
-                            Nombre
+                            {{__('Title')}}
                         </td>
                         <td class="precio-td product-td">
-                            Precio
+                            {{__('Price')}}
                         </td>
                         <td class="cantidad-td product-td">
-                            Cantidad
+                            Qty
                         </td>
                         <td class="cantidad-td product-td">
                             Total
                         </td>
                         <td class="elimianr-td product-td">
-                           Opciones
+                           {{__('More options')}}
                         </td>
                     </tr>
                 </thead>
@@ -107,13 +107,13 @@
                                 <button class="seguir-comprando-btn btn"><a href="{{route('shop.payment')}}">Proceder a pagar</a></button>
 
 
-                                <button class="comprar-btn btn"><a href="{{route('welcome')}}">Comprar</a></button>
+                                <button class="comprar-btn btn"><a href="{{route('welcome')}}">{{__('Buy')}}</a></button>
                             </div>
                             <div class="factura_contenedor">
 
                                 <div class="factura_borde">
                                     <h3>
-                                        Summary
+                                        {{__('Summary')}}
                                     </h3>
                                     <div class="todos_subtotales_cont">
                                         <div class="subtotal">

@@ -13,24 +13,24 @@
                 </div>
             @endif
         <div>
-            <label for="title">Nombre del producto</label>
+            <label for="title">{{__('Title')}}</label>
             <input name="tittle" id="tittle" value="{{ isset($products ->tittle)?$products ->tittle:old('tittle') }}" type="input escalable" autofocus autocomplete="tittle" placeholder="Ingrese el nombre de su producto">
         </div>
 
         <div>
-            <label for="description">Descripcción general del producto</label>
+            <label for="description">{{__('Description')}}</label>
             <textarea name="description" style="max-height: 15em; overflow: hidden;" id="description" autofocus autocomplete="description" placeholder="Ingrese el nombre de su producto">{{ isset($products ->description)?$products ->description:old('description') }}</textarea>
         </div>
 
         <div>
-            <label for="specifications">Especificaciones</label>
+            <label for="specifications">{{__('Specifications')}}</label>
             <textarea name="specifications" style="max-height: 40em; overflow: hidden;" id="specifications" autofocus autocomplete="specifications" placeholder="Ingrese las especificacipnes del producto">{{ isset($products ->specifications)?$products ->specifications:old('specifications') }}</textarea>
         </div>
 
         @livewire('category-dropdown-component')
 
         <div class="container-price">
-            <label for="price">Precio</label>
+            <label for="price">{{__('Price')}}</label>
             <section class="container-price-sigma">
                 <p style="color:#78892ccc;">$</p>
                 <input style="outline: none !important;" name="price" id="price" value="{{ isset($products ->price)?$products ->price:old('price') }}" {{--min="0" max="50000" step="0.01"--}} type="number" autofocus autocomplete="price" placeholder="Ingrese el precio de su producto (Menor a $50,000 )" />
@@ -38,7 +38,7 @@
         </div>
 
         <div class="container-price">
-            <label for="photos">Fotografías</label>
+            <label for="photos">{{__('Media')}}</label>
             <input name="photos" id="photos" type="file" autofocus autocomplete="photos" accept="image/*" multiple/>
             {{--
                 @error('photos')
