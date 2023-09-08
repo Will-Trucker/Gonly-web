@@ -64,7 +64,6 @@
                         @endauth
                     @endif
                     <a href="{{ route('information') }}"><li><i class="fa-solid fa-circle-info"></i>{{__('Information')}}</li></a>
-                    <a href="#seccion-destino"><li><i class="fa-solid fa-headset"></i>{{__("Contact")}}</li></a>
                 </ul>
             </section>
         </div>
