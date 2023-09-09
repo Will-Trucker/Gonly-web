@@ -84,6 +84,53 @@
 		</div>
         @endforeach
 @endif
+
+@if($ProductsUser->isNotEmpty())
+@foreach ($ProductsUser as $productuse)
+    <div class="container">
+        <div class="container-color">
+            <div class="container-color1">
+                <div class="container-main">
+                    <div class="container-img">
+                        <div class="container-all">
+                            <div class="item-slide">
+                                <img src="{{ asset('storage/' . $productuse->photos) }}" alt="{{ $productuse->tittle }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-info-product">
+                        <div class="container-titulo">
+                            <span>{{ $productuse->tittle }}</span>
+                        </div>
+                        <div class="container-description">
+                            <div class="title-description">
+                                <h4>Descripción General</h4>
+                            </div>
+                            <div class="text-description">
+                                <p>{{ $productuse->description }}</p>
+                            </div>
+                        </div>
+                        <div class="container-price">
+                            <span>$ {{ $productuse->price }}</span>
+                        </div>
+                    </div>
+                    <div class="container-vermas">
+                        <button class="button-vermas">
+                            <span class="IconContainer">
+                                <a href="{{ route("shop.showProductUser", ['id' => $productuse->id]) }}">
+                                    <svg class="arrow" viewBox="0 0 448 512" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg>
+                                </a>
+                            </span>
+                            <p class="text">Ver Más</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endforeach
+
+@endif
 <div class="card-footer clearfix">
 	{{ $products->links() }}
  </div>

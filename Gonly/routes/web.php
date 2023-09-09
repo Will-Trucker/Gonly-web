@@ -58,13 +58,10 @@ Route::get('/products', function () {
     return view('products/showProducts');
 })->name('products');
 
-
-
 Route::resource('productsUser', ProductsUserController::class)->middleware(['auth', 'verified']);
 Route::get('productsUser', [ProductsUserController::class, 'index'])->middleware(['auth', 'verified'])->name('productsUser-index');
 Route::get('productsUser/create', [ProductsUserController::class, 'create'])->middleware(['auth', 'verified'])->name('productsUser-create');
 Route::post('productsUser/store', [ProductsUserController::class, 'store'])->middleware(['auth', 'verified'])->name('productsUser-store');
-Route::get('product/index', [SubCategoryProductUserController::class, 'index'])->name('productCategoryUser');
 
 Route::prefix('/products/{id}/preview/')->group(function() {
     // Ruta para subir imagenes adicionales
@@ -94,6 +91,7 @@ Route::get('/shop/{categorySlug?}/{subCategorySlug?}',[App\Http\Controllers\Shop
 
 Route::get('/product/{slug}',[App\Http\Controllers\ShopController::class, 'product'])->name('shop.product')->middleware(['auth', 'verified']);
 
+Route::get('/product/{id}',[App\Http\Controllers\ShopController::class, 'showProductUser'])->name('shop.showProductUser')->middleware(['auth', 'verified']);
 
 
 /*

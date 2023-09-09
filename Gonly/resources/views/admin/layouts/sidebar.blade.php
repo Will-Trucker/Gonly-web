@@ -39,25 +39,6 @@
                         <p>{{__('Products')}}</p>
                     </a>
                 </li>
-
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-shopping-bag"></i>
-                        <p>{{__('Orders')}}</p>
-                    </a>
-                </li>
-               <!-- <li class="nav-item">
-                    <a href="discount.html" class="nav-link">
-                        <i class="nav-icon  fa fa-percent" aria-hidden="true"></i>
-                        <p>Discount</p>
-                    </a>
-                </li> -->
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon  fas fa-users"></i>
-                        <p>{{__('Users')}}</p>
-                    </a>
-                </li>
             </ul>
         </nav>
     </div>
