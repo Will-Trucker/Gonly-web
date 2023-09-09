@@ -24,7 +24,8 @@ export default defineConfig({
                 'resources/css//card-products/product-view.css',
                 'resources/img/index.js',
                 'resources/img/2.jpg',
-                'resources/img/1.jpg'
+                'resources/img/1.jpg',
+                'resources/img/error.png'
   
             ],
             refresh: true,
