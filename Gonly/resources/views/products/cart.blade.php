@@ -104,10 +104,10 @@
                         <div class="contenedor_td contenedor_td_full">
                             <div class="botones-contenedor">
                                
-                                <button class="seguir-comprando-btn btn"><a href="{{route('shop.payment')}}">Proceder a pagar</a></button>
+                                <button class="seguir-comprando-btn btn"><a href="{{route('shop.payment')}}">{{__('Proceed to Pay')}}</a></button>
 
 
-                                <button class="comprar-btn btn"><a href="{{route('welcome')}}">{{__('Buy')}}</a></button>
+                                <button class="comprar-btn btn"><a href="{{route('welcome')}}">{{__('Continue buying')}}</a></button>
                             </div>
                             <div class="factura_contenedor">
 

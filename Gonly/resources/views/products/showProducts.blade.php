@@ -57,12 +57,7 @@
                         <div class="container-add-cart">
                             <div>
                             </div>
-                            <div class="container-quantity">
-                                <input type="number" placeholder="1" value="1" min="1" class="input-quantity">
-                                <div class="btn-increment-decrement">
-                                    <i class="fa-solid fa-chevron-up" id="increment"></i>
-                                    <i class="fa-solid fa-chevron-down" id="decrement"></i>
-                                </div>
+                            
                             </div>
                             <a href="javascript:void(0);" onclick="addToCart({{ $products->id }});" class="btn btn-dark"><i class="fas fa-shopping-cart"></i> {{__('Add to cart')}}</a>
                         </div>
