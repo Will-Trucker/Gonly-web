@@ -6,13 +6,10 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/css/app.css',
-<<<<<<< HEAD
                 'resources/css/carrito.css',
                 'resources/css/login.css',
                 'resources/css/sidebar.css',
-=======
                 'resources/css/home-css/welcome.css',
->>>>>>> parent of fc5f6527 (Actualizacion de welcome)
                 'resources/js/app.js',
                 'resources/js/welcome.js',
                 'resources/css/auth/login.css',
@@ -44,17 +41,11 @@ export default defineConfig({
                 'resources/img/icongonly.png',
                 'resources/img/Decoration/ilustration-removebg-preview.png',
                 'resources/css/card-products/style.css',
-<<<<<<< HEAD
-                'resources/css//card-products/product-view.css'
-               
-=======
-                'resources/css//card-products/product-view.css',
+                'resources/css/card-products/product-view.css',
                 'resources/img/index.js',
                 'resources/img/2.jpg',
                 'resources/img/1.jpg',
                 'resources/img/error.png'
-  
->>>>>>> parent of fc5f6527 (Actualizacion de welcome)
             ],
             refresh: true,
         }),
