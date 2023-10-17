@@ -14,7 +14,7 @@
     <main>
 
     <div class="contenedor">
-<center>
+
     <form method="post" enctype="multipart/form-data" id="paymentForm" name="paymentForm">
 
         <div class="row">
@@ -35,33 +35,33 @@
                     <input  type="text" placeholder="Ciudad, Calle, Residencia, Casa" name="direccion" id="direccion" class="custom-control-input form-control">
                 </div>
                 <p class="error"></p>
-                <div class="flex">
+                <!-- <div class="flex"> -->
                     <div class="inputBox">
                         <span>Total</span>
                         <input type="text" name="total" id="total" value="$ {{ Cart::subtotal() }}" readonly>
                     </div>
-                </div>
+                <!-- </div> -->
                 <p class="error"></p>
-                <div class="flex">
+                <!-- <div class="flex"> -->
                   <div class="inputBox">
                     <span>{{__('Card')}}</span>
                     <input class="card-number form-control" autocomplete="off" type="tel" placeholder="1813-2582-3943-4540" name="tarjeta" id="tarjeta">
                   </div>
-                </div>
+                <!-- </div> -->
                 <p class="error"></p>
-                <div class="flex">
+                <!-- <div class="flex"> -->
                   <div class="inputBox">
                     <span>{{__('Expiry month')}}</span>
                     <input type="date" placeholder="Vencimiento" name="caducidad" id="caducidad" min="2023-09-07" class="form-control">
                   </div>
-                </div>
+                <!-- </div> -->
                 <p class="error"></p>
-                <div class="flex">
+                <!-- <div class="flex"> -->
                   <div class="inputBox">
                       <span>CVC</span>
                       <input type="number" placeholder="124" name="cvc" min="123" max="999" id="cvc" class="form-control">
                   </div>
-                </div>
+                <!-- </div> -->
                 <p class="error"></p>
             </div>
         </div>
@@ -69,7 +69,7 @@
     <button type="submit" class="btn-enviar-todo3">{{__('Pay')}}</button>
 
 </form>
-</center>
+
 </div>
 
     </main>

@@ -29,7 +29,7 @@ a{
 
 .contenedor form{
   padding: 40px 60px;
-  width: 80%;
+  width: 69%;
   background: #fff;
   border: 1.6px solid black;
   border-right: 2.5px solid black;
@@ -87,6 +87,11 @@ a{
 
 .contenedor form .submit-btn:hover{
   background: red;
+}
+
+.btn-enviar-todo3{
+  margin: 0 auto;
+  margin-top: 12px;
 }
 
 .google{
