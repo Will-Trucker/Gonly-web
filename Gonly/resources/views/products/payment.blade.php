@@ -27,7 +27,7 @@
                 <p class="error"></p>
                 <div class="inputBox">
                     <span>E-mail</span>
-                    <input type="email" placeholder="cliente234@mail.com" name="correo" id="correo" class="custom-control-input">
+                    <input type="email" placeholder="cliente234@mail.com" name="correo" id="correo" class="custom-control-input" value="{{ $userEmail }}" readonly>
                 </div>
                 <p class="error"></p>
                 <div class="inputBox">
@@ -45,24 +45,18 @@
                 <!-- <div class="flex"> -->
                   <div class="inputBox">
                     <span>{{__('Card')}}</span>
-                    <input class="card-number form-control" autocomplete="off" type="tel" placeholder="1813-2582-3943-4540" name="tarjeta" id="tarjeta">
+                  </div>
+                  <div class="card-js">
+                    <input class="card-number my-custom-class form-control tarjeta" name="tarjeta" id=" tarjeta">
+                  
+                    <input class="expiry-month" name="expiry-month">
+                    <input class="expiry-year" name="expiry-year">
+                    <input class="cvc" name="cvc"
+                    id="cvc" class="form-control">
                   </div>
                 <!-- </div> -->
                 <p class="error"></p>
-                <!-- <div class="flex"> -->
-                  <div class="inputBox">
-                    <span>{{__('Expiry month')}}</span>
-                    <input type="date" placeholder="Vencimiento" name="caducidad" id="caducidad" min="2023-09-07" class="form-control">
-                  </div>
-                <!-- </div> -->
-                <p class="error"></p>
-                <!-- <div class="flex"> -->
-                  <div class="inputBox">
-                      <span>CVC</span>
-                      <input type="number" placeholder="124" name="cvc" min="123" max="999" id="cvc" class="form-control">
-                  </div>
-                <!-- </div> -->
-                <p class="error"></p>
+              
             </div>
         </div>
 
@@ -83,6 +77,8 @@
     event.preventDefault();
     var element = $(this);
     $("button[type=submit]").prop('disabled', true);
+    var formData = element.serializeArray();
+    formData.push({ name: 'userEmail', value: '<?= $userEmail ?>'});
 
     $.ajax({
         url: '{{ route("shop.agregar") }}',
