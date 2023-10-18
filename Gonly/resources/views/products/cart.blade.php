@@ -139,6 +139,46 @@
 
                             </div> <!-- contenedor del cuadro de "factura"  -->
                         </div>
+                        <!-- ------------------------------------------------------ -->
+                        <div class="contenedor_td contenedor_td_responsive">
+                            <div class="botones-contenedor">
+                               
+                                <a href="{{route('shop.payment')}}" class="seguir-comprando-btn btn">{{__('Proceed to Pay')}}</a>
+
+
+                                <a href="{{route('welcome')}}" class="comprar-btn btn">{{__('Continue buying')}}</a>
+                            </div>
+                            <div class="factura_contenedor">
+
+                                <div class="factura_borde">
+                                    <h3>
+                                        {{__('Summary')}}
+                                    </h3>
+                                    <div class="todos_subtotales_cont">
+                                        <div class="subtotal">
+                                            <b>SubTotal: &nbsp </b>
+                                            <i>
+                                                $ {{ Cart::subtotal() }}
+                                            </i>
+                                        </div>
+                                        <div class="subtotal">
+                                            <b>Envio: &nbsp </b>
+                                            <i>
+                                                $0
+                                            </i>
+                                        </div>
+                                        <div class="subtotal final_total_apagar">
+                                            <b>Total a pagar: &nbsp </b>
+                                            <i>
+                                                $ {{ Cart::subtotal() }}
+                                            </i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div> <!-- contenedor del cuadro de "factura"  -->
+                        </div>
+                        <!-- ------------------------------------------------------ -->
                     </td>
                 </tr>
                 <!-- Aquí finaliza el table row -->
