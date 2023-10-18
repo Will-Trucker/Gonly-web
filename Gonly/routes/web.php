@@ -53,6 +53,14 @@ Route::get('/information', function () {
     return view('information');
 })->name('information');
 
+Route::get('/thanks', function () {
+    return view('thanks');
+})->name('thanks');
+
+Route::get('/error404', function () {
+    return view('error404');
+})->name('error404');
+
 
 Route::get('/products', function () {
     return view('products/showProducts');

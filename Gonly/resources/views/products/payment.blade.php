@@ -66,8 +66,8 @@
             </div>
         </div>
 
-    <button type="submit" class="btn-enviar-todo3">{{__('Pay')}}</button>
-
+    <button type="submit" class="btn-enviar-todo3" onclick="location.href='{{ route('thanks') }}'">{{__('Pay')}}</button>
+    
 </form>
 
 </div>
