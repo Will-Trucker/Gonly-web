@@ -271,6 +271,7 @@ input{
         flex-direction: column-reverse;
         align-items: center;
         height: 184px;
+        margin-top: 138px;
     }
 
     /* responsive de botones y factura */
