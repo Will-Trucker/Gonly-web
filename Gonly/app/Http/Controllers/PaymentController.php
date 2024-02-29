@@ -8,12 +8,20 @@ use App\Models\Product;
 use DB;
 use App\Models\Pay;
 use Illuminate\Support\Facades\Validator;
-use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Mail\PaymentConfirmation;
+use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
 {
-      public function payment(){
-        return view('products.payment');
+
+        public function payment(){
+
+
+        $user = Auth::user();
+        $userEmail = $user->email;
+        return view('products.payment',['userEmail' => $userEmail]);
+
       }
 
 
@@ -57,4 +65,5 @@ class PaymentController extends Controller
              ]);
         }
     }
+
 }

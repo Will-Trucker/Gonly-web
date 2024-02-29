@@ -14,7 +14,7 @@
     <main>
 
     <div class="contenedor">
-<center>
+
     <form method="post" enctype="multipart/form-data" id="paymentForm" name="paymentForm">
 
         <div class="row">
@@ -27,7 +27,11 @@
                 <p class="error"></p>
                 <div class="inputBox">
                     <span>E-mail</span>
+<<<<<<< HEAD
                     <input type="email" placeholder="cliente234@mail.com" name="correo" id="correo" class="custom-control-input">
+=======
+                    <input type="email" placeholder="cliente234@mail.com" name="correo" id="correo" class="custom-control-input" value="{{ $userEmail }}" readonly>
+>>>>>>> 11667e3eafba984f876ccf7f61f7e88234027713
                 </div>
                 <p class="error"></p>
                 <div class="inputBox">
@@ -35,18 +39,28 @@
                     <input  type="text" placeholder="Ciudad, Calle, Residencia, Casa" name="direccion" id="direccion" class="custom-control-input form-control">
                 </div>
                 <p class="error"></p>
+<<<<<<< HEAD
                 <div class="flex">
+=======
+                <!-- <div class="flex"> -->
+>>>>>>> 11667e3eafba984f876ccf7f61f7e88234027713
                     <div class="inputBox">
                         <span>Total</span>
                         <input type="text" name="total" id="total" value="$ {{ Cart::subtotal() }}" readonly>
                     </div>
+<<<<<<< HEAD
                 </div>
                 <p class="error"></p>
                 <div class="flex">
+=======
+                <!-- </div> -->
+                <p class="error"></p>
+                <!-- <div class="flex"> -->
+>>>>>>> 11667e3eafba984f876ccf7f61f7e88234027713
                   <div class="inputBox">
                     <span>{{__('Card')}}</span>
-                    <input class="card-number form-control" autocomplete="off" type="tel" placeholder="1813-2582-3943-4540" name="tarjeta" id="tarjeta">
                   </div>
+<<<<<<< HEAD
                 </div>
                 <p class="error"></p>
                 <div class="flex">
@@ -63,13 +77,26 @@
                   </div>
                 </div>
                 <p class="error"></p>
+=======
+                  <div class="card-js">
+                    <input class="card-number my-custom-class form-control tarjeta" name="tarjeta" id=" tarjeta">
+                  
+                    <input class="expiry-month" name="expiry-month">
+                    <input class="expiry-year" name="expiry-year">
+                    <input class="cvc" name="cvc"
+                    id="cvc" class="form-control">
+                  </div>
+                <!-- </div> -->
+                <p class="error"></p>
+              
+>>>>>>> 11667e3eafba984f876ccf7f61f7e88234027713
             </div>
         </div>
 
-    <button type="submit" class="btn-enviar-todo3">{{__('Pay')}}</button>
-
+    <button type="submit" class="btn-enviar-todo3" onclick="location.href='{{ route('thanks') }}'">{{__('Pay')}}</button>
+    
 </form>
-</center>
+
 </div>
 
     </main>
@@ -83,6 +110,11 @@
     event.preventDefault();
     var element = $(this);
     $("button[type=submit]").prop('disabled', true);
+<<<<<<< HEAD
+=======
+    var formData = element.serializeArray();
+    formData.push({ name: 'userEmail', value: '<?= $userEmail ?>'});
+>>>>>>> 11667e3eafba984f876ccf7f61f7e88234027713
 
     $.ajax({
         url: '{{ route("shop.agregar") }}',
