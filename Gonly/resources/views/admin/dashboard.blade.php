@@ -37,7 +37,7 @@
                 <div class="small-box card">
                     <div class="inner">
                         <h3>50</h3>
-                        <p>{{__('Customers')}}</p>
+                        <p>{{__('Products')}}</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>

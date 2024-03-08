@@ -38,7 +38,7 @@
                 <!-- <div class="flex"> -->
                     <div class="inputBox">
                         <span>Total</span>
-                        <input type="text" name="total" id="total" value="$ {{ Cart::subtotal() }}" readonly>
+                        <input type="text" name="total" id="total" value="$ {{ Cart::total() }}" readonly>
                     </div>
                 <!-- </div> -->
                 <p class="error"></p>
@@ -91,7 +91,7 @@
                 $(".error").removeClass('invalid-feedback').html('');
                 $("input[type='text'], select, input[type='number'],input[type='tel']").removeClass('is-invalid')
 
-                window.location.href = "/";
+                window.location.href = '{{ route("thanks") }}';
             } else {
                 var errors = response['errors'];
                 $(".error").removeClass('invalid-feedback').html('');

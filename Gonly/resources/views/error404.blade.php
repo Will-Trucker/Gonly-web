@@ -5,7 +5,13 @@
 @endsection
 
 @section('content-everyone')
-
+<style>
+	body{
+		background-image: url(../img/error.jpg);
+		background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
+        background-repeat: no-repeat;
+	}
+	</style>
 <div id="notfound">
 		<div class="notfound">
 			<div class="notfound-bg">

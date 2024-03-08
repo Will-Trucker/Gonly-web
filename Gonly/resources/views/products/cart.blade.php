@@ -125,13 +125,13 @@
                                         <div class="subtotal">
                                             <b>Envio: &nbsp </b>
                                             <i>
-                                                $0
+                                                $ {{ Cart::tax() }}
                                             </i>
                                         </div>
                                         <div class="subtotal final_total_apagar">
                                             <b>Total a pagar: &nbsp </b>
                                             <i>
-                                                $ {{ Cart::subtotal() }}
+                                                $ {{ Cart::total() }}
                                             </i>
                                         </div>
                                     </div>

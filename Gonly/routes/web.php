@@ -96,7 +96,6 @@ Route::post('/payment/store',[App\Http\Controllers\PaymentController::class, 'ag
 
 
 Route::get('/shop/{categorySlug?}/{subCategorySlug?}',[App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
-
 Route::get('/product/{slug}',[App\Http\Controllers\ShopController::class, 'product'])->name('shop.product')->middleware(['auth', 'verified']);
 
 Route::get('/product/{id}',[App\Http\Controllers\ShopController::class, 'showProductUser'])->name('shop.showProductUser')->middleware(['auth', 'verified']);
@@ -166,6 +165,8 @@ Route::group(['prefix'  => 'admin'], function(){
     Route::post('/product-images/update', [App\Http\Controllers\admin\ProductImageController::class, 'update'])->name('product-images.update');
 
     Route::delete('/product-images', [App\Http\Controllers\admin\ProductImageController::class, 'destroy'])->name('product-images.destroy');
+
+    Route::get('/orders',[App\Http\admin\OrderController::class, 'index'])->name('orders.index');
 
     // Subir imagenes
     Route::post('/upload-temp-image', [TempImagesController::class, 'create'])->name('temp-images.create');
