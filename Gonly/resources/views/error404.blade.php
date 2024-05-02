@@ -4,7 +4,12 @@
     @vite(['resources/css/error404.css'])
 @endsection
 
+@section('Welcome')
+   <title>Pagina no encontrada | Gonly  </title>
+@endsection
+
 @section('content-everyone')
+
 <style>
 	body{
 		background-image: url(../img/error.jpg);

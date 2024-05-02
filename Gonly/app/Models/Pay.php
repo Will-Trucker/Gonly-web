@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+Use App\Models\User;
 
 class Pay extends Model
 {
@@ -14,5 +15,21 @@ class Pay extends Model
    
     public $timestamps = false;
     
-    protected $fillable = ['cliente', 'correo', 'direccion','tarjeta','caducidad','cvc', 'total'];
+    protected $fillable = [
+        'id',
+        'user_id',
+        'cliente',
+        'correo',
+        'direccion',
+        'tarjeta',
+        'caducidad',
+        'cvc',
+        'total',
+        'status', // Si también deseas manejar el estado en este modelo
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id'); // Establecer la relación con el campo user_id
+    }
 }

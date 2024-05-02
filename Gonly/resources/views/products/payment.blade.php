@@ -22,7 +22,7 @@
                 <h1 class="title">{{__('Payment Data')}}</h1>
                 <div class="inputBox">
                     <span>{{__('Names')}}</span>
-                    <input type="text" placeholder="Pablo Perez" name="cliente" id="cliente" class="custom-control-input form-control ">
+                    <input type="text" placeholder="Pablo Perez" name="cliente" id="cliente" class="custom-control-input form-control" value="{{$userName}}" readonly>
                 </div>
                 <p class="error"></p>
                 <div class="inputBox">

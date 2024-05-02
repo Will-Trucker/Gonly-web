@@ -21,6 +21,7 @@ use App\Http\Controllers\admin\BrandController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\ProductSubCategoryController;
 use App\Http\Controllers\admin\ProductImageController;
+use App\Http\Controllers\admin\OrderController;
 
 use Illuminate\Http\Request;
 /*
@@ -166,7 +167,9 @@ Route::group(['prefix'  => 'admin'], function(){
 
     Route::delete('/product-images', [App\Http\Controllers\admin\ProductImageController::class, 'destroy'])->name('product-images.destroy');
 
-    Route::get('/orders',[App\Http\admin\OrderController::class, 'index'])->name('orders.index');
+    Route::get('/orders',[App\Http\Controllers\admin\OrderController::class, 'index'])->name('orders.index');
+    
+    Route::get('/orders/{id}',[App\Http\Controllers\admin\OrderController::class, 'detail'])->name('orders.detail');
 
     // Subir imagenes
     Route::post('/upload-temp-image', [TempImagesController::class, 'create'])->name('temp-images.create');
