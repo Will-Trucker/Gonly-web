@@ -45,7 +45,8 @@ export default defineConfig({
                 'resources/img/index.js',
                 'resources/img/2.jpg',
                 'resources/img/1.jpg',
-                'resources/img/error.png'
+                'resources/img/error.png',
+                'resources/img/Decoration/juny.jpg'
             ],
             refresh: true,
         }),
