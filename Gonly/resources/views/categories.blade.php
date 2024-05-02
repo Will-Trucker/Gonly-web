@@ -23,8 +23,10 @@
                 @if($categories->isNotEmpty())
                 @foreach ($categories as $category)
             <div class="categories-grid">
-
-                <img src="{{ asset('uploads/category/'.$category->image) }}" alt="{{$category->name}}">
+            <div class="categories-grid1">
+                <img class="imgTamaño" src="{{ asset('uploads/category/'.$category->image) }}" alt="{{$category->name}}">
+                </div>
+                
                <section>
                     <img src="{{ asset('uploads/category/'.$category->image) }}" alt="{{$category->name}}">
                     <img src="{{ asset('uploads/category/'.$category->image) }}" alt="{{$category->name}}">

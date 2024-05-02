@@ -31,17 +31,26 @@ article{
 }
     
 article div{
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparente para ver un poco el fondo */
     display: flex;
     flex-direction: column;
-    align-items: center ;
+    align-items: center;
     width: 80%;
     padding: 10px 15px;
+    border-radius: 5px; /* Bordes redondeados para el div interno */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombras internas suaves */
 }
     
 article div h2{
     font-size: 3em;
     font-weight: 500;
+    color: #2e7d32; /* Un verde oscuro para el texto */
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+}
+
+article div p {
+    color: #33691e; /* Un tono de verde más claro para el texto */
+    font-size: 1.2em; /* Un tamaño mayor para la descripción o el texto normal */
 }
 
 main .not-registers{
@@ -67,23 +76,32 @@ main section{
     flex-wrap: wrap;
 }
     
-.categories-grid{
-    width: 40%;
+.categories-grid {
+    width: auto; /* Ancho fijo de 300 píxeles */
+    height: auto;  /* Establece el ancho del contenedor al 100% */
     display: grid;
+    grid-template-columns: 1fr 1fr; /* Define dos columnas */
+    padding: 2rem 1.5% 0.6rem;
     margin-bottom: 3em;
     align-items: flex-end;
     overflow: hidden;
     border-radius: 15px;
     background-color: #e9e7e7;
-    grid-template-columns: 1fr 1fr;
-    padding: 2rem 1.5% 0.6rem;
-}
+    border: 1px solid #ccc;
+    position: relative; /* Posicionamiento relativo para el contenedor */
     
-.categories-grid img{
-    width: 100%;
-    height: 100%;
+    
 }
-  
+
+.imgTamaño {
+    position: relative; /* Posicionamiento absoluto para la imagen */
+    width: 520px; /* Ajusta el ancho de la imagen */
+    height: auto; 
+    border-radius: 15px;
+    margin-bottom: 2.5em;
+}
+
+
 .categories-grid section{
     margin-left: 5px;
     display: grid;
@@ -93,10 +111,7 @@ main section{
     height: 32em;
 }
     
-.categories-grid section img{
-    width: 100%;
-    height: 100%;
-}
+
     
 .categories-grid div{
     margin-top: 10px;
@@ -118,9 +133,7 @@ main section{
     width: 600px;
     grid-template-columns: 0.5fr;
 }
-.categories-grid img{
-    margin-left: 50%;
-}
+
 .categories-grid section{
     display: none;
 }
