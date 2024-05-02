@@ -20,32 +20,36 @@
         <div class="row">
             <div class="col">
                 <h1 class="title">{{__('Payment Data')}}</h1>
-                <div class="inputBox">
-                    <span>{{__('Names')}}</span>
-                    <input type="text" placeholder="Pablo Perez" name="cliente" id="cliente" class="custom-control-input form-control ">
+                <div class="inputBox inputBoxmodified">
+                    <!-- <span>{{__('Names')}}</span> -->
+                    <span class="icon"><i class="fas fa-user"></i></span>
+                    <input type="text" placeholder="Pablo Perez" name="cliente" id="cliente" class="inputs_modificados custom-control-input form-control ">
                 </div>
                 <p class="error"></p>
-                <div class="inputBox">
-                    <span>E-mail</span>
-                    <input type="email" placeholder="cliente234@mail.com" name="correo" id="correo" class="custom-control-input" value="{{ $userEmail }}" readonly>
+                <div class="inputBox inputBoxmodified">
+                    <!-- <span>E-mail</span> -->
+                    <span class="icon"><i class="fas fa-envelope"></i></span>
+                    <input type="email" placeholder="cliente234@mail.com" name="correo" id="correo" class="inputs_modificados custom-control-input" value="{{ $userEmail }}" readonly>
                 </div>
                 <p class="error"></p>
-                <div class="inputBox">
-                    <span>{{__('Address')}}</span>
-                    <input  type="text" placeholder="Ciudad, Calle, Residencia, Casa" name="direccion" id="direccion" class="custom-control-input form-control">
+                <div class="inputBox inputBoxmodified">
+                    <!-- <span>{{__('Address')}}</span> -->
+                    <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                    <input  type="text" placeholder="Ciudad, Calle, Residencia, Casa" name="direccion" id="direccion" class="inputs_modificados custom-control-input form-control">
                 </div>
                 <p class="error"></p>
                 <!-- <div class="flex"> -->
-                    <div class="inputBox">
-                        <span>Total</span>
-                        <input type="text" name="total" id="total" value="$ {{ Cart::total() }}" readonly>
+                    <div class="inputBox inputBoxmodified">
+                        <!-- <span>Total</span> -->
+                        <span class="icon"><i class="fas fa-dollar-sign"></i></span>
+                        <input type="text" name="total" id="total" value="$ {{ Cart::total() }}" readonly class="inputs_modificados">
                     </div>
                 <!-- </div> -->
                 <p class="error"></p>
                 <!-- <div class="flex"> -->
                   <div class="inputBox">
-                    <span>{{__('Card')}}</span>
-                  </div>
+                    <!-- <span>{{__('Card')}}</span> -->
+                  
                   <div class="card-js">
                     <input class="card-number my-custom-class form-control tarjeta" name="tarjeta" id=" tarjeta">
 
@@ -56,6 +60,7 @@
                   </div>
                   <!-- </div> -->
                  <p class="error"></p>
+                </div>
                 </div>
         </div>
 
