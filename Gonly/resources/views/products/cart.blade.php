@@ -103,7 +103,7 @@
                     <td colspan="6">
                         <div class="contenedor_td contenedor_td_full">
                             <div class="botones-contenedor">
-                               
+
                                 <a href="{{route('shop.payment')}}" class="seguir-comprando-btn btn">{{__('Proceed to Pay')}}</a>
 
 
@@ -142,7 +142,7 @@
                         <!-- ------------------------------------------------------ -->
                         <div class="contenedor_td contenedor_td_responsive">
                             <div class="botones-contenedor">
-                               
+
                                 <a href="{{route('shop.payment')}}" class="seguir-comprando-btn btn">{{__('Proceed to Pay')}}</a>
 
 
@@ -164,13 +164,13 @@
                                         <div class="subtotal">
                                             <b>Envio: &nbsp </b>
                                             <i>
-                                                $0
+                                                $ {{Cart::tax()}}
                                             </i>
                                         </div>
                                         <div class="subtotal final_total_apagar">
                                             <b>Total a pagar: &nbsp </b>
                                             <i>
-                                                $ {{ Cart::subtotal() }}
+                                                $ {{ Cart::total() }}
                                             </i>
                                         </div>
                                     </div>
@@ -190,10 +190,10 @@
                             </div>
                             @else
                             <div class="col-md-12">
-                                <section class="not-registers">        
+                                <section class="not-registers">
                                     <img src="{{ Vite::asset('resources/img/Decoration/cart-empty.png') }}" alt="">
                                     <h1>{{__('Your cart is empty!!')}}</h1>
-                                </section> 
+                                </section>
                             </div>
 @endif
 

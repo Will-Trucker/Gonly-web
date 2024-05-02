@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Mail\PaymentConfirmation;
 use Illuminate\Support\Facades\Mail;
 use App\Models\User;
+use App\Models\OrderItem;
 
 class PaymentController extends Controller
 {
@@ -60,21 +61,33 @@ class PaymentController extends Controller
 
             $pago->save();
 
-         
+            // Guardar en tabla order_items para mostrar detalladamente la compra
+            foreach (Cart::content() as $item) {
+                 $pagoItem = new OrderItem;
+                 $pagoItem->product_id = $item->id;
+                 $pagoItem->order_id = $pago->id;
+                 $pagoItem->name = $item->name;
+                 $pagoItem->qty = $item->qty;
+                 $pagoItem->price = $item->price;
+                 $pagoItem->total = $item->total*$item->qty;
+                 $pagoItem->save();
+            }
+
             Mail::to($userEmail)->send(new PaymentConfirmation($pago->direccion, $pago->total));
 
             Cart::destroy();
 
             DB::commit();
 
-            $request->session()->flash('success', trans('messages.pay_success'));
+            session()->flash('success','Orden Almacenada con éxito');
 
             return response()->json([
-                'status' => true,
-                'message' => 'Your transaction was successful, thank you for shopping with us | Su transacción fue exitosa, gracias por comprar con nosotros'
+                'message' => 'Your transaction was successful, thank you for shopping with us | Su transacción fue exitosa, gracias por comprar con nosotros',
+                'status' => true
             ]);
+
         } catch (\Exception $e) {
-           
+
             DB::rollBack();
 
             return response()->json([
@@ -102,7 +115,7 @@ class PaymentController extends Controller
 
             // $pago->save();
 
-            
+
 
             // $request->session()->flash('success', trans('messages.pay_success'));
 

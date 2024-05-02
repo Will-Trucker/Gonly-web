@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pay;
 use App\Models\Product;
+use App\Models\OrderItem;
 
 
 class OrderController extends Controller
@@ -18,7 +19,7 @@ class OrderController extends Controller
        $orders = $orders->where('users.name','like','%'.$request->keyword.'%');
        $orders = $orders->orWhere('users.email','like','%'.$request->keyword.'%');
        $orders = $orders->orWhere('orders.user_id','like','%'.$request->keyword.'%');
-       
+
       }
 
       $orders = $orders->paginate('10');
@@ -29,9 +30,14 @@ class OrderController extends Controller
     }
 
     public function detail($orderId){
-      
-      $order = Pay::where('id',$orderId)->first();
 
-      return view('admin.order.detail');
+      $orders = Pay::where('id',$orderId)->first();
+
+      $orderItems = OrderItem::where('id',$orderId)->get();
+
+      return view('admin.order.detail',[
+        'orders' => $orders,
+        'orderItems' => $orderItems
+      ]);
     }
 }

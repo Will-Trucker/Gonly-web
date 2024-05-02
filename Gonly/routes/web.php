@@ -167,8 +167,8 @@ Route::group(['prefix'  => 'admin'], function(){
 
     Route::delete('/product-images', [App\Http\Controllers\admin\ProductImageController::class, 'destroy'])->name('product-images.destroy');
 
+    // Orders
     Route::get('/orders',[App\Http\Controllers\admin\OrderController::class, 'index'])->name('orders.index');
-    
     Route::get('/orders/{id}',[App\Http\Controllers\admin\OrderController::class, 'detail'])->name('orders.detail');
 
     // Subir imagenes

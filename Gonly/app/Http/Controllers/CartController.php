@@ -27,6 +27,7 @@ class CartController extends Controller
        // Si el producto no fue agregado al carrito, luego agrega el producto en el carrito
 
        $cartContent = Cart::content();
+
        $productAlreadyExist = false;
 
        foreach ($cartContent as $item) {
@@ -36,7 +37,9 @@ class CartController extends Controller
        }
 
       if($productAlreadyExist == false){
-        Cart::add($product->id,$product->title, 1, $product->price, ['productImage' => (!empty($product->product_images)) ? $product->product_images->first() : '']);
+        Cart::add($product->id,$product->title, 1, $product->price,
+        ['productImage' => (!empty($product->product_images)) ? $product->product_images->first() : ''
+        ]);
 
         $status = false;
         $message = $product->title.' added in cart successfully';
