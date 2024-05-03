@@ -22,7 +22,6 @@ use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\ProductSubCategoryController;
 use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\admin\ProductImageController;
-use App\Http\Controllers\admin\OrderController;
 
 use Illuminate\Http\Request;
 /*
