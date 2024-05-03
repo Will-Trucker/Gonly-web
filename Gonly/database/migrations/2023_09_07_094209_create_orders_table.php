@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('cliente');
             $table->string('correo');
             $table->string('direccion');
@@ -20,6 +21,7 @@ return new class extends Migration
             $table->string('caducidad');
             $table->string('cvc');
             $table->string('total')->nullable();
+            $table->enum('status',['confirmado','enviado','entregado'])->default('confirmado');
             $table->timestamps();
         });
     }

@@ -39,6 +39,12 @@
                         <p>{{__('Products')}}</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('orders.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-shopping-bag"></i>
+                        <p>{{__('Ordenes')}}</p>
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>

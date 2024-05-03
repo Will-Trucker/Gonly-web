@@ -11,6 +11,7 @@
 @section('content-everyone')
     @include('layouts.nav-users-guest')
     <main>
+        <div class="categories-grid2">
         <div class="container-main1">
             <div class="container-main2">
                 <div class="container-img">
@@ -22,14 +23,14 @@
                             <div class="slide">
                         @foreach ($products->product_images as $key => $productImage)
                         <div class="item-slide">
-                            <img src="{{asset('uploads/product/large/'.$productImage->image)}}">
+                        <img src="{{asset('uploads/product/large/'.$productImage->image)}}">
                         </div>
                         @endforeach
                     </div>
                     <div class="pagination">
                         @foreach ($products->product_images as $key => $productImage)
                         <label class="pagination-item" for="{{ $key + 1 }}">
-                            <img src="{{asset('uploads/product/large/'.$productImage->image)}}">
+                        <img src="{{asset('uploads/product/large/'.$productImage->image)}}">
                         </label>
                         @endforeach
                     </div>
@@ -38,12 +39,12 @@
                 </div>
                     <div class="container-info-product">
                         <div class="container-titulo">
-                            <span>{{ $products->title }}</span>
+                            <span >{{ $products->title }}</span>
                         </div>
                         <div class="container-description">
                             <div class="title-description">
                                 <h4>{{__('Description')}}</h4>
-                                <i class="fa-solid fa-chevron-down"></i>
+                               
                             </div>
                             <div class="text-description">
                                 <p>
@@ -57,17 +58,13 @@
                         <div class="container-add-cart">
                             <div>
                             </div>
-                            <div class="container-quantity">
-                                <input type="number" placeholder="1" value="1" min="1" class="input-quantity">
-                                <div class="btn-increment-decrement">
-                                    <i class="fa-solid fa-chevron-up" id="increment"></i>
-                                    <i class="fa-solid fa-chevron-down" id="decrement"></i>
-                                </div>
+                            
                             </div>
                             <a href="javascript:void(0);" onclick="addToCart({{ $products->id }});" class="btn btn-dark"><i class="fas fa-shopping-cart"></i> {{__('Add to cart')}}</a>
                         </div>
 
                </div>
+        </div>
         </div>
     </main>
 @include('layouts.footer-users')

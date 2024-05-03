@@ -18,30 +18,28 @@ h1{
     font-size: 2rem;
 }
 
-
-
 table{
     display: block;
     width: 84%;
     margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: rgb(250, 250, 250);
 }
 
 thead{
     font-weight: 800;
 }
 
-table, td, tr{
+td, thead tr td{
     /* border-top: 2px solid rgb(9, 208, 9); */
     border-top: 2px solid black;
-    border-collapse: collapse;
-    text-align: center;
-    background-color: rgb(250, 250, 250);
 }
 
-tbody{
-    /* border-top: 3px solid rgb(9, 208, 9); */
+/* tbody{
+    border-top: 3px solid rgb(9, 208, 9);
     border-top: 3px solid black;
-}
+} */
 
 tr{
     height: 140px;
@@ -58,9 +56,9 @@ tr:nth-last-child(0){
 }
 
 
-i > img{
+/* i > img{
     width: 40px;
-}
+} */
 
 .default-product-image{
     width: 90px;
@@ -147,8 +145,8 @@ input[type = number]{
 
 .fa-trash:hover{
     background-color: rgb(255, 40, 40);
-    padding: 12px;
-    border-radius: 16px;
+    padding: 6px;
+    border-radius: 7px;
 }
 
 /* nuevas correcciones de subtotal de compra */
@@ -214,42 +212,20 @@ input{
     background-color: transparent;
 }
 
-
-
-/* media queries */
-@media screen and (max-width: 850px){
-    table{
-        width: 95%;
-    }
-}
-
-@media screen and (max-width: 680px){
-    .description{
-        display:none;
-    }
-
-    .product-img-td{
-        display: none;
-    }
-
-    .product-td{
-        width: 20%;
-        text-overflow: ellipsis;
-    }
-
-    .cantidad-td{
-        min-width: 50px;
-    }
-}
-
 /* boton minus más cerca */
 
 .btn-minus{
     float: right !important;
 }
 
-.input-group{
-    width: 107px !important;
+.input-group {
+    width: 120px !important;
+    display: flex;
+    justify-content: space-around;
+}
+
+.fa-minus, .fa-plus{
+    width: 18.5px !important;
 }
 
 /* mostrar u ocultar factura responsive */
@@ -257,7 +233,7 @@ input{
     display: none;
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1290px) {
     .contenedor_td_full{
         display: none;
     }
@@ -271,6 +247,7 @@ input{
         flex-direction: column-reverse;
         align-items: center;
         height: 184px;
+        margin-top: 138px;
     }
 
     /* responsive de botones y factura */
@@ -318,13 +295,48 @@ input{
         align-items: center;
     }
 
-    .input-group{
+    /* .input-group{
         width: 106px !important;
-    }
+    } */
     
     
 }
 
 .product-img-td > img {
-    margin: 25px 0;
+    margin: 20px 0;
+    object-fit: contain !important;
+}
+
+@media screen and (max-width: 680px){
+    .description{
+        display:none;
+    }
+
+    .product-img-td{
+        display: none;
+    }
+
+
+    .product-td{
+        width: 20%;
+        text-overflow: ellipsis;
+    }
+
+    .cantidad-td{
+        min-width: 50px;
+    }
+}
+
+/* media queries */
+@media screen and (max-width: 850px){
+    table{
+        width: 95%;
+    }
+}
+
+main {
+    margin: 10px 5px !important;
+    padding: 0; 
+    width: 100%;
+    margin-left: 0px !important;
 }

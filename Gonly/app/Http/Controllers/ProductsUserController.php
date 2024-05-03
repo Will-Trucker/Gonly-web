@@ -74,9 +74,10 @@ class ProductsUserController extends Controller
             'specifications'=>'required|string|max:1220',
             'price' => 'required|numeric|min:0|max:50000',
             'photos'=>'required|max:10000|mimes:jpeg,png,jpg',
-            'category_id' => 'required|numeric', // Agrega una regla para category_id
-            'sub_category_id' => 'required|numeric', 
+            'category_id' => 'required',
+            'sub_category_id' => 'required'
         ];
+        
         $message=[
             'tittle.max'=>'El título del producto no debe ser mayor a 25 caracteres (Incluyendo espacios)',
             'description.max'=>'La descripcción del producto no debe exceder más de 530 caracteres (Incluyendo espacios)',
@@ -88,7 +89,9 @@ class ProductsUserController extends Controller
             'photos.required'=>'La fotografía del producto es obligatorio',
             'numeric'=>'Solo se pueden ingresar números',
             'price.min'=>'El valor del precio debe de ser mayor a 0',
-            'price.max'=>'El valor del precio debe ser menor a $50,000'
+            'price.max'=>'El valor del precio debe ser menor a $50,000',
+            'category_id.required' => 'Debe seleccionar una categoría.',
+            'sub_category_id.required' => 'Debe seleccionar una subcategoría.'
         ];
 
         $this->validate($request, $camps, $message);
@@ -114,14 +117,6 @@ class ProductsUserController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(Products $products)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit($id)
@@ -143,6 +138,8 @@ class ProductsUserController extends Controller
             'description'=>'required|string|max:530',
             'specifications'=>'required|string|max:1220',
             'price' => 'required|numeric|min:0|max:50000',
+            'category_id' => 'required',
+            'sub_category_id' => 'required'
         ];
         $message=[
             'tittle.max'=>'El título del producto no debe ser mayor a 25 caracteres (Incluyendo espacios)',
@@ -154,7 +151,9 @@ class ProductsUserController extends Controller
             'price.required'=>'El precio del producto es obligatorio',
             'numeric'=>'Solo se pueden ingresar números',
             'price.min'=>'El valor del precio debe de ser mayor a 0',
-            'price.max'=>'El valor del precio debe ser menor a $50,000'
+            'price.max'=>'El valor del precio debe ser menor a $50,000',
+            'category_id.required' => 'Debe seleccionar una categoría.',
+            'sub_category_id.required' => 'Debe seleccionar una subcategoría.'
         ];
 
         if($request->hasFile('photos')){

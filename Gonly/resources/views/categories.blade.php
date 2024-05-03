@@ -23,8 +23,10 @@
                 @if($categories->isNotEmpty())
                 @foreach ($categories as $category)
             <div class="categories-grid">
-
-                <img src="{{ asset('uploads/category/'.$category->image) }}" alt="{{$category->name}}">
+            <div class="categories-grid1">
+                <img class="imgTamaño" src="{{ asset('uploads/category/'.$category->image) }}" alt="{{$category->name}}">
+                </div>
+                
                <section>
                     <img src="{{ asset('uploads/category/'.$category->image) }}" alt="{{$category->name}}">
                     <img src="{{ asset('uploads/category/'.$category->image) }}" alt="{{$category->name}}">
@@ -33,7 +35,6 @@
                     <h3>{{ $category->name }}  </a></h3>
                     <p>{{__('With the ones you can purchase only here, at Gonly')}}</p>
                     @if ($category->subcategories->isNotEmpty())
-
                     @else
                     <a href="{{ route("shop.index",$category->slug) }}" class="cta">
                         <span class="hover-underline-animation"> Ver Categoria </span>

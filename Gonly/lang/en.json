@@ -121,14 +121,17 @@
     "Address": "Address",
     "Birth Date": "Birth Date",
     "Payment Details": "Payment Details",
-    "Pay": "Pay",
+    "Proceed to Pay": "Proceed to Pay",
     "Create a product": "Create a product",
     "Caution": "Caution",
     "Shopping Cart": "Shopping Cart",
     "More options": "More options",
     "Summary": "Summary",
-    "Buy": "Buy",
+    "Continue Buying": "Continue Buying",
     "Actions": "Actions",
     "Card": "Card",
-    "Expiry month": "Expiry month"
+    "Expiry month": "Expiry month",
+    "Page Not Found": "Page Not Found",
+    "Welcome Administrator": "Welcome Administrator",
+    "Welcome": "Welcome"
 }

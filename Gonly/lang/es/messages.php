@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return[
     'category_added_success' => 'Categoria agregada con éxito',
@@ -25,5 +25,6 @@ return[
     "cart_clean" => 'Çarrito vaciado con exito',
     "cart_product_delete" => 'Producto eliminado del carrito con éxito',
     "cart_notFound" => 'Producto no encontrado',
-    "cart_not_qty" => 'Cantidad solicitada no disponible en stock'
+    "cart_not_qty" => 'Cantidad solicitada no disponible en stock',
+    "pay_success"  => 'Su transacción fue exitosa, gracias por comprar con nosotros'
 ];

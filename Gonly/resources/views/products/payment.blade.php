@@ -14,7 +14,7 @@
     <main>
 
     <div class="contenedor">
-<center>
+
     <form method="post" enctype="multipart/form-data" id="paymentForm" name="paymentForm">
 
         <div class="row">
@@ -22,54 +22,51 @@
                 <h1 class="title">{{__('Payment Data')}}</h1>
                 <div class="inputBox">
                     <span>{{__('Names')}}</span>
-                    <input type="text" placeholder="Pablo Perez" name="cliente" id="cliente" class="custom-control-input form-control ">
+                    <input type="text" placeholder="Pablo Perez" name="cliente" id="cliente" class="custom-control-input form-control" value="{{$userName}}" readonly>
                 </div>
                 <p class="error"></p>
-                <div class="inputBox">
-                    <span>E-mail</span>
-                    <input type="email" placeholder="cliente234@mail.com" name="correo" id="correo" class="custom-control-input">
+                <div class="inputBox inputBoxmodified">
+                    <!-- <span>E-mail</span> -->
+                    <span class="icon"><i class="fas fa-envelope"></i></span>
+                    <input type="email" placeholder="cliente234@mail.com" name="correo" id="correo" class="inputs_modificados custom-control-input" value="{{ $userEmail }}" readonly>
                 </div>
                 <p class="error"></p>
-                <div class="inputBox">
-                    <span>{{__('Address')}}</span>
-                    <input  type="text" placeholder="Ciudad, Calle, Residencia, Casa" name="direccion" id="direccion" class="custom-control-input form-control">
+                <div class="inputBox inputBoxmodified">
+                    <!-- <span>{{__('Address')}}</span> -->
+                    <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                    <input  type="text" placeholder="Ciudad, Calle, Residencia, Casa" name="direccion" id="direccion" class="inputs_modificados custom-control-input form-control">
                 </div>
                 <p class="error"></p>
-                <div class="flex">
-                    <div class="inputBox">
-                        <span>Total</span>
-                        <input type="text" name="total" id="total" value="$ {{ Cart::subtotal() }}" readonly>
+                <!-- <div class="flex"> -->
+                    <div class="inputBox inputBoxmodified">
+                        <!-- <span>Total</span> -->
+                        <span class="icon"><i class="fas fa-dollar-sign"></i></span>
+                        <input type="text" name="total" id="total" value="$ {{ Cart::total() }}" readonly class="inputs_modificados">
                     </div>
-                </div>
+                <!-- </div> -->
                 <p class="error"></p>
-                <div class="flex">
+                <!-- <div class="flex"> -->
                   <div class="inputBox">
-                    <span>{{__('Card')}}</span>
-                    <input class="card-number form-control" autocomplete="off" type="tel" placeholder="1813-2582-3943-4540" name="tarjeta" id="tarjeta">
+                    <!-- <span>{{__('Card')}}</span> -->
+
+                  <div class="card-js">
+                    <input class="card-number my-custom-class form-control tarjeta" name="tarjeta" id=" tarjeta">
+
+                    <input class="expiry-month" name="expiry-month">
+                    <input class="expiry-year" name="expiry-year">
+                    <input class="cvc" name="cvc"
+                    id="cvc" class="form-control">
                   </div>
+                  <!-- </div> -->
+                 <p class="error"></p>
                 </div>
-                <p class="error"></p>
-                <div class="flex">
-                  <div class="inputBox">
-                    <span>{{__('Expiry month')}}</span>
-                    <input type="date" placeholder="Vencimiento" name="caducidad" id="caducidad" min="2023-09-07" class="form-control">
-                  </div>
                 </div>
-                <p class="error"></p>
-                <div class="flex">
-                  <div class="inputBox">
-                      <span>CVC</span>
-                      <input type="number" placeholder="124" name="cvc" min="123" max="999" id="cvc" class="form-control">
-                  </div>
-                </div>
-                <p class="error"></p>
-            </div>
         </div>
 
-    <button type="submit" class="btn-enviar-todo3">{{__('Pay')}}</button>
+    <button type="submit" class="btn-enviar-todo3" onclick="location.href='{{ route('thanks') }}'">{{__('Pay')}}</button>
 
 </form>
-</center>
+
 </div>
 
     </main>
@@ -78,11 +75,13 @@
 @endsection
 
 @section('customJs')
-   <script type="text/javascript">
+<script type="text/javascript">
     $("#paymentForm").submit(function(event) {
     event.preventDefault();
     var element = $(this);
     $("button[type=submit]").prop('disabled', true);
+    var formData = element.serializeArray();
+    formData.push({ name: 'userEmail', value: '<?= $userEmail ?>'});
 
     $.ajax({
         url: '{{ route("shop.agregar") }}',
@@ -93,14 +92,11 @@
             $("button[type=submit]").prop('disabled', false);
             if (response['status'] === true) {
                 $(".error").removeClass('invalid-feedback').html('');
-                $("input[type='text'], select, input[type='number'],input[type='tel']").removeClass('is-invalid')
 
-                window.location.href = "/";
+                window.location.href = "{{route('thanks')}}";
             } else {
                 var errors = response['errors'];
                 $(".error").removeClass('invalid-feedback').html('');
-                $("input[type='text'], select, input[type='number'],input[type='tel']").removeClass('is-invalid')
-
                 $.each(errors, function(key, value) {
                     $("#" + key).addClass('is-invalid')
                         .siblings('p')

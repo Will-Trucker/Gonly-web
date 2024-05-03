@@ -194,14 +194,17 @@
     "Address": "Dirección",
     "Birth Date": "Fecha de nacimiento",
     "Payment Details": "Detalles de pago",
-    "Pay": "Pagar",
+    "Proceed to Pay": "Pagar",
     "Create a product": "Creación de un producto",
     "Caution":"Cuidado",
     "Shopping Cart": "Carrito de compras",
     "More options": "Más opciones",
     "Summary": "Resumen",
-    "Buy": "Seguir Comprando",
+    "Continue Buying": "Seguir Comprando",
     "Actions": "Opciones",
     "Card": "Tarjeta",
-    "Expiry month": "Mes de caducidad"
+    "Expiry month": "Mes de caducidad",
+    "Page Not Found": "Página no Encontrada",
+    "Welcome Administrator": "Bienvenido Administrador",
+    "Welcome": "Bienvenido"
 }
