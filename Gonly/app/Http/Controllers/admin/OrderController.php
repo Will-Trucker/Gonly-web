@@ -33,7 +33,7 @@ class OrderController extends Controller
 
       $orders = Pay::where('id',$orderId)->first();
 
-      $orderItems = OrderItem::where('id',$orderId)->get();
+      $orderItems = OrderItem::where('order_id',$orderId)->get();
 
       return view('admin.order.detail',[
         'orders' => $orders,

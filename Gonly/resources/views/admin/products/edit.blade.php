@@ -59,7 +59,7 @@
                         <div class="row" id="product-gallery">
                            @if ($productImages->isNotEmpty())
                                @foreach ($productImages as $image)
-                               <div class="col-md-3" id="image-row-{{ $image->id }}"> 
+                               <div class="col-md-3" id="image-row-{{ $image->id }}">
                                   <div class="card">
                                     <input type="hidden" name="image_array[]" value="{{ $image->id }}">
                                       <img src="{{ asset('uploads/product/small/'.$image->image) }}" class="card-img-top" alt="">
@@ -83,16 +83,6 @@
                                             <p class="error"></p>
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="mb-3">
-                                            <label for="compare_price">{{ __('Compare at Price') }}</label>
-                                            <input type="text" name="compare_price" id="compare_price"
-                                                class="form-control" placeholder="{{ __('Compare at Price') }}" value="{{ $product->compare_price }}">
-                                            <p class="text-muted mt-3">
-                                                {{ __('To show a reduced price, move the product’s original price into Compare at price. Enter a lower value into Price.') }}
-                                            </p>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -101,16 +91,6 @@
                                 <h2 class="h4 mb-3">{{ __('Inventory') }}</h2>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="mb-3">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="hidden" name="track_qty" value="No">
-                                                <input class="custom-control-input" type="checkbox" id="track_qty"
-                                                    name="track_qty" value="Yes" {{ ($product->track_qty == 'Yes') ? 'checked' : '' }}>
-                                                <label for="track_qty"
-                                                    class="custom-control-label">{{ __('Track Quantity') }}</label>
-                                                <p class="error"></p>
-                                            </div>
-                                        </div>
                                         <div class="mb-3">
                                             <input type="number" min="0" name="qty" id="qty"
                                                 class="form-control" placeholder="Qty" value="{{ $product->qty }}">
@@ -177,17 +157,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h2 class="h4 mb-3">{{ __('Featured product') }}</h2>
-                                <div class="mb-3">
-                                    <select name="is_featured" id="is_featured" class="form-control">
-                                        <option {{($product->is_featured == 'No') ? 'selected' : ''}} value="No">{{ __('No') }}</option>
-                                        <option {{($product->is_featured == 'Yes') ? 'selected' : ''}} value="Yes">{{ __('Yes') }}</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="pb-5 pt-3">
@@ -232,7 +201,7 @@
                     if (response['status'] == true) {
                         $(".error").removeClass('invalid-feedback').html('');
                         $("input[type='text'], select, input[type='number']").removeClass('is-invalid')
-                        
+
                         window.location.href = "{{ route('products.index')}}";
                     } else {
                         var errors = response['errors'];
@@ -288,7 +257,7 @@
         })
 
      Dropzone.autoDiscover = false;
-     const dropzone = new Dropzone("#image", { 
+     const dropzone = new Dropzone("#image", {
      url:  "{{ route('product-images.update') }}",
      maxFiles: 6,
      paramName: 'image',
@@ -314,7 +283,7 @@
         $("#product-gallery").append(html);
 
 
-        
+
        },
        complete: function (file){
           this.removeFile(file)
@@ -335,7 +304,7 @@
                     alert(response.message);
                 }
             }
-        }); 
+        });
       }
     };
     </script>

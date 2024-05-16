@@ -68,39 +68,17 @@
                                                 <tbody>
                                                     @foreach ($orderItems as $item)
                                                     <tr>
+
+
                                                         <td>{{$item->name}}</td>
                                                         <td>{{$item->price}}</td>
                                                         <td>{{$item->qty}}</td>
                                                         <td>${{$item->total}}</td>
                                                     </tr>
                                                     @endforeach
-                                                    {{-- <tr>
-                                                        <td>Call of Duty</td>
-                                                        <td>$10.00</td>
-                                                        <td>2</td>
-                                                        <td>$20.00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Call of Duty</td>
-                                                        <td>$10.00</td>
-                                                        <td>2</td>
-                                                        <td>$20.00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Call of Duty</td>
-                                                        <td>$10.00</td>
-                                                        <td>2</td>
-                                                        <td>$20.00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Call of Duty</td>
-                                                        <td>$10.00</td>
-                                                        <td>2</td>
-                                                        <td>$20.00</td>
-                                                    </tr> --}}
                                                     <tr>
                                                         <th colspan="3" class="text-right">Subtotal:</th>
-                                                        <td>${{$orders->total}}</td>
+                                                        <td>${{$orders->subtotal}}</td>
                                                     </tr>
 
                                                     <tr>
@@ -109,7 +87,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th colspan="3" class="text-right">Grand Total:</th>
-                                                        <td>$85.00</td>
+                                                        <td>${{$orders->total}}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -122,10 +100,10 @@
                                             <h2 class="h4 mb-3">Order Status</h2>
                                             <div class="mb-3">
                                                 <select name="status" id="status" class="form-control">
-                                                    <option value="">Pending</option>
-                                                    <option value="">Shipped</option>
-                                                    <option value="">Delivered</option>
-                                                    <option value="">Cancelled</option>
+                                                    <option value="confirmado"{{($orders->status == 'confirmado') ? 'selected' : ''}}>Confirmado</option>
+                                                    <option value="enviado"{{($orders->status == 'enviado') ? 'selected' : ''}}>Enviado</option>
+                                                    <option value="entregado"{{($orders->status == 'entregado') ? 'selected' : ''}}>Entregado</option>
+                                                    {{-- <option value="">Cancelled</option> --}}
                                                 </select>
                                             </div>
                                             <div class="mb-3">

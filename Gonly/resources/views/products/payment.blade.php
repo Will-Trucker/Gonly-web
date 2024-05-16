@@ -16,13 +16,12 @@
     <div class="contenedor">
 
     <form method="post" enctype="multipart/form-data" id="paymentForm" name="paymentForm">
-
     <div class="row">
         <div class="col">
             <h1 class="title">{{__('Payment Data')}}</h1>
             <div class="inputBox inputBoxmodified">
                 <span class="icon"><i class="fas fa-user"></i></span>
-                <input type="text" placeholder="{{__('Names')}}" name="cliente" id="cliente" class="inputs_modificados custom-control-input form-control">
+                <input type="text" placeholder="{{__('Names')}}" name="cliente" id="cliente" class="inputs_modificados custom-control-input form-control" value="{{$userName}}">
             </div>
             <p class="error"></p>
             <div class="inputBox inputBoxmodified">
@@ -34,7 +33,7 @@
                 <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
                 <input  type="text" placeholder="{{__('Address')}}" name="direccion" id="direccion" class="inputs_modificados custom-control-input form-control">
             </div>
-            <p class="error"></p>
+            <p class="error direccion-error"></p>
             <!-- <div class="flex"> -->
                 <div class="inputBox inputBoxmodified">
                     <span class="icon"><i class="fas fa-dollar-sign"></i></span>
@@ -44,12 +43,14 @@
             <p class="error"></p>
             <!-- <div class="flex"> -->
                 <div class="inputBox">
-                    
+
                     <div class="card-js">
-                        <input class="card-number my-custom-class form-control tarjeta" name="tarjeta" id="tarjeta">
-                        <input class="expiry-month" name="expiry-month">
-                        <input class="expiry-year" name="expiry-year">
-                        <input class="cvc" name="cvc" id="cvc" class="form-control">
+                        <input class="card-number my-custom-class form-control" name="tarjeta" id="tarjeta">
+                        <p class="error tarjeta-error"></p>
+                        <input class="expiry-month  my-custom-class form-control" name="expiry-month" id="expiry-month">
+                        <input class="expiry-year  my-custom-class form-control" name="expiry-year" id="expiry-year">
+                        <input class="cvc  my-custom-class form-control" name="cvc" id="cvc">
+                        <p class="error cvc-error"></p>
                     </div>
                 </div>
             <!-- </div> -->
@@ -57,7 +58,7 @@
         </div>
     </div>
 
-    <button type="submit" class="btn-enviar-todo3" onclick="location.href='{{ route('thanks') }}'">{{__('Pay')}}</button>
+    <button type="submit" class="btn-enviar-todo3">{{__('Pay')}}</button>
 
 </form>
 
@@ -72,39 +73,35 @@
 @section('customJs')
 <script type="text/javascript">
     $("#paymentForm").submit(function(event) {
-    event.preventDefault();
-    var element = $(this);
-    $("button[type=submit]").prop('disabled', true);
-    var formData = element.serializeArray();
-    formData.push({ name: 'userEmail', value: '<?= $userEmail ?>'});
+        event.preventDefault();
+        var element = $(this);
+        $("button[type=submit]").prop('disabled', true);
+        var formData = element.serializeArray();
 
-    $.ajax({
-        url: '{{ route("shop.agregar") }}',
-        type: 'post',
-        data: element.serializeArray(),
-        dataType: 'json',
-        success: function(response) {
-            $("button[type=submit]").prop('disabled', false);
-            if (response['status'] === true) {
+        $.ajax({
+            url: '{{ route("shop.agregar") }}',
+            type: 'post',
+            data: formData,
+            dataType: 'json',
+            success: function(response) {
+                $("button[type=submit]").prop('disabled', false);
                 $(".error").removeClass('invalid-feedback').html('');
 
-                window.location.href = "{{route('thanks')}}";
-            } else {
-                var errors = response['errors'];
-                $(".error").removeClass('invalid-feedback').html('');
-                $.each(errors, function(key, value) {
-                    $("#" + key).addClass('is-invalid')
-                        .siblings('p')
-                        .addClass('invalid-feedback')
-                        .html(value)
-                });
+                if (response['status'] === true) {
+                    window.location.href = response['redirect_url'];
+                } else {
+                    var errors = response['errors'];
+                    $.each(errors, function(key, value) {
+                        $("." + key + "-error").addClass('invalid-feedback').html(value);
+                        $("#" + key).addClass('is-invalid');
+                    });
+                }
+            },
+            error: function(xhr, status, error) {
+                alert("Something wrong has happened | Algo ocurrió de manera incorrecta");
             }
-        },
-        error: function(xhr, status, error) {
-            alert("Something wrong has happened | Algo ocurrió de manera incorrecta");
-        }
+        });
     });
-});
 
    </script>
 @endsection

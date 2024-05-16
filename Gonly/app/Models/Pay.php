@@ -12,9 +12,9 @@ class Pay extends Model
 
     protected $table = 'orders';
     protected $primaryKey = 'id';
-   
+
     public $timestamps = false;
-    
+
     protected $fillable = [
         'id',
         'user_id',
@@ -25,7 +25,9 @@ class Pay extends Model
         'caducidad',
         'cvc',
         'total',
-        'status', // Si también deseas manejar el estado en este modelo
+        'status',
+        'subtotal',
+        'shipping'
     ];
 
     public function user()

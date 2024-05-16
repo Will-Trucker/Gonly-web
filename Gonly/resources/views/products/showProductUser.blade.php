@@ -35,7 +35,7 @@
                     <div class="container-description">
                         <div class="title-description">
                             <h4>{{ __('Description') }}</h4>
-                            <i class="fa-solid fa-chevron-down"></i>
+
                         </div>
                         <div class="text-description">
                             <p>

@@ -31,10 +31,8 @@ class PaymentController extends Controller
         $userName = $user->name;
         $userEmail = $user->email;
         $rules = [
-            'correo' => 'required | email',
-            'direccion' => 'required | max:255| regex:/^[\pL\s\-]+$/u',
-            'expiry-month' => 'required',
-            'expiry-year' => 'required',
+            'direccion' => 'required',
+            'tarjeta' => 'required',
             'cvc' => 'required | integer',
         ];
 
@@ -43,6 +41,9 @@ class PaymentController extends Controller
         if ($validator->passes()) {
         DB::beginTransaction();
         try {
+            $tax = Cart::tax(2, '.', '');
+            $subtotal = Cart::subtotal(2,'.','');
+            $total = $subtotal+$tax;
 
             $pago = new Pay;
             $pago->cliente = $userName;
@@ -56,7 +57,9 @@ class PaymentController extends Controller
             $pago->caducidad = $caducidad;
 
             $pago->cvc = $request->cvc;
-            $pago->total = Cart::total();
+            $pago->subtotal = $subtotal;
+            $pago->tax = $tax;
+            $pago->total = $total;
             $pago->user_id = $user->id;
 
             $pago->save();
@@ -83,10 +86,11 @@ class PaymentController extends Controller
 
             return response()->json([
                 'message' => 'Your transaction was successful, thank you for shopping with us | Su transacción fue exitosa, gracias por comprar con nosotros',
-                'status' => true
+                'status' => true,
+                'redirect_url' => route('thanks')
             ]);
 
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
 
             DB::rollBack();
 
