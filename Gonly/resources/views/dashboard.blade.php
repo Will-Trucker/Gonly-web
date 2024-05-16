@@ -13,7 +13,7 @@
 
     <main>
         <div class="welcome-user" style="background-image: url({{ Vite::asset('resources/img/Decoration/welcome-user.jpg') }})">
-            <h1>Bienvenido {{ Auth::user()->name }}</h1>
+            <h1>{{__('Welcome')}} {{ Auth::user()->name }}</h1>
             <p>Da un vistazo de las posibilidades que tienes con Gonly, para compra y venta, adelante!</p>
         </div>
         <section class="grid-containers-balanced">

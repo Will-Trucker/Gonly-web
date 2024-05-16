@@ -87,14 +87,11 @@
             $("button[type=submit]").prop('disabled', false);
             if (response['status'] === true) {
                 $(".error").removeClass('invalid-feedback').html('');
-                $("input[type='text'], select, input[type='number'],input[type='tel']").removeClass('is-invalid')
 
-                window.location.href = "/";
+                window.location.href = "{{route('thanks')}}";
             } else {
                 var errors = response['errors'];
                 $(".error").removeClass('invalid-feedback').html('');
-                $("input[type='text'], select, input[type='number'],input[type='tel']").removeClass('is-invalid')
-
                 $.each(errors, function(key, value) {
                     $("#" + key).addClass('is-invalid')
                         .siblings('p')

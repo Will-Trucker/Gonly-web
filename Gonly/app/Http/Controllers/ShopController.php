@@ -10,79 +10,87 @@ use App\Models\Products_user;
 
 class ShopController extends Controller
 {
-        public function index(Request $request, $categorySlug = null, $subCategorySlug = null){
+    public function index(Request $request, $categorySlug = null, $subCategorySlug = null)
+    {
 
-            $categories = Category::orderBy('name','ASC')->with('subcategories')->where('status',1)->get();
+        $categories = Category::orderBy('name', 'ASC')->with('subcategories')->where('status', 1)->get();
 
-            $ProductsUser = Products_user::all();
+        $ProductsUser = Products_user::all();
 
-            $products = Product::where('status',1);
+        $products = Product::where('status', 1);
 
-            $category = null;
+        $category = null;
 
-            if ($category) {
+        if ($category) {
 
-                $ProductsUser->where('category_id', $category->id);
-                $products->where('category_id', $category->id);
-                $products = $products->get();
+            $ProductsUser->where('category_id', $category->id);
+            $products->where('category_id', $category->id);
+            $products = $products->get();
 
-                if (!$subCategorySlug) {
-                    return view('categories', ['category' => $category, 'products' => $products, 'ProductsUser' => $ProductsUser]);
-                }
+            if (!$subCategorySlug) {
+                return view('categories', ['category' => $category, 'products' => $products, 'ProductsUser' => $ProductsUser]);
             }
-
-            if ($subCategorySlug) {
-
-                $subCategory = SubCategory::where('slug', $subCategorySlug)->first();
-
-                if ($subCategory) {
-
-                    $ProductsUser = Products_user::where('sub_category_id', $subCategory->id)->get();
-
-                    $products->where('sub_category_id', $subCategory->id);
-
-                    return view('products.subcategory', ['subCategory' => $subCategory, 'products' => $products->paginate(6), 'ProductsUser' => $ProductsUser]);
-                }
-            }
-
-            $ProductsUser = $ProductsUser;
-            $products = $products->paginate(6);
-
-            $data['categories'] = $categories;
-            $data['products'] = $products;
-            $data['ProductsUser'] = $ProductsUser;
-
-
-            return view('categories', $data);
         }
 
-        public function product($slug){
-            // echo $slug;
+        if ($subCategorySlug) {
 
-            //$ProductsUser
-            
-            $products = Product::where('slug',$slug)->with('product_images')->first();
+            $subCategory = SubCategory::where('slug', $subCategorySlug)->first();
 
-            if($products == null){
-                abort(404);
+            if ($subCategory) {
+
+                $ProductsUser = Products_user::where('sub_category_id', $subCategory->id)->get();
+
+                $products->where('sub_category_id', $subCategory->id);
+
+                return view('products.subcategory', ['subCategory' => $subCategory, 'products' => $products->paginate(6), 'ProductsUser' => $ProductsUser]);
             }
-
-            $data['products'] = $products;
-            return view('products.showProducts',$data);
         }
 
-        public function showProductUser($id)
-        {
-            // Obtén el producto específico según el ID
-            $productUser = Products_user::findOrFail($id);
+        $ProductsUser = $ProductsUser;
+        $products = $products->paginate(6);
 
-            // Pasa el producto a la vista de detalles del producto
-            return view('products.showProductsUser', ['productUser' => $productUser]);
-        }   
+        $data['categories'] = $categories;
+        $data['products'] = $products;
+        $data['ProductsUser'] = $ProductsUser;
 
 
+        return view('categories', $data);
+    }
 
-/*
+    public function product($slug)
+    {
+        // echo $slug;
+
+        //$ProductsUser
+
+        $products = Product::where('slug', $slug)->with('product_images')->first();
+
+        if ($products == null) {
+            abort(404);
+        }
+
+        $data['products'] = $products;
+        return view('products.showProducts', $data);
+    }
+
+
+    public function showProductUser($id)
+    {
+        $productUser = Products_user::where('id', $id)->first();
+
+        if ($productUser == null) {
+            abort(404);
+        }
+
+        $deta['productUser'] = $productUser;
+        return view('products.showProductUser', $deta);
+
+    }
+
+
+
+
+    /*
     public function show(Request $request, $categorySlug = null, $subCategorySlug = null){
 
         $categories = Category::orderBy('name','ASC')->where('status',1)->get();

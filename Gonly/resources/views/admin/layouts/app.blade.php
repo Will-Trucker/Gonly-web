@@ -72,7 +72,7 @@
 				@yield('content')
 			</div>
 			<footer class="main-footer">
-				<strong>Copyright &copy; 2023 Gonly {{__('All rights reserved')}}.
+				<strong>Copyright &copy; 2024 Gonly {{__('All rights reserved')}}.
 			</footer>
 		</div>
 

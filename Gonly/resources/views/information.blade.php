@@ -13,7 +13,7 @@
     @include('layouts.nav-users-guest')
 
     
- <main>    
+    <main>    
             <article>
                 <div>
                     <h2>Informacion</h2>

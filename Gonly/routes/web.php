@@ -20,6 +20,7 @@ use App\Http\Controllers\admin\TempImagesController;
 use App\Http\Controllers\admin\BrandController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\ProductSubCategoryController;
+use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\admin\ProductImageController;
 
 use Illuminate\Http\Request;
@@ -74,7 +75,6 @@ Route::post('productsUser/store', [ProductsUserController::class, 'store'])->mid
 Route::prefix('/products/{id}/preview/')->group(function() {
     // Ruta para subir imagenes adicionales
     Route::resource('moreimg', ImagesController::class)->middleware(['auth', 'verified']);
-
 })->middleware(['auth', 'verified']);
 
 
@@ -98,7 +98,7 @@ Route::post('/payment/store',[App\Http\Controllers\PaymentController::class, 'ag
 Route::get('/shop/{categorySlug?}/{subCategorySlug?}',[App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
 Route::get('/product/{slug}',[App\Http\Controllers\ShopController::class, 'product'])->name('shop.product')->middleware(['auth', 'verified']);
 
-Route::get('/product/{id}',[App\Http\Controllers\ShopController::class, 'showProductUser'])->name('shop.showProductUser')->middleware(['auth', 'verified']);
+Route::get('/products/{id}',[App\Http\Controllers\ShopController::class, 'showProductUser'])->name('shop.showProductUser')->middleware(['auth', 'verified']);
 
 
 /*
@@ -118,8 +118,6 @@ Route::group(['prefix'  => 'admin'], function(){
 
     Route::get('/login', [App\Http\Controllers\admin\AdminLoginController::class, 'indexl'])->name('admin.login');
     Route::post('/authenticate', [App\Http\Controllers\admin\AdminLoginController::class, 'authenticate'])->name('admin.authenticate');
-
-
 
    });
 
@@ -166,7 +164,9 @@ Route::group(['prefix'  => 'admin'], function(){
 
     Route::delete('/product-images', [App\Http\Controllers\admin\ProductImageController::class, 'destroy'])->name('product-images.destroy');
 
-    Route::get('/orders',[App\Http\admin\OrderController::class, 'index'])->name('orders.index');
+    // Orders
+    Route::get('/orders',[App\Http\Controllers\admin\OrderController::class, 'index'])->name('orders.index');
+    Route::get('/orders/{id}',[App\Http\Controllers\admin\OrderController::class, 'detail'])->name('orders.detail');
 
     // Subir imagenes
     Route::post('/upload-temp-image', [TempImagesController::class, 'create'])->name('temp-images.create');
