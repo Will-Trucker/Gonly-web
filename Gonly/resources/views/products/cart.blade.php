@@ -76,12 +76,12 @@
                         <td>
                             <div class="input-group quantity mx-auto" style="width: 100px;">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-dark btn-minus p-2 pt-1 pb-1 sub" data-id="{{ $item->rowId }}">
+                                    <button class="boton_mas btn btn-sm btn-dark btn-minus p-2 pt-1 pb-1 sub" data-id="{{ $item->rowId }}">
                                       <i class="fa fa-minus"></i></button>
                                 </div>
-                                <input type="text" readonly class="form-control form-control-sm  border-0 text-center numerito_q_incrementa" value="{{ $item->qty  }}">
+                                <input type="text" readonly class="readonly-input-quantity form-control form-control-sm  border-0 text-center numerito_q_incrementa" value="{{ $item->qty  }}">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-dark btn-plus p-2 pt-1 pb-1 add" data-id="{{ $item->rowId }}">
+                                    <button class="boton_mas btn btn-sm btn-dark btn-plus p-2 pt-1 pb-1 add" data-id="{{ $item->rowId }}">
                                     <i class="fa fa-plus"></i>
                                     </button>
                                 </div>

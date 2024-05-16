@@ -17,51 +17,50 @@
 
     <form method="post" enctype="multipart/form-data" id="paymentForm" name="paymentForm">
 
-        <div class="row">
-            <div class="col">
-                <h1 class="title">{{__('Payment Data')}}</h1>
-                <div class="inputBox">
-                    <span>{{__('Names')}}</span>
-                    <input type="text" placeholder="Pablo Perez" name="cliente" id="cliente" class="custom-control-input form-control ">
+    <div class="row">
+        <div class="col">
+            <h1 class="title">{{__('Payment Data')}}</h1>
+            <div class="inputBox inputBoxmodified">
+                <span class="icon"><i class="fas fa-user"></i></span>
+                <input type="text" placeholder="{{__('Names')}}" name="cliente" id="cliente" class="inputs_modificados custom-control-input form-control">
+            </div>
+            <p class="error"></p>
+            <div class="inputBox inputBoxmodified">
+                <span class="icon"><i class="fas fa-envelope"></i></span>
+                <input type="email" placeholder="E-mail" name="correo" id="correo" class="inputs_modificados custom-control-input" value="{{ $userEmail }}" readonly>
+            </div>
+            <p class="error"></p>
+            <div class="inputBox inputBoxmodified">
+                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                <input  type="text" placeholder="{{__('Address')}}" name="direccion" id="direccion" class="inputs_modificados custom-control-input form-control">
+            </div>
+            <p class="error"></p>
+            <!-- <div class="flex"> -->
+                <div class="inputBox inputBoxmodified">
+                    <span class="icon"><i class="fas fa-dollar-sign"></i></span>
+                    <input type="text" name="total" id="total" value="$ {{ Cart::total() }}" readonly class="inputs_modificados">
                 </div>
-                <p class="error"></p>
+            <!-- </div> -->
+            <p class="error"></p>
+            <!-- <div class="flex"> -->
                 <div class="inputBox">
-                    <span>E-mail</span>
-                    <input type="email" placeholder="cliente234@mail.com" name="correo" id="correo" class="custom-control-input" value="{{ $userEmail }}" readonly>
-                </div>
-                <p class="error"></p>
-                <div class="inputBox">
-                    <span>{{__('Address')}}</span>
-                    <input  type="text" placeholder="Ciudad, Calle, Residencia, Casa" name="direccion" id="direccion" class="custom-control-input form-control">
-                </div>
-                <p class="error"></p>
-                <!-- <div class="flex"> -->
-                    <div class="inputBox">
-                        <span>Total</span>
-                        <input type="text" name="total" id="total" value="$ {{ Cart::total() }}" readonly>
+                    
+                    <div class="card-js">
+                        <input class="card-number my-custom-class form-control tarjeta" name="tarjeta" id="tarjeta">
+                        <input class="expiry-month" name="expiry-month">
+                        <input class="expiry-year" name="expiry-year">
+                        <input class="cvc" name="cvc" id="cvc" class="form-control">
                     </div>
-                <!-- </div> -->
-                <p class="error"></p>
-                <!-- <div class="flex"> -->
-                  <div class="inputBox">
-                    <span>{{__('Card')}}</span>
-                  </div>
-                  <div class="card-js">
-                    <input class="card-number my-custom-class form-control tarjeta" name="tarjeta" id=" tarjeta">
-
-                    <input class="expiry-month" name="expiry-month">
-                    <input class="expiry-year" name="expiry-year">
-                    <input class="cvc" name="cvc"
-                    id="cvc" class="form-control">
-                  </div>
-                  <!-- </div> -->
-                 <p class="error"></p>
                 </div>
+            <!-- </div> -->
+            <p class="error"></p>
         </div>
+    </div>
 
     <button type="submit" class="btn-enviar-todo3" onclick="location.href='{{ route('thanks') }}'">{{__('Pay')}}</button>
 
 </form>
+
 
 </div>
 
