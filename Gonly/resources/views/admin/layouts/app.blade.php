@@ -5,20 +5,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>| Gonly - AdminPanel</title>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-		<link rel="shortcut icon" href="{{Vite::asset('resources/img/icongonly.png')}}" type="image/x-icon"> 
+		<link rel="shortcut icon" href="{{Vite::asset('resources/img/icongonly.png')}}" type="image/x-icon">
 		<meta name="csrf-token" content="{{csrf_token()}}">
 		<link rel="stylesheet" href="{{asset('admin-assets/plugins/fontawesome-free/css/all.min.css')}}">
 		<link rel="stylesheet" href="{{asset('admin-assets/css/adminlte.min.css')}}">
 		<link rel="stylesheet" href="{{asset('admin-assets/plugins/dropzone/min/dropzone.min.css')}}">
 		<link rel="stylesheet" href="{{asset('admin-assets/css/custom.css')}}">
         <link rel="stylesheet" href="{{asset('admin-assets/plugins/summernote/summernote.min.css')}}">
-	</head>
+        <link rel="stylesheet" href="{{asset('admin-assets/css/datetimepicker.css')}}">
+    </head>
 	<body class="hold-transition sidebar-mini">
-		
+
 		<div class="wrapper">
-			
+
 			<nav class="main-header navbar navbar-expand navbar-white navbar-light">
-				
+
 				<ul class="navbar-nav">
 					<li class="nav-item">
 					  	<a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
@@ -42,7 +43,7 @@
 							@endif
 						@endforeach
 					</ul>
-				</div> 
+				</div>
 
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
@@ -82,6 +83,7 @@
 		<script src="{{asset('admin-assets/js/adminlte.min.js')}}"></script>
 		<script src="{{asset('admin-assets/js/demo.js')}}"></script>
 		<script src="{{asset('admin-assets/plugins/summernote/summernote.min.js')}}"></script>
+        <script src="{{asset('admin-assets/js/datetimepicker.js')}}"></script>
         <script>
 			$.ajaxSetup({
                  headers: {
@@ -96,7 +98,7 @@
 			   });
 			});
 		</script>
-	
+
 		@yield('customJs')
 	</body>
 </html>

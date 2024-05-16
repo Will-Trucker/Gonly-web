@@ -1,11 +1,11 @@
 @extends('admin.layouts.app')
 
 @section('content')
-    <section class="content-header">					
+    <section class="content-header">
         <div class="container-fluid my-2">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Orders</h1>
+                    <h1>Ordenes</h1>
                 </div>
             </div>
         </div>
@@ -28,18 +28,18 @@
                                   </button>
                                 </div>
                               </div>
-                        </div> 
+                        </div>
                     </div>
                 </form>
-                <div class="card-body table-responsive p-0">								
+                <div class="card-body table-responsive p-0">
                     <table class="table table-hover text-nowrap">
                         <thead>
                             <tr>
-                                <th width="60">Order#</th>
-                                <th>Customer</th>
+                                <th width="60">Orden #</th>
+                                <th>Cliente</th>
                                 <th>E-mail</th>
-                                <th>Address</th>
-                                <th>Credit Card NO.</th>
+                                <th>Direccion</th>
+                                <th>Tarjeta #</th>
                                 <th>Caducidad</th>
                                 <th>cvc</th>
                                 <th>Monto</th>
@@ -52,14 +52,14 @@
                                 @foreach ($orders as $order)
                                      <tr>
                                 <td><a href="{{route('orders.detail',[$order->id])}}">{{ $order->id }}</a></td>
-                                
+
                                 <td>{{ $order->cliente }}</td>
                                 <td>{{ $order->correo }}</td>
                                 <td>{{ $order->direccion }}</td>
-                                <td>{{ $order->tarjeta}}</td>	
-                                <td>{{ $order->caducidad}}</td>	
-                                <td>{{ $order->cvc }}</td>		
-                                <td>$ {{ $order->total }}</td>							
+                                <td>{{ $order->tarjeta}}</td>
+                                <td>{{ $order->caducidad}}</td>
+                                <td>{{ $order->cvc }}</td>
+                                <td>$ {{ $order->total }}</td>
                                 <td>
                                     @if($order->status == 'confirmado')
                                         <span class="badge bg-success">Confirmado</span>
@@ -89,7 +89,7 @@
                                 </tr>
                             @endif
                         </tbody>
-                    </table>										
+                    </table>
                 </div>
                 <div class="card-footer clearfix">
                     {{ $orders->links() }}
@@ -111,7 +111,7 @@
       function deleteProduct(id){
         var url = '{{ route("products.delete","ID") }}';
         var newUrl = url.replace("ID",id);
-        
+
         if (confirm("{{__('Are you sure you want to delete this?')}}")){
             $.ajax({
             url: newUrl,
@@ -120,7 +120,7 @@
             dataType: 'json',
             success: function(response){
               if (response["status"] == true){
-                window.location.href="{{ route('products.index') }}";   
+                window.location.href="{{ route('products.index') }}";
               } else {
                 window.location.href="{{ route('products.index') }}";
               }
